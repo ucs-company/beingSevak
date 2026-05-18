@@ -168,7 +168,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 /* Pulse rings - Zakat */
 .zakat-pulse-ring {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -60%);
   width: 52px;
