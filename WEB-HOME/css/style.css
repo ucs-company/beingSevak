@@ -79,12 +79,14 @@ input, select { font-family: inherit; outline: none; border: none; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+ gap: 0px; /* bane vachche space */
   flex-shrink: 0;
 }
+
+/* ROUND LOGO */
 .logo-circle {
-  width: 70px;
-  height: 70px;
+  width: 85px;   /* mota karo */
+  height: 85px;  /* mota karo */
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.3);
   overflow: hidden;
@@ -92,16 +94,28 @@ input, select { font-family: inherit; outline: none; border: none; }
   align-items: center;
   justify-content: center;
   background: rgba(255,255,255,0.1);
+    margin-right:-8px;
+
 }
-.logo-fallback { font-size: 28px; line-height: 1; }
-.logo-globe { font-size: 42px; }
-.logo-text {
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+
+.logo-fallback {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.logo-globe {
+  font-size: 42px;
+}
+
+/* PNG TEXT LOGO */
+
+.BS-text-logo{
+  height:100px;
+  width:auto;
+  object-fit:contain;
+  margin-left:0;
+  padding:0;
+  margin-right:-15px;
 }
 
 /* Quick Links (Language  */
@@ -2607,23 +2621,23 @@ body{
 
 /* BUTTON */
 
-.donate-btn{
-  display:inline-block;
-  padding:15px 36px;
-  background:#00a3da;
-  color:#fff;
-  text-decoration:none;
-  border-radius:50px;
-  font-weight:700;
-  transition:0.4s;
-  box-shadow:
-  0 10px 25px rgba(11,77,120,0.25);
-}
+  .donate-btn{
+    display:inline-block;
+    padding:15px 36px;
+    background:#00a3da;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:700;
+    transition:0.4s;
+    box-shadow:
+    0 10px 25px rgba(11,77,120,0.25);
+  }
 
-.donate-btn:hover{
-  transform:translateY(-5px);
-  background:#083552;
-}
+  .donate-btn:hover{
+    transform:translateY(-5px);
+    background:#083552;
+  }
 
 /* RESPONSIVE */
 
