@@ -1,0 +1,67 @@
+/* =========================
+   GLOBAL HOVER EFFECT (ADD THIS)
+========================= */
+
+/* ABOUT BOX */
+.about-box{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.about-box:hover{
+  background:#00a3da;
+  transform:translateY(-8px);
+}
+
+.about-box:hover h3,
+.about-box:hover p{
+  color:#fff;
+}
+
+/* MISSION CARD */
+.mission-card{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.mission-card:hover h3,
+.mission-card:hover p,
+.mission-card:hover .icon{
+  color:#fff;
+}
+
+/* already background effect hai, bas smooth kar diya */
+.mission-card:hover::before{
+  height:100%;
+}
+
+/* TESTIMONIAL CARD */
+.testimonial-card{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.testimonial-card:hover p,
+.testimonial-card:hover h4{
+  color:#fff;
+}
+
+/* optional background effect */
+.testimonial-card:hover{
+  background:#00a3da;
+}
+
+/* IMPACT STATS BOX */
+.impact-stats div{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.impact-stats div:hover{
+  background:#00a3da;
+}
+
+.impact-stats div:hover h3,
+.impact-stats div:hover p{
+  color:#fff;
+}
