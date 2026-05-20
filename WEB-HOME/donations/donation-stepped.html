@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Stepped Donation – BSCT</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #03163E;
+  --mid: #315371;
+  --cyan: #00A2D9;
+  --cyan-light: #33bce8;
+  --green: #2eb85c;
+  --gold: #D4AF37;
+  --white: #fff;
+  --light-bg: #f4f7fb;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --border: #d0eaf5;
+}
+body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:20px; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+
+/* ── CONTAINER ── */
+.step-container {
+  max-width: 640px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  overflow: hidden;
+  animation: fadeUp 0.5s ease;
+}
+@keyframes fadeUp {
+  0% { opacity:0; transform:translateY(30px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+/* ── HEADER ── */
+.step-header {
+  background: linear-gradient(135deg, var(--navy), var(--mid));
+  padding: 24px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.step-header::before {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(0,162,217,0.12), transparent);
+  top: -100px; right: -100px;
+  border-radius: 50%;
+}
+.step-header h2 {
+  font-family:'Montserrat',sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+.step-header p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.78);
+  margin-top: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── STEP INDICATOR ── */
+.steps-bar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 28px 0;
+}
+.step-dot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.step-dot .circle {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: #e8edf2;
+  color: var(--text-mid);
+  transition: all 0.4s ease;
+  position: relative;
+}
+.step-dot .circle.active {
+  background: var(--cyan);
+  color: var(--white);
+  box-shadow: 0 0 0 4px rgba(0,162,217,0.2);
+}
+.step-dot .circle.done {
+  background: var(--green);
+  color: var(--white);
+}
+.step-dot .circle.done::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.7rem;
+}
+.step-dot .line {
+  width: 40px; height: 3px;
+  background: #e8edf2;
+  border-radius: 2px;
+  transition: background 0.4s;
+}
+.step-dot .line.done { background: var(--green); }
+
+/* ── STEPS ── */
+.step-panel { display: none; padding: 24px 28px; animation: stepSlide 0.4s ease; }
+.step-panel.active { display: block; }
+@keyframes stepSlide {
+  0% { opacity:0; transform:translateX(20px); }
+  100% { opacity:1; transform:translateX(0); }
+}
+
+/* ── FORM ELEMENTS ── */
+.s-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.s-label .req { color: #e53935; }
+.s-amt-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.s-amt-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.s-amt-box:focus-within { border-color: var(--cyan); }
+.s-amt-box .rs {
+  padding: 10px 11px;
+  font-size: 14px;
+  color: var(--text-mid);
+  font-weight: 600;
+  border-right: 2px solid var(--border);
+  background: #eef8fc;
+}
+.s-amt-box input {
+  border: none; outline: none;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100px;
+  background: transparent;
+  color: var(--navy);
+}
+.s-preset {
+  padding: 9px 16px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family:'Montserrat',sans-serif;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.s-preset:hover { border-color: var(--cyan); color: var(--cyan); }
+.s-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+
+.s-field { margin-bottom: 16px; }
+.s-field label {
+  display: block;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 600;
+  font-size: 0.76rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.s-field label .req { color: #e53935; }
+.s-field input, .s-field select, .s-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-family:'Open Sans',sans-serif;
+  color: var(--text-dark);
+  background: #f9fdff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.s-field input:focus, .s-field select:focus, .s-field textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,162,217,0.12);
+}
+.s-field textarea { min-height: 70px; resize: vertical; }
+.s-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* ── NAV BUTTONS ── */
+.s-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 2px solid var(--border);
+}
+.s-btn {
+  padding: 11px 28px;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+.s-btn-prev {
+  background: #e8edf2;
+  color: var(--text-mid);
+}
+.s-btn-prev:hover { background: #d5dce4; }
+.s-btn-next {
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(0,162,217,0.3);
+}
+.s-btn-next:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,162,217,0.35); }
+.s-btn-next:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
+.s-btn-submit {
+  background: linear-gradient(135deg, var(--green), #1e8c3e);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(46,184,92,0.3);
+}
+.s-btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(46,184,92,0.35); }
+
+/* ── STEP 3: REVIEW ── */
+.review-box {
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+.review-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.review-row:last-child { border-bottom: none; }
+.review-row .r-label { color: var(--text-mid); font-weight: 600; }
+.review-row .r-val { color: var(--text-dark); font-weight: 700; font-family:'Montserrat',sans-serif; }
+
+@media (max-width: 520px) {
+  .step-panel { padding: 18px 16px; }
+  .s-row { grid-template-columns: 1fr; }
+  .steps-bar { padding: 14px 16px 0; }
+  .step-dot .line { width: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="step-container">
+  <div class="step-header">
+    <h2><i class="fas fa-hand-holding-heart"></i> Complete Your Donation</h2>
+    <p>Three simple steps to make a difference</p>
+  </div>
+
+  <!-- STEPS BAR -->
+  <div class="steps-bar" id="stepsBar">
+    <div class="step-dot"><div class="circle active" id="sDot1">1</div><div class="line" id="sLine1"></div></div>
+    <div class="step-dot"><div class="circle" id="sDot2">2</div><div class="line" id="sLine2"></div></div>
+    <div class="step-dot"><div class="circle" id="sDot3">3</div></div>
+  </div>
+
+  <!-- STEP 1: AMOUNT -->
+  <div class="step-panel active" id="step1">
+    <div class="s-label">Select Amount <span class="req">*</span></div>
+    <div class="s-amt-row">
+      <div class="s-amt-box">
+        <span class="rs">₹</span>
+        <input type="number" id="sAmt" value="1000" min="1" oninput="updateSReview()"/>
+      </div>
+      <button class="s-preset" onclick="setSAmt(500,this)">₹500</button>
+      <button class="s-preset active" onclick="setSAmt(1000,this)">₹1,000</button>
+      <button class="s-preset" onclick="setSAmt(2500,this)">₹2,500</button>
+      <button class="s-preset" onclick="setSAmt(10000,this)">₹10K</button>
+    </div>
+
+    <div class="s-label">Choose Mission</div>
+    <div class="s-field">
+      <select id="sMission" onchange="updateSReview()">
+        <option value="Annapurna">Mission Annapurna – Nutrition</option>
+        <option value="Vidhya">Mission Vidhya – Education</option>
+        <option value="Aurat">Mission Aurat – Women Empowerment</option>
+        <option value="Atmanirbhar">Mission Atmanirbhar – Livelihood</option>
+        <option value="General">General Donation</option>
+      </select>
+    </div>
+
+    <div class="s-nav">
+      <div></div>
+      <button class="s-btn s-btn-next" onclick="goStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- STEP 2: INFO -->
+  <div class="step-panel" id="step2">
+    <div class="s-row">
+      <div class="s-field">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" id="sFname" placeholder="First Name" oninput="updateSReview()"/>
+      </div>
+      <div class="s-field">
+        <label>Last Name</label>
+        <input type="text" id="sLname" placeholder="Last Name" oninput="updateSReview()"/>
+      </div>
+    </div>
+    <div class="s-field">
+      <label>Email <span class="req">*</span></label>
+      <input type="email" id="sEmail" placeholder="Email Address" oninput="updateSReview()"/>
+    </div>
+    <div class="s-field">
+      <label>Phone <span class="req">*</span></label>
+      <input type="tel" id="sPhone" placeholder="Phone Number" oninput="updateSReview()"/>
+    </div>
+    <div class="s-field">
+      <label>Message (optional)</label>
+      <textarea id="sMessage" placeholder="Leave a message..." oninput="updateSReview()"></textarea>
+    </div>
+
+    <div class="s-nav">
+      <button class="s-btn s-btn-prev" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+      <button class="s-btn s-btn-next" onclick="goStep(3)">Review <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- STEP 3: REVIEW -->
+  <div class="step-panel" id="step3">
+    <div class="s-label" style="margin-bottom:12px;">Review Your Donation</div>
+    <div class="review-box">
+      <div class="review-row"><span class="r-label">Amount</span><span class="r-val" id="rAmt">₹1,000.00</span></div>
+      <div class="review-row"><span class="r-label">Mission</span><span class="r-val" id="rMission">Annapurna</span></div>
+      <div class="review-row"><span class="r-label">Name</span><span class="r-val" id="rName">—</span></div>
+      <div class="review-row"><span class="r-label">Email</span><span class="r-val" id="rEmail">—</span></div>
+      <div class="review-row"><span class="r-label">Phone</span><span class="r-val" id="rPhone">—</span></div>
+      <div class="review-row" style="border-bottom:none;"><span class="r-label">Message</span><span class="r-val" id="rMsg" style="font-weight:400;">—</span></div>
+    </div>
+
+    <div class="s-nav">
+      <button class="s-btn s-btn-prev" onclick="goStep(2)"><i class="fas fa-arrow-left"></i> Edit</button>
+      <button class="s-btn s-btn-submit" onclick="handleStepSubmit()">
+        <i class="fas fa-heart"></i> Confirm Donation
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentStep = 1;
+function goStep(n) {
+  if (n < 1 || n > 3) return;
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+
+  [1,2,3].forEach(i => {
+    const dot = document.getElementById('sDot' + i);
+    dot.classList.remove('active', 'done');
+    if (i < n) dot.classList.add('done');
+    else if (i === n) dot.classList.add('active');
+    if (i < 3) {
+      const line = document.getElementById('sLine' + i);
+      line.classList.toggle('done', i < n);
+    }
+  });
+  currentStep = n;
+  updateSReview();
+}
+
+function setSAmt(val, btn) {
+  document.getElementById('sAmt').value = val;
+  document.querySelectorAll('.s-preset').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateSReview();
+}
+function updateSReview() {
+  const amt = parseFloat(document.getElementById('sAmt').value) || 0;
+  document.getElementById('rAmt').textContent = '₹' + amt.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+  const mission = document.getElementById('sMission');
+  document.getElementById('rMission').textContent = mission.options[mission.selectedIndex].text;
+  const f = document.getElementById('sFname').value.trim();
+  const l = document.getElementById('sLname').value.trim();
+  document.getElementById('rName').textContent = f + (l ? ' ' + l : '') || '—';
+  document.getElementById('rEmail').textContent = document.getElementById('sEmail').value.trim() || '—';
+  document.getElementById('rPhone').textContent = document.getElementById('sPhone').value.trim() || '—';
+  document.getElementById('rMsg').textContent = document.getElementById('sMessage').value.trim() || '—';
+}
+
+function handleStepSubmit() {
+  const amt = document.getElementById('sAmt').value;
+  const fname = document.getElementById('sFname').value.trim();
+  const email = document.getElementById('sEmail').value.trim();
+  const phone = document.getElementById('sPhone').value.trim();
+  if (!amt || parseFloat(amt) <= 0) { alert('Please enter a valid amount.'); goStep(1); return; }
+  if (!fname) { alert('Please enter your first name.'); goStep(2); return; }
+  if (!email) { alert('Please enter your email.'); goStep(2); return; }
+  if (!phone) { alert('Please enter your phone number.'); goStep(2); return; }
+  alert('Thank you ' + fname + '!\nYour donation of ₹' + parseFloat(amt).toLocaleString('en-IN') + ' has been submitted.\nRedirecting to payment gateway...');
+}
+</script>
+</body>
+</html>

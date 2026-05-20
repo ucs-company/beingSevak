@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Donate Inline – BSCT</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #03163E;
+  --mid: #315371;
+  --cyan: #00A2D9;
+  --cyan-light: #33bce8;
+  --green: #2eb85c;
+  --gold: #D4AF37;
+  --white: #fff;
+  --light-bg: #f4f7fb;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --border: #d0eaf5;
+}
+body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var(--text-dark); padding:20px; }
+
+/* ── WRAPPER ── */
+.donate-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  overflow: hidden;
+  animation: formIn 0.6s ease;
+}
+@keyframes formIn {
+  0% { opacity:0; transform:translateY(30px) scale(0.97); }
+  100% { opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* ── HEADER ── */
+.form-header {
+  background: linear-gradient(135deg, var(--navy), var(--mid));
+  padding: 28px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.form-header::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(0,162,217,0.15), transparent);
+  animation: shine 8s linear infinite;
+}
+@keyframes shine {
+  0% { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+.form-header h2 {
+  font-family:'Montserrat',sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+.form-header p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 6px;
+  position: relative;
+  z-index: 1;
+}
+.form-header .badge-80g {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── BODY ── */
+.form-body { padding: 28px 32px 32px; }
+
+/* ── MISSION SELECT ── */
+.field-group { margin-bottom: 22px; }
+.field-group label {
+  display: block;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.field-group label .req { color: #e53935; }
+.mission-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.mission-opt {
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  font-family:'Montserrat',sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.mission-opt i { display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--cyan); transition: 0.3s; }
+.mission-opt:hover { border-color: var(--cyan); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,162,217,0.12); }
+.mission-opt.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
+.mission-opt.active i { color: var(--white); }
+
+/* ── AMOUNT ── */
+.amount-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.amount-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f9fdff;
+  transition: border-color 0.3s;
+}
+.amount-box:focus-within { border-color: var(--cyan); }
+.amount-box .rupee {
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+  font-weight: 600;
+  border-right: 2px solid var(--border);
+  background: #eef8fc;
+}
+.amount-box input {
+  border: none; outline: none;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 110px;
+  background: transparent;
+  color: var(--navy);
+}
+.amt-preset {
+  padding: 9px 16px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family:'Montserrat',sans-serif;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.amt-preset:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+.amt-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+
+/* ── FORM GRID ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.form-grid .full { grid-column: 1 / -1; }
+.form-group { margin-bottom: 0; }
+.form-group label {
+  display: block;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.form-group label .req { color: #e53935; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-family:'Open Sans',sans-serif;
+  color: var(--text-dark);
+  background: #f9fdff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,162,217,0.12);
+}
+.form-group textarea { min-height: 70px; resize: vertical; }
+
+/* ── TOTAL + DONATE ── */
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 2px solid var(--border);
+}
+.total-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.total-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+.total-val {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--cyan);
+}
+.donate-btn-inline {
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  border: none;
+  padding: 14px 36px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family:'Montserrat',sans-serif;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,162,217,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.donate-btn-inline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+.donate-btn-inline:hover::before { left: 100%; }
+.donate-btn-inline:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .form-body { padding: 20px 18px; }
+  .mission-select { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .action-row { flex-direction: column; align-items: stretch; }
+  .donate-btn-inline { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="donate-wrap">
+  <div class="form-header">
+    <h2>Support a Mission</h2>
+    <p>Your contribution brings food, education &amp; dignity to those in need</p>
+    <span class="badge-80g">80G TAX EXEMPTION</span>
+  </div>
+  <div class="form-body">
+    <div class="field-group">
+      <label>Choose Mission <span class="req">*</span></label>
+      <div class="mission-select" id="missionSelect">
+        <div class="mission-opt active" data-mission="annapurna" onclick="selectMission(this)">
+          <i class="fas fa-bread-slice"></i> Annapurna
+        </div>
+        <div class="mission-opt" data-mission="vidhya" onclick="selectMission(this)">
+          <i class="fas fa-book-open"></i> Vidhya
+        </div>
+        <div class="mission-opt" data-mission="aurat" onclick="selectMission(this)">
+          <i class="fas fa-fist-raised"></i> Aurat
+        </div>
+        <div class="mission-opt" data-mission="atmanirbhar" onclick="selectMission(this)">
+          <i class="fas fa-hand-holding-heart"></i> Atmanirbhar
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Donation Amount <span class="req">*</span></label>
+      <div class="amount-row">
+        <div class="amount-box">
+          <span class="rupee">₹</span>
+          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateInlineTotal()"/>
+        </div>
+        <button class="amt-preset" onclick="setInlineAmt(500,this)">₹500</button>
+        <button class="amt-preset active" onclick="setInlineAmt(1000,this)">₹1,000</button>
+        <button class="amt-preset" onclick="setInlineAmt(2500,this)">₹2,500</button>
+        <button class="amt-preset" onclick="setInlineAmt(5000,this)">₹5,000</button>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" id="fname" placeholder="First Name"/>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" id="lname" placeholder="Last Name"/>
+      </div>
+      <div class="form-group">
+        <label>Email <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="Email Address"/>
+      </div>
+      <div class="form-group">
+        <label>Phone <span class="req">*</span></label>
+        <input type="tel" id="phone" placeholder="Phone Number"/>
+      </div>
+      <div class="form-group full">
+        <label>Message (optional)</label>
+        <textarea id="message" placeholder="Leave a message..."></textarea>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <div class="total-box">
+        <span class="total-label">Donation Total:</span>
+        <span class="total-val" id="inlineTotal">₹1,000.00</span>
+      </div>
+      <button class="donate-btn-inline" onclick="handleInlineDonate()">
+        <i class="fas fa-heart"></i> Donate Now
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+function selectMission(el) {
+  document.querySelectorAll('.mission-opt').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+function setInlineAmt(val, btn) {
+  document.getElementById('donateAmount').value = val;
+  document.querySelectorAll('.amt-preset').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateInlineTotal();
+}
+function updateInlineTotal() {
+  const n = parseFloat(document.getElementById('donateAmount').value) || 0;
+  document.getElementById('inlineTotal').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function handleInlineDonate() {
+  const amt = document.getElementById('donateAmount').value;
+  const name = document.getElementById('fname').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  if (!amt || parseFloat(amt) <= 0) { alert('Please enter a valid amount.'); return; }
+  if (!name.trim()) { alert('Please enter your first name.'); return; }
+  if (!email.trim()) { alert('Please enter your email.'); return; }
+  if (!phone.trim()) { alert('Please enter your phone number.'); return; }
+  alert('Thank you for your donation of ₹' + parseFloat(amt).toLocaleString('en-IN') + '!\nWe will redirect you to the payment gateway.');
+}
+</script>
+</body>
+</html>

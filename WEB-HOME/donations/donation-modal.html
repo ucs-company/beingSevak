@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Donate Modal – BSCT</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #03163E;
+  --mid: #315371;
+  --cyan: #00A2D9;
+  --cyan-light: #33bce8;
+  --green: #2eb85c;
+  --gold: #D4AF37;
+  --white: #fff;
+  --light-bg: #f4f7fb;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --border: #d0eaf5;
+}
+body { font-family:'Open Sans',sans-serif; background:var(--light-bg); display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px; }
+
+/* ── TRIGGER BUTTON (for demo) ── */
+.demo-trigger {
+  text-align: center;
+}
+.open-modal-btn {
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family:'Montserrat',sans-serif;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,162,217,0.3);
+}
+.open-modal-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,162,217,0.35); }
+
+/* ── OVERLAY ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(3,22,62,0.7);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  animation: overlayIn 0.3s ease;
+}
+.modal-overlay.open { display: flex; }
+@keyframes overlayIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+/* ── MODAL BOX ── */
+.modal-box {
+  background: var(--white);
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+  animation: modalIn 0.4s ease;
+  position: relative;
+}
+@keyframes modalIn {
+  0% { opacity:0; transform:scale(0.9) translateY(40px); }
+  100% { opacity:1; transform:scale(1) translateY(0); }
+}
+
+/* ── HEADER ── */
+.modal-header {
+  background: linear-gradient(135deg, var(--navy), var(--mid));
+  padding: 24px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: -60%; left: -60%;
+  width: 220%; height: 220%;
+  background: radial-gradient(circle, rgba(0,162,217,0.12), transparent);
+  animation: spinGlow 10s linear infinite;
+}
+@keyframes spinGlow {
+  0% { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+.modal-close {
+  position: absolute;
+  top: 14px; right: 18px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: var(--white);
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover { background: rgba(255,255,255,0.3); transform:rotate(90deg); }
+.modal-header h2 {
+  font-family:'Montserrat',sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+.modal-header p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 6px;
+  position: relative;
+  z-index: 1;
+}
+.modal-header .badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── BODY ── */
+.modal-body { padding: 24px 28px 28px; }
+
+/* ── AMOUNT ── */
+.amt-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.amt-label .req { color: #e53935; }
+.amt-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.amt-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.amt-box:focus-within { border-color: var(--cyan); }
+.amt-box .rs {
+  padding: 9px 10px;
+  font-size: 14px;
+  color: var(--text-mid);
+  font-weight: 600;
+  border-right: 2px solid var(--border);
+  background: #eef8fc;
+}
+.amt-box input {
+  border: none; outline: none;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 90px;
+  background: transparent;
+  color: var(--navy);
+}
+.amt-preset {
+  padding: 8px 14px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family:'Montserrat',sans-serif;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.amt-preset:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+.amt-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+
+/* ── FORM ── */
+.modal-field { margin-bottom: 14px; }
+.modal-field label {
+  display: block;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 600;
+  font-size: 0.76rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.modal-field label .req { color: #e53935; }
+.modal-field input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-family:'Open Sans',sans-serif;
+  color: var(--text-dark);
+  background: #f9fdff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.modal-field input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,162,217,0.12);
+}
+.modal-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.modal-fields .full { grid-column: 1 / -1; }
+
+/* ── TOTAL ── */
+.modal-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  margin-top: 10px;
+  border-top: 2px solid var(--border);
+}
+.modal-total .t-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--navy);
+}
+.modal-total .t-val {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--cyan);
+}
+
+/* ── DONATE BTN ── */
+.modal-donate-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family:'Montserrat',sans-serif;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,162,217,0.3);
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.modal-donate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+.modal-donate-btn:hover::before { left: 100%; }
+.modal-donate-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,162,217,0.35); }
+
+@media (max-width: 480px) {
+  .modal-fields { grid-template-columns: 1fr; }
+  .modal-body { padding: 18px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TRIGGER BUTTON (demo) -->
+<div class="demo-trigger">
+  <button class="open-modal-btn" onclick="openDonateModal()">
+    <i class="fas fa-hand-holding-heart"></i> Donate Now
+  </button>
+  <p style="margin-top:12px;color:var(--text-mid);font-size:0.85rem;">Click to open donation modal &mdash; embed this in any project page</p>
+</div>
+
+<!-- MODAL OVERLAY -->
+<div class="modal-overlay" id="donateModalOverlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeDonateModal()"><i class="fas fa-times"></i></button>
+      <h2>Make a Donation</h2>
+      <p>Your support transforms lives across India</p>
+      <span class="badge">80G TAX EXEMPTION</span>
+    </div>
+    <div class="modal-body">
+      <div class="amt-label">Select Amount <span class="req">*</span></div>
+      <div class="amt-row">
+        <div class="amt-box">
+          <span class="rs">₹</span>
+          <input type="number" id="modalAmt" value="1000" min="1" oninput="updateModalTotal()"/>
+        </div>
+        <button class="amt-preset" onclick="setModalAmt(500,this)">₹500</button>
+        <button class="amt-preset active" onclick="setModalAmt(1000,this)">₹1,000</button>
+        <button class="amt-preset" onclick="setModalAmt(2500,this)">₹2,500</button>
+        <button class="amt-preset" onclick="setModalAmt(5000,this)">₹5,000</button>
+      </div>
+
+      <div class="modal-fields">
+        <div class="modal-field">
+          <label>First Name <span class="req">*</span></label>
+          <input type="text" id="modalFname" placeholder="First Name"/>
+        </div>
+        <div class="modal-field">
+          <label>Last Name</label>
+          <input type="text" id="modalLname" placeholder="Last Name"/>
+        </div>
+        <div class="modal-field full">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" id="modalEmail" placeholder="Email Address"/>
+        </div>
+        <div class="modal-field full">
+          <label>Phone <span class="req">*</span></label>
+          <input type="tel" id="modalPhone" placeholder="Phone Number"/>
+        </div>
+      </div>
+
+      <div class="modal-total">
+        <span class="t-label">Donation Total:</span>
+        <span class="t-val" id="modalTotal">₹1,000.00</span>
+      </div>
+
+      <button class="modal-donate-btn" onclick="handleModalDonate()">
+        <i class="fas fa-heart"></i> Donate Now
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openDonateModal() {
+  document.getElementById('donateModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDonateModal() {
+  document.getElementById('donateModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('donateModalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeDonateModal();
+});
+
+function setModalAmt(val, btn) {
+  document.getElementById('modalAmt').value = val;
+  document.querySelectorAll('.amt-preset').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateModalTotal();
+}
+function updateModalTotal() {
+  const n = parseFloat(document.getElementById('modalAmt').value) || 0;
+  document.getElementById('modalTotal').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function handleModalDonate() {
+  const amt = document.getElementById('modalAmt').value;
+  const fname = document.getElementById('modalFname').value;
+  const email = document.getElementById('modalEmail').value;
+  const phone = document.getElementById('modalPhone').value;
+  if (!amt || parseFloat(amt) <= 0) { alert('Please enter a valid amount.'); return; }
+  if (!fname.trim()) { alert('Please enter your first name.'); return; }
+  if (!email.trim()) { alert('Please enter your email.'); return; }
+  if (!phone.trim()) { alert('Please enter your phone number.'); return; }
+  alert('Thank you for your donation of ₹' + parseFloat(amt).toLocaleString('en-IN') + '!\nRedirecting to payment gateway...');
+  // closeDonateModal();
+}
+</script>
+</body>
+</html>

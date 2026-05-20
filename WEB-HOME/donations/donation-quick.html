@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Quick Donate – BSCT</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy: #03163E;
+  --mid: #315371;
+  --cyan: #00A2D9;
+  --cyan-light: #33bce8;
+  --green: #2eb85c;
+  --gold: #D4AF37;
+  --white: #fff;
+  --light-bg: #f4f7fb;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --border: #d0eaf5;
+}
+body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:20px; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+
+/* ── CARD ── */
+.quick-card {
+  max-width: 380px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+}
+@keyframes slideUp {
+  0% { opacity:0; transform:translateY(30px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+/* ── TOP ── */
+.quick-top {
+  background: linear-gradient(135deg, var(--navy), var(--mid));
+  padding: 20px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.quick-top::after {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 100px; height: 100px;
+  background: rgba(0,162,217,0.12);
+  border-radius: 50%;
+}
+.quick-top h3 {
+  font-family:'Montserrat',sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+.quick-top p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── BODY ── */
+.quick-body { padding: 22px 24px 24px; }
+
+/* ── AMOUNT ── */
+.q-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.q-amt-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.q-amt-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.q-amt-box:focus-within { border-color: var(--cyan); }
+.q-amt-box .rs {
+  padding: 8px 9px;
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 600;
+  border-right: 2px solid var(--border);
+  background: #eef8fc;
+}
+.q-amt-box input {
+  border: none; outline: none;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  width: 75px;
+  background: transparent;
+  color: var(--navy);
+}
+.q-preset {
+  padding: 7px 12px;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family:'Montserrat',sans-serif;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.q-preset:hover { border-color: var(--cyan); color: var(--cyan); }
+.q-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+
+/* ── NAME ── */
+.q-field { margin-bottom: 12px; }
+.q-field label {
+  display: block;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.q-field label .req { color: #e53935; }
+.q-field input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-family:'Open Sans',sans-serif;
+  color: var(--text-dark);
+  background: #f9fdff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.q-field input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,162,217,0.1);
+}
+
+/* ── TOTAL + BTN ── */
+.q-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 2px solid var(--border);
+}
+.q-total-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+}
+.q-total-val {
+  font-family:'Montserrat',sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--cyan);
+}
+.q-donate-btn {
+  background: linear-gradient(135deg, var(--green), #1e8c3e);
+  color: var(--white);
+  border: none;
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family:'Montserrat',sans-serif;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(46,184,92,0.3);
+}
+.q-donate-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(46,184,92,0.35); }
+.q-donate-btn i { margin-right: 6px; }
+
+/* ── BADGE ── */
+.q-badge {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.65rem;
+  color: var(--text-mid);
+}
+.q-badge span { color: var(--gold); font-weight: 700; }
+
+@media (max-width: 400px) {
+  .quick-body { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="quick-card">
+  <div class="quick-top">
+    <h3><i class="fas fa-bolt"></i> Quick Donate</h3>
+    <p>Fast &amp; secure — 30 seconds only</p>
+  </div>
+  <div class="quick-body">
+    <div class="q-label">Choose Amount</div>
+    <div class="q-amt-row">
+      <div class="q-amt-box">
+        <span class="rs">₹</span>
+        <input type="number" id="qAmt" value="500" min="1" oninput="updateQTotal()"/>
+      </div>
+      <button class="q-preset active" onclick="setQAmt(500,this)">₹500</button>
+      <button class="q-preset" onclick="setQAmt(1000,this)">₹1K</button>
+      <button class="q-preset" onclick="setQAmt(2500,this)">₹2.5K</button>
+    </div>
+
+    <div class="q-field">
+      <label>Your Name <span class="req">*</span></label>
+      <input type="text" id="qName" placeholder="Full Name"/>
+    </div>
+    <div class="q-field" style="margin-bottom:0;">
+      <label>Phone <span class="req">*</span></label>
+      <input type="tel" id="qPhone" placeholder="Phone Number"/>
+    </div>
+
+    <div class="q-footer">
+      <div>
+        <div class="q-total-label">Total:</div>
+        <div class="q-total-val" id="qTotal">₹500.00</div>
+      </div>
+      <button class="q-donate-btn" onclick="handleQuickDonate()">
+        <i class="fas fa-heart"></i> Donate
+      </button>
+    </div>
+    <div class="q-badge">
+      <i class="fas fa-shield-alt"></i> Secure | <span>80G</span> Tax Exempt
+    </div>
+  </div>
+</div>
+
+<script>
+function setQAmt(val, btn) {
+  document.getElementById('qAmt').value = val;
+  document.querySelectorAll('.q-preset').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateQTotal();
+}
+function updateQTotal() {
+  const n = parseFloat(document.getElementById('qAmt').value) || 0;
+  document.getElementById('qTotal').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function handleQuickDonate() {
+  const amt = document.getElementById('qAmt').value;
+  const name = document.getElementById('qName').value;
+  const phone = document.getElementById('qPhone').value;
+  if (!amt || parseFloat(amt) <= 0) { alert('Please enter a valid amount.'); return; }
+  if (!name.trim()) { alert('Please enter your name.'); return; }
+  if (!phone.trim()) { alert('Please enter your phone number.'); return; }
+  alert('Thank you ' + name.trim() + '!\nDonation of ₹' + parseFloat(amt).toLocaleString('en-IN') + ' initiated.\nRedirecting to payment...');
+}
+</script>
+</body>
+</html>
