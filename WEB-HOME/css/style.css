@@ -1420,18 +1420,18 @@ body{
 }
 
 .causes-section {
-  padding: 72px 20px;
+  padding: 22px 20px;
   background: var(--off-white);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 
 .section-header h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 68px;
+  font-size: 48px;
   font-weight: 800;
   color: var(--navy);
   margin-bottom: 0px;
@@ -2558,25 +2558,25 @@ body{
 /* =========================================
    CIRCLE MARQUEE CSS
 ========================================= */
-/*
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
-/*
+
 .logo-marquee-section{
   width:100%;
-  height:90vh;
+  height:80 px;
   background:linear-gradient(135deg,#eefcff,#f8feff);
   display:flex;
   align-items:center;
   overflow:hidden;
   position:relative;
 }
-*/
+
 /* SIDE BLUR */
-/*
+
 .logo-marquee-section::before,
 .logo-marquee-section::after{
   content:'';
@@ -2601,6 +2601,7 @@ body{
 
 .marquee{
   width:100%;
+  
   overflow:hidden;
   position:relative;
 }
