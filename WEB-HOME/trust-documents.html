@@ -33,6 +33,8 @@
       --white:#ffffff;
       --light:#f4f7fb;
       --text:#333;
+      --text-mid:#4a5568;
+      --light-bg:#f4f7fb;
     }
 
     body{
@@ -42,40 +44,6 @@
     }
 
 
-
-    /* =========================================
-       HERO
-    ========================================= */
-
-    .trust-hero{
-      height:320px;
-      background:
-      linear-gradient(rgba(3,22,62,0.75),rgba(3,22,62,0.75)),
-      url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80') center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:white;
-      padding:20px;
-    }
-
-    .trust-hero-content h1{
-      font-family:'Montserrat',sans-serif;
-      font-size:58px;
-      font-weight:900;
-      margin-bottom:12px;
-      text-transform:uppercase;
-    }
-
-    .breadcrumb{
-      font-size:16px;
-      color:#dce7ff;
-    }
-
-    .breadcrumb span{
-      color:var(--cyan);
-    }
 
     /* =========================================
        DOCUMENT SECTION
@@ -433,6 +401,389 @@
 
     }
 
+    /* ─── .section-label (shared) ─── */
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 28px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    /* ─── FLOATING KEYFRAMES ─── */
+    @keyframes floatUpDown {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes floatCard {
+      0%   { transform: perspective(1000px) rotate(-3deg) translateY(0); }
+      50%  { transform: perspective(1000px) rotate(-3deg) translateY(-12px); }
+      100% { transform: perspective(1000px) rotate(-3deg) translateY(0); }
+    }
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes fadeInUp {
+      0%   { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ENHANCED HERO (Vidhya-style grid with floating cards) ─── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a8f 100%);
+      padding: 0 24px;
+      text-align: left;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      padding: 80px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tag {
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+    .hero-grid h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 3.2rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+    .hero-grid h1 span {
+      color: var(--cyan);
+    }
+    .hero-grid .hero-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+    .hero-breadcrumb {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: var(--gold); }
+    .hero-breadcrumb .sep { opacity: 0.5; }
+
+    /* Hero right – floating cards area */
+    .hero-right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+    }
+    .hero-card {
+      position: absolute;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 18px 22px;
+      border-radius: 20px;
+      min-width: 180px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      z-index: 5;
+      animation: float 3s ease-in-out infinite;
+      text-align: center;
+    }
+    .hero-card h3 {
+      color: var(--cyan);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+    .hero-card p {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+    .hero-card.card1 { top: 50px; left: 10px; }
+    .hero-card.card2 { bottom: 60px; right: 10px; }
+
+    .hero-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.4;
+    }
+    .hero-glow.g1 { background: var(--cyan); top: -50px; left: -80px; }
+    .hero-glow.g2 { background: var(--mid); bottom: -60px; right: -80px; }
+
+    /* ─── 2-COL ABOUT GRID (Annapurna-style) ─── */
+    .about-grid-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .about-image-col { position: relative; }
+    .about-image-col img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+      transition: 0.5s ease;
+      display: block;
+    }
+    .about-image-col img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.2);
+    }
+    .about-image-col::before {
+      content: "";
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 100%; height: 100%;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(0,162,217,0.2), transparent);
+      filter: blur(12px);
+      z-index: -1;
+    }
+    .about-content-col { padding-right: 20px; }
+    .about-content-col .section-label { font-size: 1.5rem; margin-bottom: 18px; }
+    .about-content-col .section-label::after { width: 50px; }
+    .about-content-col h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .about-content-col h2 span { color: var(--cyan); }
+    .about-content-col p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+    }
+
+    /* ─── VALUE / MISSION CARDS (Annapurna highlight-card blue-fill hover) ─── */
+    .values-section {
+      background: var(--light-bg);
+      padding: 80px 24px;
+    }
+    .values-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 50px;
+    }
+    .value-card {
+      background: #fff;
+      padding: 35px 28px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+    .value-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0%;
+      background: var(--cyan);
+      transition: 0.5s ease;
+      z-index: 1;
+    }
+    .value-card:hover::before { height: 100%; }
+    .value-card:hover { transform: translateY(-12px); }
+    .value-card > * {
+      position: relative;
+      z-index: 2;
+      transition: 0.4s ease;
+    }
+    .value-card .val-icon {
+      font-size: 2.4rem;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .value-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+    .value-card:hover .val-icon,
+    .value-card:hover h3,
+    .value-card:hover p { color: #fff; }
+
+    /* ─── TESTIMONIALS (Annapurna-style blue-fill hover) ─── */
+    .testimonials-section {
+      padding: 80px 24px;
+      background: #fff;
+    }
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+      align-items: stretch;
+    }
+    .testimonial-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.07);
+      transition: 0.4s ease;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .testimonial-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0%;
+      background: var(--cyan);
+      transition: 0.4s ease;
+      z-index: 1;
+      border-radius: 28px;
+    }
+    .testimonial-card:hover::before { height: 100%; }
+    .testimonial-card:hover { transform: translateY(-10px); }
+    .testimonial-card > * { position: relative; z-index: 2; }
+    .testimonial-card p {
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+    }
+    .testimonial-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--cyan);
+      font-size: 1rem;
+    }
+    .testimonial-card span {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+    }
+    .testimonial-card:hover p,
+    .testimonial-card:hover h4,
+    .testimonial-card:hover span { color: #fff !important; }
+    .testimonial-card .quote-icon {
+      font-size: 1.6rem;
+      color: var(--cyan-light);
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+    .testimonial-card:hover .quote-icon { color: rgba(255,255,255,0.6); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 0;
+        gap: 30px;
+      }
+      .hero-grid .hero-desc,
+      .hero-breadcrumb {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-breadcrumb { justify-content: center; }
+      .hero-right { min-height: 300px; }
+      .hero-grid h1 { font-size: 2.2rem; }
+      .about-grid-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding: 60px 24px;
+      }
+      .about-content-col { padding-right: 0; }
+      .about-content-col .section-label { margin: 0 auto 18px; }
+      .about-content-col .section-label::after { margin: 8px auto 0; }
+      .about-image-col img { height: 360px; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .hero-card.card1,
+      .hero-card.card2 { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin: 10px; min-width: 140px; }
+      .hero-right { flex-direction: column; min-height: auto; }
+      .hero-grid h1 { font-size: 1.8rem; }
+      .hero-tag { font-size: 22px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 
@@ -477,7 +828,7 @@
           <div class="dropdown-menu">
             <a href="about-bsct.html">About BSCT</a>
             <a href="management.html">Management</a>
-            <a href="mission-vision.html">Mission/Vision</a>
+            <!-- <a href="mission-vision.html">Mission/Vision</a> -->
             <a href="trust-documents.html">Trust Documents</a>
             <a href="where-we-work.html">Where We Work</a>
             <a href="awards.html">Awards/Achievements</a>
@@ -606,19 +957,35 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <section class="trust-hero">
-
-    <div class="trust-hero-content">
-
-      <h1>Legal Documents</h1>
-
-      <div class="breadcrumb">
-        Home <span>»</span> Trust Documents
+  <!-- HERO BANNER (Enhanced with floating cards) -->
+  <section class="page-hero">
+    <div class="hero-glow g1"></div>
+    <div class="hero-glow g2"></div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="hero-tag">BEING SEVAK CHARITABLE TRUST</span>
+        <h1>Trust <span>Documents</span></h1>
+        <p class="hero-desc">
+          View important legal certificates, registrations, compliance documents,
+          and annual activity reports of Being Sevak Charitable Trust.
+        </p>
+        <div class="hero-breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">»</span>
+          <span>Trust Documents</span>
+        </div>
       </div>
-
+      <div class="hero-right">
+        <div class="hero-card card1">
+          <h3>18+</h3>
+          <p>Registered Documents</p>
+        </div>
+        <div class="hero-card card2">
+          <h3>80G</h3>
+          <p>Tax Exemption</p>
+        </div>
+      </div>
     </div>
-
   </section>
 
   <!-- DOCUMENT SECTION -->
@@ -660,6 +1027,76 @@
 
     </div>
 
+  </section>
+
+  <!-- VALUES / COMPLIANCE SECTION -->
+  <section class="values-section">
+    <div class="values-inner">
+      <div class="section-title">
+        <span class="section-label">OUR COMPLIANCE</span>
+        <h2>Certified &amp; Transparent</h2>
+        <p>Ensuring full regulatory compliance and transparent operations across all our activities.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-file-shield"></i></div>
+          <h3>Registered Trust</h3>
+          <p>Registered under Bombay Trust Act 2015 with Registration No. E-31948.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-certificate"></i></div>
+          <h3>80G Certified</h3>
+          <p>Donors get 50% tax exemption under Section 80G of Income Tax Act.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Full Compliance</h3>
+          <p>All statutory compliances including 12A, PAN, and CSR certifications.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Annual Reports</h3>
+          <p>Transparent activity reports published yearly since inception.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+      <div class="section-title">
+        <span class="section-label">TESTIMONIALS</span>
+        <h2>Verified by Experts</h2>
+        <p>What professionals and auditors say about BSCT's compliance and documentation standards.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>Their documentation and compliance standards are impeccable. A model NGO in terms of transparency.</p>
+          <div>
+            <h4>CA Sunil Mehta</h4>
+            <span>Tax Consultant</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>Having audited their books for 5 years, I can vouch for their financial discipline and proper record-keeping.</p>
+          <div>
+            <h4>Ravi Agarwal</h4>
+            <span>Chartered Accountant</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>BSCT's compliance with all regulatory requirements makes them a trusted partner for donors and corporations alike.</p>
+          <div>
+            <h4>Neha Singh</h4>
+            <span>CSR Auditor</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -832,6 +1269,17 @@
       mobileMenu.classList.remove('open');
     });
 
+    // Scroll Reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObserver.observe(el));
   </script>
 
 </body>

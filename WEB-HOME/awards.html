@@ -36,26 +36,6 @@
       background:#fff;
     }
 
-    /* HERO */
-
-    .awards-hero{
-      height:260px;
-      background:
-      linear-gradient(rgba(3,22,62,.78),rgba(3,22,62,.78)),
-      url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80') center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size:42px;
-      font-weight:900;
-      letter-spacing:1px;
-      font-family:'Montserrat',sans-serif;
-      text-transform:uppercase;
-      text-align:center;
-      padding:20px;
-    }
-
     /* SECTION TITLE */
 
     .section-title{
@@ -413,9 +393,6 @@
         padding:20px;
       }
 
-      .awards-hero{
-        font-size:30px;
-      }
     }
 
     @media(max-width:600px){
@@ -423,6 +400,328 @@
       .footer-top{
         grid-template-columns:1fr;
       }
+    }
+
+    /* ══════════════════════════════════════════
+       ENHANCED: Awards page additions
+       ══════════════════════════════════════════ */
+
+    /* ─── FLOATING KEYFRAMES ─── */
+    @keyframes floatUpDown {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes floatCard {
+      0%   { transform: perspective(1000px) rotate(-3deg) translateY(0); }
+      50%  { transform: perspective(1000px) rotate(-3deg) translateY(-12px); }
+      100% { transform: perspective(1000px) rotate(-3deg) translateY(0); }
+    }
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes fadeInUp {
+      0%   { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ENHANCED HERO (grid with floating cards) ─── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a8f 100%);
+      padding: 0 24px;
+      text-align: left;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      padding: 80px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tag {
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+    .hero-grid h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 3.2rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+    .hero-grid h1 span {
+      color: var(--cyan);
+    }
+    .hero-grid .hero-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+    .hero-breadcrumb {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: var(--gold); }
+    .hero-breadcrumb .sep { opacity: 0.5; }
+
+    /* Hero right – floating cards area */
+    .hero-right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+    }
+    .hero-card {
+      position: absolute;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 18px 22px;
+      border-radius: 20px;
+      min-width: 180px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      z-index: 5;
+      animation: float 3s ease-in-out infinite;
+      text-align: center;
+    }
+    .hero-card h3 {
+      color: var(--cyan);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+    .hero-card p {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+    .hero-card.card1 { top: 50px; left: 10px; }
+    .hero-card.card2 { bottom: 60px; right: 10px; }
+
+    .hero-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.4;
+    }
+    .hero-glow.g1 { background: var(--cyan); top: -50px; left: -80px; }
+    .hero-glow.g2 { background: var(--mid); bottom: -60px; right: -80px; }
+
+    /* ─── VALUE / MISSION CARDS ─── */
+    .values-section {
+      background: var(--light-bg);
+      padding: 80px 24px;
+    }
+    .values-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 50px;
+    }
+    .value-card {
+      background: #fff;
+      padding: 35px 28px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+    .value-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0%;
+      background: var(--cyan);
+      transition: 0.5s ease;
+      z-index: 1;
+    }
+    .value-card:hover::before {
+      height: 100%;
+    }
+    .value-card:hover {
+      transform: translateY(-12px);
+    }
+    .value-card > * {
+      position: relative;
+      z-index: 2;
+      transition: 0.4s ease;
+    }
+    .value-card .val-icon {
+      font-size: 2.4rem;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .value-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+    .value-card:hover .val-icon,
+    .value-card:hover h3,
+    .value-card:hover p {
+      color: #fff;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-section {
+      padding: 80px 24px;
+      background: #fff;
+    }
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+      align-items: stretch;
+    }
+    .testimonial-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.07);
+      transition: 0.4s ease;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .testimonial-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0%;
+      background: var(--cyan);
+      transition: 0.4s ease;
+      z-index: 1;
+      border-radius: 28px;
+    }
+    .testimonial-card:hover::before {
+      height: 100%;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+    }
+    .testimonial-card > * {
+      position: relative;
+      z-index: 2;
+    }
+    .testimonial-card p {
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+    }
+    .testimonial-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--cyan);
+      font-size: 1rem;
+    }
+    .testimonial-card span {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+    }
+    .testimonial-card:hover p,
+    .testimonial-card:hover h4,
+    .testimonial-card:hover span {
+      color: #fff !important;
+    }
+    .testimonial-card .quote-icon {
+      font-size: 1.6rem;
+      color: var(--cyan-light);
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+    .testimonial-card:hover .quote-icon {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 0;
+        gap: 30px;
+      }
+      .hero-grid .hero-desc,
+      .hero-breadcrumb {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-breadcrumb { justify-content: center; }
+      .hero-right { min-height: 300px; }
+      .hero-grid h1 { font-size: 2.2rem; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .hero-card.card1,
+      .hero-card.card2 { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin: 10px; min-width: 140px; }
+      .hero-right { flex-direction: column; min-height: auto; }
+      .hero-grid h1 { font-size: 1.8rem; }
+      .hero-tag { font-size: 22px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
     }
 
   </style>
@@ -469,7 +768,7 @@
           <div class="dropdown-menu">
             <a href="about-bsct.html">About BSCT</a>
             <a href="management.html">Management</a>
-            <a href="mission-vision.html">Mission/Vision</a>
+            <!-- <a href="mission-vision.html">Mission/Vision</a> -->
             <a href="trust-documents.html">Trust Documents</a>
             <a href="where-we-work.html">Where We Work</a>
             <a href="awards.html">Awards/Achievements</a>
@@ -598,16 +897,42 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <section class="awards-hero">
-    Awards & Achievements
+  <!-- HERO BANNER (Enhanced with floating cards) -->
+  <section class="page-hero">
+    <div class="hero-glow g1"></div>
+    <div class="hero-glow g2"></div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="hero-tag">BEING SEVAK CHARITABLE TRUST</span>
+        <h1>Awards &amp; <span>Achievements</span></h1>
+        <p class="hero-desc">
+          Recognized nationally for outstanding contribution to social welfare,
+          community development, and humanitarian service across India.
+        </p>
+        <div class="hero-breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">»</span>
+          <span>Awards &amp; Achievements</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card card1">
+          <h3>17+</h3>
+          <p>National Awards</p>
+        </div>
+        <div class="hero-card card2">
+          <h3>1M+</h3>
+          <p>Lives Impacted</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- TITLE -->
-  <h2 class="section-title">Our Achievements</h2>
+  <h2 class="section-title reveal">Our Achievements</h2>
 
   <!-- AWARDS GRID -->
-  <div class="awards-grid">
+  <div class="awards-grid reveal">
 
     <div class="award-card">
       <img src="https://beingsevak.org/wp-content/uploads/2023/12/18.png">
@@ -697,9 +1022,9 @@
   </div>
 
   <!-- LETTERS -->
-  <h2 class="section-title">Appreciation Letters</h2>
+  <h2 class="section-title reveal">Appreciation Letters</h2>
 
-  <div class="letter-grid">
+  <div class="letter-grid reveal">
 
     <img src="https://beingsevak.org/wp-content/uploads/2023/12/appricieciation-letters_page-0009-e1702379098118.jpg">
 
@@ -722,6 +1047,80 @@
     <img src="https://beingsevak.org/wp-content/uploads/2023/12/Big@123.png">
 
   </div>
+
+  <!-- VALUES SECTION -->
+  <section class="values-section">
+    <div class="values-inner">
+      <div class="section-header" style="text-align:center;">
+        <span style="color:var(--cyan);font-weight:700;font-size:1.5rem;letter-spacing:1px;display:block;margin-bottom:8px;">OUR HONORS</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;color:var(--navy);">Awards &amp; Recognition</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-trophy"></i></div>
+          <h3>National Recognition</h3>
+          <p>Honored with prestigious awards including Dada Saheb Phalke Award and Mahatma Gandhi Ratna.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-star"></i></div>
+          <h3>Excellence</h3>
+          <p>Recognized for outstanding contribution to social welfare and community development.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-medal"></i></div>
+          <h3>World Records</h3>
+          <p>Harvard World Record and multiple national accolades for humanitarian work.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-award"></i></div>
+          <h3>Industry Honor</h3>
+          <p>IIIA Award, Business Award 2023, and numerous other prestigious recognitions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+      <div class="section-header" style="text-align:center;">
+        <span style="color:var(--cyan);font-weight:700;font-size:1.5rem;letter-spacing:1px;display:block;margin-bottom:8px;">TESTIMONIALS</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;color:var(--navy);">Recognized by Leaders</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div>
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>BSCT's award-winning work in education and nourishment sets a benchmark for NGOs across India.</p>
+          </div>
+          <div>
+            <h4>Dr. Amit Sharma</h4>
+            <span>Award Committee Member</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div>
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>Their Harvard World Record is a testament to the scale and quality of their social impact.</p>
+          </div>
+          <div>
+            <h4>Prof. Sunita Reddy</h4>
+            <span>Academic &amp; Researcher</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div>
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>Being Sevak's achievements inspire other organizations to strive for excellence in social service.</p>
+          </div>
+          <div>
+            <h4>Rajiv Kapoor</h4>
+            <span>Philanthropist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -912,6 +1311,17 @@
       `quick.html?amount=${amt}&category=${encodeURIComponent(category)}`;
     }
 
+    // ─── Scroll Reveal ───
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
