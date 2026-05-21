@@ -550,7 +550,7 @@
           <span class="basket-total-amt" id="basketTotal">₹0 INR</span>
         </div>
         <button class="gpay-btn" onclick="proceedDonate('gpay')">Google Pay</button>
-        <button class="basket-donate-btn" onclick="proceedDonate('razorpay')">
+        <button class="basket-donate-btn" onclick="proceedDonate()">
           <i class="fas fa-heart"></i> Donate Now
         </button>
         <p class="basket-empty-msg" id="basketEmptyMsg">Please add at least one mission to donate.</p>
@@ -559,7 +559,6 @@
     </div><!-- /basket-scroll -->
   </div><!-- /basket-panel -->
 
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
     // ── Hamburger ──
     const hamburger = document.getElementById('hamburger');
@@ -631,7 +630,7 @@
     }
 
     // ── Payment ──
-    function proceedDonate(method) {
+    function proceedDonate() {
       const emptyMsg = document.getElementById('basketEmptyMsg');
       const total = Object.keys(cartQty).reduce((s, k) => s + cartQty[k] * UNIT_PRICE[k], 0);
       if (total === 0) {
@@ -642,24 +641,30 @@
       const name  = document.getElementById('b-name').value.trim();
       const email = document.getElementById('b-email').value.trim();
       const phone = document.getElementById('b-phone').value.trim();
-      const options = {
-        key: 'YOUR_RAZORPAY_KEY_ID', // ← Replace with your rzp_test_... key
-        amount: total * 100,
-        currency: 'INR',
-        name: 'Being Sevak Charitable Trust',
-        description: 'Donation Basket',
-        prefill: { name, email, contact: phone },
-        handler: function(response) {
-          closeBasket();
-          alert('🎉 Donation Successful!\nPayment ID: ' + response.razorpay_payment_id + '\nThank you for your generosity!');
-        },
-        theme: { color: '#00A3DA' }
+      if (!name) { alert('Please enter your name.'); return; }
+      if (!email) { alert('Please enter your email.'); return; }
+      if (!phone) { alert('Please enter your phone number.'); return; }
+      const items = Object.entries(cartQty).filter(([,q]) => q > 0).map(([k,q]) => k + 'x' + q).join(', ');
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'payment/payu.php';
+      const fields = {
+        amount: total,
+        firstname: name,
+        email: email,
+        phone: phone,
+        productinfo: 'Donation Basket: ' + items,
+        udf1: 'General',
+        udf2: 'once',
+        udf3: items
       };
-      if (typeof Razorpay !== 'undefined') {
-        new Razorpay(options).open();
-      } else {
-        alert('Payment gateway not configured.\nPlease add your Razorpay Key ID.');
+      for (const [k, v] of Object.entries(fields)) {
+        const inp = document.createElement('input');
+        inp.type = 'hidden'; inp.name = k; inp.value = v;
+        form.appendChild(inp);
       }
+      document.body.appendChild(form);
+      form.submit();
     }
   </script>
 

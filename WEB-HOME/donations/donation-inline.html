@@ -384,6 +384,36 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-btn-inline:hover::before { left: 100%; }
 .donate-btn-inline:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
 
+/* ── LANDSCAPE LAYOUT ── */
+.donate-wrap.landscape{max-width:100%;}
+.donate-wrap.landscape .form-header{padding:16px 24px;}
+.donate-wrap.landscape .form-body{padding:16px 20px;}
+.donate-wrap.landscape .field-group{margin-bottom:12px;}
+.donate-wrap.landscape .top-row{display:flex;gap:16px;flex-wrap:wrap;}
+.donate-wrap.landscape .top-row .col{flex:1;min-width:180px;}
+.donate-wrap.landscape .dist-tabs{flex-wrap:nowrap;}
+.donate-wrap.landscape .dist-tab{min-width:0;padding:8px 6px;font-size:0.7rem;}
+.donate-wrap.landscape .dist-tab i{font-size:1rem;margin-bottom:2px;}
+.donate-wrap.landscape .freq-toggle{margin-bottom:0;}
+.donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
+.donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
+.donate-wrap.landscape .amt-preset{padding:6px 10px;font-size:0.7rem;}
+.donate-wrap.landscape .dist-desc{padding:10px 14px;margin-bottom:10px;}
+.donate-wrap.landscape .dist-desc p{font-size:0.78rem;margin-bottom:6px;line-height:1.4;}
+.donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr 1fr 1fr 1fr;}
+.donate-wrap.landscape .form-grid .full{grid-column:auto;}
+.donate-wrap.landscape .form-group input,.donate-wrap.landscape .form-group textarea{padding:7px 10px;font-size:0.78rem;}
+.donate-wrap.landscape .form-group textarea{min-height:36px;}
+.donate-wrap.landscape .action-row{margin-top:12px;padding-top:12px;}
+.donate-wrap.landscape .donate-btn-inline{padding:10px 24px;font-size:0.85rem;}
+
+@media(max-width:768px){
+  .donate-wrap.landscape .top-row{flex-direction:column;}
+  .donate-wrap.landscape .top-row .col{min-width:100%;}
+  .donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr;}
+  .donate-wrap.landscape .dist-tabs{flex-wrap:wrap;}
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .form-body { padding: 20px 18px; }
@@ -396,28 +426,68 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 </head>
 <body>
 
-<div class="donate-wrap">
+<div class="donate-wrap landscape">
   <div class="form-header">
-    <h2>Food Distribution Donation</h2>
+    <h2>Mission Annapurna Donation</h2>
     <p>Your contribution helps feed those who need it most</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
   <div class="form-body">
-    <div class="field-group">
-      <label>Choose Distribution Type <span class="req">*</span></label>
-      <div class="dist-tabs" id="distTabs">
-        <button class="dist-tab active" data-dist="ration" onclick="selectDist(this)">
-          <i class="fas fa-shopping-basket"></i> Ration Distribution
-        </button>
-        <button class="dist-tab" data-dist="snacks" onclick="selectDist(this)">
-          <i class="fas fa-cookie"></i> Snacks Distribution
-        </button>
-        <button class="dist-tab" data-dist="meal" onclick="selectDist(this)">
-          <i class="fas fa-utensils"></i> Meal Distribution
-        </button>
-        <button class="dist-tab" data-dist="roti" onclick="selectDist(this)">
-          <i class="fas fa-bread-slice"></i> Roti Drive
-        </button>
+
+    <div class="top-row">
+      <div class="col">
+        <div class="field-group">
+          <label>Choose Distribution Type <span class="req">*</span></label>
+          <div class="dist-tabs" id="distTabs">
+            <button class="dist-tab active" data-dist="ration" onclick="selectDist(this)">
+              <i class="fas fa-shopping-basket"></i> Ration Distribution
+            </button>
+            <button class="dist-tab" data-dist="snacks" onclick="selectDist(this)">
+              <i class="fas fa-cookie"></i> Snacks Distribution
+            </button>
+            <button class="dist-tab" data-dist="meal" onclick="selectDist(this)">
+              <i class="fas fa-utensils"></i> Meal Distribution
+            </button>
+            <button class="dist-tab" data-dist="roti" onclick="selectDist(this)">
+              <i class="fas fa-bread-slice"></i> Roti Drive
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="field-group">
+          <label>Frequency <span class="req">*</span></label>
+          <div class="freq-toggle">
+            <button class="freq-btn active" onclick="selectFreq('once', this)">Just Once</button>
+            <button class="freq-btn" onclick="selectFreq('monthly', this)">Give Monthly</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="field-group">
+          <label>Donation Amount <span class="req">*</span></label>
+          <div class="amount-row">
+            <div class="amount-box">
+              <span class="rupee">₹</span>
+              <input type="number" id="donateAmount" value="1250" min="1" oninput="updateInlineTotal()"/>
+            </div>
+            <div class="preset-group once-presets">
+              <button class="amt-preset active" onclick="setInlineAmt(1250,this)">₹1,250</button>
+              <button class="amt-preset" onclick="setInlineAmt(2500,this)">₹2,500</button>
+              <button class="amt-preset" onclick="setInlineAmt(3750,this)">₹3,750</button>
+              <button class="amt-preset" onclick="setInlineAmt(5000,this)">₹5,000</button>
+              <button class="amt-preset" onclick="setInlineAmt(6250,this)">₹6,250</button>
+              <button class="amt-preset" onclick="setInlineAmt(7500,this)">₹7,500</button>
+            </div>
+            <div class="preset-group monthly-presets" style="display:none">
+              <button class="amt-preset active" onclick="setInlineAmt(500,this)">₹500</button>
+              <button class="amt-preset" onclick="setInlineAmt(750,this)">₹750</button>
+              <button class="amt-preset" onclick="setInlineAmt(1000,this)">₹1,000</button>
+              <button class="amt-preset" onclick="setInlineAmt(1250,this)">₹1,250</button>
+              <button class="amt-preset" onclick="setInlineAmt(1500,this)">₹1,500</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -462,39 +532,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
         <div class="dist-impact">
           <span><strong>₹1,000</strong> feeds 50 people with rotis</span>
           <span><strong>₹7,000</strong> supports a week-long drive</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="field-group">
-      <label>Frequency <span class="req">*</span></label>
-      <div class="freq-toggle">
-        <button class="freq-btn active" onclick="selectFreq('once', this)">Just Once</button>
-        <button class="freq-btn" onclick="selectFreq('monthly', this)">Give Monthly</button>
-      </div>
-    </div>
-
-    <div class="field-group">
-      <label>Donation Amount <span class="req">*</span></label>
-      <div class="amount-row">
-        <div class="amount-box">
-          <span class="rupee">₹</span>
-          <input type="number" id="donateAmount" value="1250" min="1" oninput="updateInlineTotal()"/>
-        </div>
-        <div class="preset-group once-presets">
-          <button class="amt-preset active" onclick="setInlineAmt(1250,this)">₹1,250</button>
-          <button class="amt-preset" onclick="setInlineAmt(2500,this)">₹2,500</button>
-          <button class="amt-preset" onclick="setInlineAmt(3750,this)">₹3,750</button>
-          <button class="amt-preset" onclick="setInlineAmt(5000,this)">₹5,000</button>
-          <button class="amt-preset" onclick="setInlineAmt(6250,this)">₹6,250</button>
-          <button class="amt-preset" onclick="setInlineAmt(7500,this)">₹7,500</button>
-        </div>
-        <div class="preset-group monthly-presets" style="display:none">
-          <button class="amt-preset active" onclick="setInlineAmt(500,this)">₹500</button>
-          <button class="amt-preset" onclick="setInlineAmt(750,this)">₹750</button>
-          <button class="amt-preset" onclick="setInlineAmt(1000,this)">₹1,000</button>
-          <button class="amt-preset" onclick="setInlineAmt(1250,this)">₹1,250</button>
-          <button class="amt-preset" onclick="setInlineAmt(1500,this)">₹1,500</button>
         </div>
       </div>
     </div>
@@ -574,7 +611,28 @@ function handleInlineDonate() {
   if (!name.trim()) { alert('Please enter your first name.'); return; }
   if (!email.trim()) { alert('Please enter your email.'); return; }
   if (!phone.trim()) { alert('Please enter your phone number.'); return; }
-  alert('Thank you for your donation of ₹' + parseFloat(amt).toLocaleString('en-IN') + '!\nWe will redirect you to the payment gateway.');
+  const activeTab = document.querySelector('.dist-tab.active');
+  const programme = activeTab ? activeTab.textContent.trim() : 'General Donation';
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = '../payment/payu.php';
+  const fields = {
+    amount: amt,
+    firstname: name,
+    email: email,
+    phone: phone,
+    productinfo: 'Donation - ' + programme,
+    udf1: 'General',
+    udf2: donationFreq || 'once',
+    udf3: programme
+  };
+  for (const [k, v] of Object.entries(fields)) {
+    const inp = document.createElement('input');
+    inp.type = 'hidden'; inp.name = k; inp.value = v;
+    form.appendChild(inp);
+  }
+  document.body.appendChild(form);
+  form.submit();
 }
 </script>
 <!-- WhatsApp Floating Button -->

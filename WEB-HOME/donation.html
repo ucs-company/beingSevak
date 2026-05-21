@@ -1214,28 +1214,36 @@
         alert('Please enter a valid donation amount.');
         return;
       }
-      // Hook Razorpay here (replace YOUR_RAZORPAY_KEY_ID)
-      const options = {
-        key: 'YOUR_RAZORPAY_KEY_ID',
-        amount: Math.round(parseFloat(amt) * 100),
-        currency: 'INR',
-        name: 'Being Sevak Charitable Trust',
-        description: 'Donation – ' + document.querySelector('#panel-' + tab + ' h2').textContent,
-        handler: function(response) {
-          alert('🎉 Donation Successful!\nPayment ID: ' + response.razorpay_payment_id);
-        },
-        prefill: {},
-        theme: { color: '#00A3DA' }
+      const name = document.getElementById('fname').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      if (!name.trim()) { alert('Please enter your first name.'); return; }
+      if (!email.trim()) { alert('Please enter your email.'); return; }
+      if (!phone.trim()) { alert('Please enter your phone number.'); return; }
+      const programme = document.querySelector('#panel-' + tab + ' h2') ? document.querySelector('#panel-' + tab + ' h2').textContent : 'General';
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'payment/payu.php';
+      const fields = {
+        amount: amt,
+        firstname: name,
+        email: email,
+        phone: phone,
+        productinfo: 'Donation - ' + programme,
+        udf1: 'General',
+        udf2: 'once',
+        udf3: programme
       };
-      if (typeof Razorpay !== 'undefined') {
-        new Razorpay(options).open();
-      } else {
-        alert('Payment gateway not configured yet.\nPlease add your Razorpay Key ID to enable live payments.');
+      for (const [k, v] of Object.entries(fields)) {
+        const inp = document.createElement('input');
+        inp.type = 'hidden'; inp.name = k; inp.value = v;
+        form.appendChild(inp);
       }
+      document.body.appendChild(form);
+      form.submit();
     }
     
   </script>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>

@@ -1,0 +1,83 @@
+<?php
+require_once 'config.php';
+
+$txnid = $_POST['txnid'] ?? '';
+$amount = $_POST['amount'] ?? '';
+$productinfo = $_POST['productinfo'] ?? '';
+$firstname = $_POST['firstname'] ?? '';
+$email = $_POST['email'] ?? '';
+$udf1 = $_POST['udf1'] ?? '';
+$mihpayid = $_POST['mihpayid'] ?? '';
+$status = $_POST['status'] ?? '';
+$error = $_POST['error'] ?? $_POST['unmappedstatus'] ?? 'Transaction could not be completed';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Payment Failed – Being Sevak</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Open Sans',sans-serif;
+  background:#f4f7fb;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.card{
+  background:#fff;
+  border-radius:24px;
+  padding:50px 40px;
+  text-align:center;
+  max-width:500px;
+  width:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+}
+.icon{
+  width:72px;height:72px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;font-size:36px;
+  background:#fff3e0;color:#f57c00;
+}
+h2{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:#1a1a2e;margin-bottom:8px;}
+p{color:#4a5568;font-size:0.9rem;line-height:1.6;margin-bottom:6px;}
+.btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.btn{
+  display:inline-block;
+  padding:12px 32px;
+  background:linear-gradient(135deg,#009BD4,#046FB1);
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  font-size:0.9rem;
+  font-weight:600;
+  font-family:'Montserrat',sans-serif;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,162,217,0.3);}
+.btn-outline{background:transparent;color:#009BD4;border:2px solid #009BD4;}
+.btn-outline:hover{background:#009BD4;color:#fff;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">&#9888;</div>
+  <h2>Payment Could Not Be Completed</h2>
+  <p><?php echo htmlspecialchars($error); ?></p>
+  <p style="font-size:0.85rem;color:#999;margin-top:10px;">
+    Don't worry — no amount has been deducted. Please try again or use a different payment method.
+  </p>
+  <div class="btn-group">
+    <a href="javascript:history.back()" class="btn">Try Again</a>
+    <a href="../donation.html" class="btn btn-outline">Choose Another Option</a>
+  </div>
+</div>
+</body>
+</html>

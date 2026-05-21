@@ -579,10 +579,12 @@ nav a:hover{
   max-width:600px;
 }
 
-/* BUTTON RIGHT */
+/* RIGHT: button / iframe */
 .donation-right{
   flex-shrink:0;
 }
+
+
 
 /* BUTTON */
 .primary-btn{
