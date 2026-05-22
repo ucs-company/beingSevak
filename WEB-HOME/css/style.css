@@ -798,7 +798,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 
 /* Slide Background Colors (gradient fallbacks) */
 .slide-bg-1 {
-  background-image: url("../images/h1.jpg");
+  background-image: url("../images/h1.jpeg");
   background-size: cover;
   background-position: center;
 }
