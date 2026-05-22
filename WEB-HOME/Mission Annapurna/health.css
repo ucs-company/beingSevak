@@ -1,0 +1,422 @@
+/*# Annapurna.css*/
+
+body
+{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  color:#315270;
+  overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+section{
+  padding:10px 8%;
+}
+
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* .logo-circle{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00a3da,#315270);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  font-weight:700;
+  font-size:20px;
+}
+
+.logo h2{
+  font-size:20px;
+}
+
+.logo p{
+  font-size:12px;
+  color:#6d7f91;
+} */
+
+nav{
+  display:flex;
+  gap:28px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#315270;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00a3da;
+}
+/*////////////////// new page ....//////
+/* new page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////// new page ....//////
+/*new page */
+
+
+
+
+
+
+
+
+/* SECTION HEADER  font mate*/
+
+.testimonial-grid{
+  width:100%;
+  max-width:1200px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+  gap:25px;
+
+  align-items:stretch;
+   grid-auto-rows:1fr;
+}
+
+.testimonial-card{
+  width: 100%;
+
+  background:#fff;
+  padding:30px;
+
+  border-radius:28px;
+
+  box-shadow:0 20px 40px rgba(0,0,0,0.07);
+
+  transition:0.4s;
+
+  overflow:hidden;
+  
+  position:relative;
+  z-index:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+
+.testimonial-card:hover{
+  transform:translateY(-10px);
+}
+
+.testimonial-card p{
+  line-height:2;
+  color:#6c7d8e;
+  margin-bottom:25px;
+}
+
+.testimonial-card h4{
+  color:#00a3da;
+}
+
+/* TEXT ALWAYS ABOVE BLUE LAYER */
+.testimonial-card h4,
+.testimonial-card p{
+  position:relative;
+  z-index:3;
+  transition:0.4s ease;
+}
+
+/* WHITE TEXT ON HOVER */
+.testimonial-card:hover h4,
+.testimonial-card:hover p{
+  color:#fff !important;
+}
+/* ADD ONLY - BLUE FILL HOVER EFFECT */
+.testimonial-card{
+  position:relative;
+  overflow:hidden;
+}
+
+/* BLUE BACKGROUND FILL */
+.testimonial-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:0%;
+  background:#00a3da;
+  transition:0.4s ease;
+  z-index:1;
+  border-radius:28px;
+}
+
+/* ON HOVER FILL UP */
+.testimonial-card:hover::before{
+  height:100%;
+}
+
+/* KEEP CONTENT ABOVE BLUE LAYER */
+.testimonial-card > *{
+  position:relative;
+  z-index:2;
+}
+
+
+.tax-box{
+  width:100%;
+  height:70px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  color:#fff;
+
+  border-radius:0px;
+  margin:20px 0;
+  padding:10px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+
+  position:relative;
+  overflow:hidden;
+  transition:0.4s ease;
+}
+/* text box*/
+/* Glow animation effect */
+.tax-box::before{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle,rgba(255,255,255,0.15),transparent);
+  top:-50%;
+  left:-50%;
+  animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+.tax-box p{
+  font-size:16px;
+  line-height:1.6;
+  position:relative;
+  z-index:2;
+}
+
+/* Hover effect */
+.tax-box:hover{
+  transform:translateY(-5px) scale(1.01);
+  box-shadow:0 25px 60px rgba(0,163,218,0.35);
+}
+
+
+/* =========================
+DONATION
+========================= */
+
+.donation-section{
+  width:100%;
+  padding:15px 6%;   /* even smaller padding */
+  min-height:140px;  /* control height */
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+}
+
+.donation-wrapper{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:20px;
+}
+
+.donation-content{
+  max-width:600px;
+  color:#fff;
+}
+
+.donation-content span{
+  font-size:11px;
+  font-weight:700;
+}
+
+.donation-content h2{
+  font-size:26px;   /* smaller heading */
+  line-height:1.2;
+  margin:6px 0;
+}
+
+.donation-content p{
+  font-size:13px;
+  line-height:1.5;
+}
+
+.donate-btn{
+  display:inline-block;
+  padding:12px 28px;  /* smaller button */
+  background:#00a3da;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:700;
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(11,77,120,0.25);
+}
+
+.donate-btn:hover{
+  background: var(--pink-dark);
+  transform: translateY(-1px);
+}
+
+
+/*************************************/
+
+
+/* =========================
+   GLOBAL CARD HOVER EFFECT (ADD ON ONLY)
+   DO NOT DELETE OLD CSS
+========================= */
+
+/* ABOUT BOX */
+.about-card{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.about-card:hover{
+  background:#00a3da;
+  transform:translateY(-10px);
+}
+
+.about-card:hover h3,
+.about-card:hover p{
+  color:#fff;
+}
+
+
+
+/* TESTIMONIAL BOX */
+.testimonial-card{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.testimonial-card:hover{
+  background:#00a3da;
+}
+
+.testimonial-card:hover p,
+.testimonial-card:hover h4{
+  color:#fff;
+}
+
+/* IMPACT BOX */
+.impact-box{
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.impact-box:hover{
+  background:#ffffff;
+  transform:translateY(-8px);
+}
+
+.impact-box:hover h3,
+.impact-box:hover p{
+  color:#00a3da;
+}
+
+/* FLOATING CARDS (optional smooth hover) */
+.floating-card{
+  transition:0.4s ease;
+}
+
+.floating-card:hover{
+  transform:translateY(-8px) scale(1.05);
+}
