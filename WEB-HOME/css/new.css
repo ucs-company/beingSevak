@@ -1,0 +1,742 @@
+/* ============================================
+   BSCT PROJECT - FULL STYLESHEET
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #042d52d1;
+  --navy-dark: #03163e;
+  --pink: #00a3da;
+  --pink-dark: #007d94;
+  --cyan: #00a3da;
+  --white: #ffffff;
+  --off-white: #f4f6f8;
+  --text: #2c2c2c;
+  --text-light: #666;
+  --border: #e0e0e0;
+  --shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+html { scroll-behavior: smooth; }
+body{font-family: "Times New Roman", Times, serif;}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+input, select { font-family: inherit; outline: none; border: none; }
+
+/* ============================================
+   TOP BAR
+   ============================================ */
+.top-bar {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  padding: 6px 0;
+}
+.top-bar-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+}
+.top-bar span i { margin-right: 5px; color: var(--pink); }
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+   padding: 18px 40px;   /* height vadhse */
+}
+
+/*.navbar {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}*/
+.navbar-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 82px;
+  gap: 16px;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+ gap: 0px; /* bane vachche space */
+  flex-shrink: 0;
+}
+
+/* ROUND LOGO */
+.logo-circle {
+  width: 85px;   /* mota karo */
+  height: 85px;  /* mota karo */
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+    margin-right:-8px;
+
+}
+
+.logo-fallback {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.logo-globe {
+  font-size: 42px;
+}
+
+/* PNG TEXT LOGO */
+
+.BS-text-logo{
+  height:100px;
+  width:auto;
+  object-fit:contain;
+  margin-left:0;
+  padding:0;
+  margin-right:-15px;
+}
+
+/* Quick Links (Language  */
+/* Quick Links (Language + Zakat) */
+.nav-quick {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.lang-btn, .zakat-btn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.2s;
+}
+.lang-btn:hover, .zakat-btn:hover { background: rgba(255,255,255,0.2); }
+
+/*.zakat-btn { background: #00a3da; }
+/* Zakat Circle */
+.zakat-circle-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.zakat-circle-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s;
+}
+.zakat-circle-btn:hover { transform: scale(1.08); }
+.zakat-circle-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.zakat-label {
+  color: rgba(255,255,255,0.9);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Pulse rings - Zakat */
+.zakat-pulse-ring {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  animation: pulseRing 2s ease-out infinite;
+  z-index: 1;
+}
+.zakat-pulse-ring.ring2 {
+  animation-delay: 1s;
+}
+@keyframes pulseRing {
+  0%   { transform: translate(-50%, -60%) scale(1); opacity: 0.8; }
+  100% { transform: translate(-50%, -60%) scale(2); opacity: 0; }
+}
+@keyframes pulseRingSquare {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+
+
+
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
+}
+.nav-item {
+  position: relative;
+}
+.nav-item > a {
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-item > a:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-item > a .fa-chevron-down { font-size: 9px; opacity: 0.7; }
+
+.new-badge .badge-new {
+  background: var(--pink);
+  color: white;
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: 800;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: white;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: all 0.2s;
+  z-index: 200;
+  overflow: hidden;
+}
+/* ================================
+   NAV ITEM DROPDOWN BASE
+================================ */
+.nav-item.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ================================
+   DROPDOWN MENU BOX
+================================ */
+.nav-item.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* ================================
+   SHOW ON HOVER (DESKTOP)
+================================ */
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ================================
+   DROPDOWN LINKS
+================================ */
+.dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #222;
+  border-bottom: 1px solid #f3f3f3;
+  transition: all 0.2s ease;
+}
+
+/* ================================
+   HOVER EFFECT (COOL BLUE SLIDE)
+================================ */
+.dropdown-menu a:hover {
+  background: #00a3da;
+  color: #fff;
+  padding-left: 22px;
+}
+
+/* Remove last border */
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+/* ================================
+   ICON ROTATION (ARROW EFFECT)
+================================ */
+.nav-item.dropdown > a i {
+  transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown:hover > a i {
+  transform: rotate(180deg);
+}
+
+/* Right Side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.icon-btn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+.icon-btn:hover { background: rgba(255,255,255,0.2); }
+.cart-btn { position: relative; }
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--pink);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yt-avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+.yt-icon {
+  width: 44px;
+  height: 44px;
+  background: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+.avatar-img {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  object-fit: cover;
+}
+.donate-btn {
+  background: var(--pink);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s;
+}
+.donate-btn:hover { background: var(--pink-dark); transform: translateY(-1px); }
+.phone-num {
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+/* Quick Donate Button */
+ .quick-donate-pulse-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+     z-index: 999;
+}
+
+/* Pulse Rings */
+.quick-donate-pulse-ring {
+    position: absolute;
+    inset: -5px;
+    border-radius: 8px;
+    border: 2px solid #00a3da;
+    animation: pulseRingSquare 2s ease-out infinite;
+    pointer-events: none;
+}
+
+.quick-donate-pulse-ring.ring2 {
+    animation-delay: 1s;
+}
+
+/* Button */
+.quick-donate-btn {
+    background: #0031B4;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover Effect */
+.quick-donate-btn:hover {
+    background: #00248a;
+    transform: translateY(-1px);
+}
+
+/* Pulse Animation */
+@keyframes pulseRingSquare {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}                    
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  margin-left: auto;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--navy-dark);
+  z-index: 9999;
+  padding: 60px 24px 24px;
+  transition: right 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.mobile-menu.open { right: 0; }
+.close-menu {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  color: white;
+  font-size: 22px;
+}
+.mobile-menu nav a {
+  display: block;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-menu nav a:hover { color: var(--pink); }
+.mobile-donate-btn {
+  display: inline-block !important;
+  background: var(--pink) !important;
+  color: white !important;
+  padding: 12px 28px !important;
+  border-radius: 4px !important;
+  margin-top: 20px !important;
+  border-bottom: none !important;
+}
+
+/* ============================================
+   ALERT BANNER
+   ============================================ */
+.alert-banner {
+  background: var(--pink);
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.alert-text em { font-style: italic; }
+.alert-link {
+  color: white;
+  font-weight: 700;
+  text-decoration: underline;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s;
+}
+.alert-link:hover { opacity: 0.8; }
+
+/* ============================================
+   HERO SLIDER (IMAGES)
+   ============================================ */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  background: #111;
+}
+
+/* ============================================
+   QUICK DONATE BAR
+   ============================================ */
+.quick-donate-bar {
+  background:#fff;
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.qd-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Currency Select */
+.currency-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.2s;
+  background: white;
+}
+.currency-select:hover { border-color: var(--cyan); }
+.currency-select .flag { font-size: 18px; line-height: 1; }
+.currency-select .fa-chevron-down { font-size: 10px; color: var(--text-light); }
+
+/* Amount Input */
+.amount-input-wrap {
+  flex: 1;
+  min-width: 120px;
+}
+.amount-input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 14px;
+  font-size: 14px;
+  color: var(--text);
+  transition: border-color 0.2s;
+  background: white;
+}
+.amount-input:focus { border-color: var(--cyan); }
+.amount-input::placeholder { color: #aaa; }
+/* Hide number spinners */
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.amount-input[type=number] { -moz-appearance: textfield; }
+
+/* Preset Amounts */
+.preset-amt {
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: white;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.preset-amt:hover { border-color: var(--pink); color: var(--pink); }
+.preset-amt.active {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+}
+
+/* Category Select */
+.category-select {
+  position: relative;
+  flex: 1;
+  min-width: 160px;
+}
+
+/* SELECT BOX */
+.category-select select {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 36px 9px 14px;
+  font-size: 13px;
+  color: var(--text);
+  background: white;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* focus effect */
+.category-select select:focus {
+  border-color: #00a3da;
+  box-shadow: 0 0 8px rgba(0,163,218,0.3);
+}
+
+/* ARROW ICON */
+.category-select .fa-chevron-down {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #00a3d4;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 BLUR + COLOR CHANGE ON HOVER */
+.category-select:hover .fa-chevron-down {
+  color: #00a3d4;
+  filter: blur(0.3px);
+  text-shadow: 0 0 6px rgba(0,163,218,0.6);
+}
+
+/* 🔥 ACTIVE FOCUS STATE (BEST EFFECT) */
+.category-select:focus-within .fa-chevron-down {
+  color: #00e1ff;
+  filter: blur(0px);
+  text-shadow: 0 0 10px rgba(0,225,255,0.9);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Payment Icons */
+.payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0f4ff;
+  border: 1.5px solid #dce4ff;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+.pay-icon { width: 24px; height: 16px; object-fit: contain; }
+.pay-icon-text {
+  font-size: 10px;
+  font-weight: 800;
+  color: #00a3d4;
+  letter-spacing: 0.3px;
+}
+.pay-icon-text.mc { color: #eb001b; }
+.pay-icon-fb { font-size: 9px; color: #555; }
+
+/* Quick Donate Button */
+.quick-donate-btn {
+  background: var(--pink);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+.quick-donate-btn:hover { background: var(--pink-dark); transform: translateY(-1px); }

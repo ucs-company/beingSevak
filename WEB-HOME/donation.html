@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donation – Being Sevak Charitable Trust</title>
-  <!-- Shared navbar styles from about page — keeps navbar identical -->
-  <link rel="stylesheet" href="css/about-bsct.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
@@ -20,181 +19,12 @@
       --border: #d0eaf5;
       --text: #222;
       --muted: #666;
+      --gold: #D4AF37;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); }
 
-    /* ── TOP BAR ── */
-    .top-bar {
-      background: #1e3347;
-      padding: 7px 0;
-      font-size: 13px;
-      color: #cdd8ef;
-    }
-    .top-bar-inner {
-      max-width: 1440px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 24px;
-      justify-content: flex-end;
-    }
-    .top-bar-inner span { display: flex; align-items: center; gap: 6px; }
-    .top-bar-inner i { color: #00A3DA; }
-
-    /* ── NAVBAR — matches about-bsct.html exactly ── */
-    .navbar {
-      background: #315371;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    }
-    .navbar-inner {
-      max-width: 1440px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      height: 70px;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
-    .logo-circle {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: white;
-      overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-circle img { width: 100%; height: 100%; object-fit: contain; }
-    .logo-text {
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-    .nav-quick { flex-shrink: 0; }
-    .nav-quick .zakat-btn {
-      background: #00A3DA;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      cursor: pointer;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      flex: 1;
-      justify-content: center;
-    }
-    .nav-item { position: relative; }
-    .nav-item > a {
-      color: #cdd8ef;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      padding: 8px 9px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      border-radius: 4px;
-      transition: color 0.2s, background 0.2s;
-      white-space: nowrap;
-    }
-    .nav-item > a:hover { color: white; background: rgba(255,255,255,0.08); }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      min-width: 200px;
-      border-radius: 6px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      padding: 6px 0;
-      z-index: 200;
-    }
-    .nav-item:hover .dropdown-menu { display: block; }
-    .dropdown-menu a {
-      display: block;
-      padding: 9px 18px;
-      color: #315371;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      transition: background 0.15s, color 0.15s;
-    }
-    .dropdown-menu a:hover { background: #e6f7fd; color: #00A3DA; }
-    .badge-new {
-      background: #00A3DA;
-      color: white;
-      font-size: 9px;
-      padding: 2px 5px;
-      border-radius: 3px;
-      font-weight: 700;
-    }
-    .nav-right { display: flex; align-items: center; gap: 10px; margin-left: auto; flex-shrink: 0; }
-    .yt-avatar { display: flex; align-items: center; }
-    .yt-icon {
-      width: 38px; height: 38px;
-      background: #ff0000;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: white; font-size: 17px;
-      flex-shrink: 0;
-    }
-    .donate-btn {
-      background: #00A3DA;
-      color: white;
-      padding: 10px 22px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      transition: background 0.2s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .donate-btn:hover { background: #0088bb; }
-    .hamburger { display: none; background: none; border: none; color: white; font-size: 22px; cursor: pointer; flex-shrink: 0; }
-
-    /* ── ALERT BANNER ── */
-    .alert-banner {
-      background: var(--blue);
-      text-align: center;
-      padding: 10px 20px;
-      color: white;
-      font-size: 14px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-    }
-    .alert-link {
-      color: white;
-      font-weight: 700;
-      text-decoration: underline;
-    }
 
     /* ── HERO BANNER ── */
     .hero-banner {
@@ -495,8 +325,6 @@
     }
     .donate-now-btn:hover { background: var(--blue); }
 
-    /* ── HAMBURGER (hidden on desktop) ── */
-    .hamburger { display: none; background: none; border: none; color: white; font-size: 22px; cursor: pointer; }
 
     @media (max-width: 900px) {
       .nav-links { display: none; }
@@ -791,10 +619,8 @@
   }
 }
 </style>
-  </style>
 </head>
 <body>
-
   <!-- TOP UTILITY BAR -->
   <div class="top-bar">
     <div class="top-bar-inner">
@@ -806,15 +632,26 @@
   <!-- MAIN NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="nav-logo">
+
+      <a href="index.html" class="nav-logo">
         <div class="logo-circle">
-          <img src="logo11.png" alt="BSCT Logo" onerror="this.style.display='none'"/>
+          <img src="logo11.png" alt="BSCT Logo" style="width:100%;height:100%;object-fit:contain;"/>
+          <div class="logo-fallback">
+            <div class="logo-globe"></div>
+          </div>
         </div>
-        <span class="logo-text">Being Sevak Charitable Trust</span>
-      </div>
+        <img src="images/bs.png" alt="Text Logo" class="BS-text-logo">
+      </a>
 
       <div class="nav-quick">
-        <button class="zakat-btn"><i class="fas fa-hands-praying"></i> Being Sevak</button>
+        <div class="zakat-circle-wrap">
+          <div class="zakat-pulse-ring"></div>
+          <div class="zakat-pulse-ring ring2"></div>
+          <button class="zakat-circle-btn">
+            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat"/>
+          </button>
+          <span class="zakat-label">Annदान</span>
+        </div>
       </div>
 
       <nav class="nav-links">
@@ -832,37 +669,36 @@
         <div class="nav-item dropdown">
           <a href="#">PROJECTS <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="#">Mission Annapurna</a>
-            <a href="#">Mission Vidhya</a>
-            <a href="#">Mission Aurat</a>
-            <a href="#">Mission Beach Sevak</a>
-            <a href="#">Mission Aadhar</a>
+            <a href="Annapurna.html">Mission Annapurna</a>
+            <a href="Vidhya.html">Mission Vidhya</a>
+            <a href="aurat.html">Mission Aurat</a>
+            <a href="beach.html">Mission Beach Sevak</a>
+            <a href="bezubaan.html">Mission Bezubaan</a>
+            <a href="aadhar.html">Mission Aadhar</a>
+            <a href="atmanirbhar.html">Mission Atmanirbhar</a>
           </div>
         </div>
         <div class="nav-item dropdown">
-          <a href="#">GALLERY & MEDIA ROOM <i class="fas fa-chevron-down"></i></a>
+          <a href="#"> GALLERY & MEDIA ROOM <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="#">Photos</a>
+            <a href="photos.html">Photos</a>
             <a href="#">Youtube Video</a>
             <a href="#">Press Release</a>
             <a href="#">In News Paper</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="#" class="new-badge-link">2026 <span class="badge-new">NEW</span></a>
+          <a href="#" class="new-badge"> 2026 <span class="badge-new">NEW</span></a>
         </div>
         <div class="nav-item dropdown">
-          <a href="#">Contact Us <i class="fas fa-chevron-down"></i></a>
-          <div class="dropdown-menu">
-            <a href="#">Get in Touch</a>
-            <a href="#">Our Offices</a>
-          </div>
+          <a href="#">Contact Us</a>
+          <div class="dropdown-menu"></div>
         </div>
         <div class="nav-item dropdown">
-          <a href="#">GET INVOLVED <i class="fas fa-chevron-down"></i></a>
+          <a href="#">GET INVOLVED<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="#">Individual Donation</a>
-            <a href="#">Volunteers (SEVAK BANO)</a>
+            <a href="#">Volunteers(SEVAK BANO)</a>
             <a href="#">Corporate Collaboration</a>
             <a href="#">School/Institute Collaboration</a>
             <a href="#">NGO Collaboration</a>
@@ -872,18 +708,39 @@
 
       <div class="nav-right">
         <div class="yt-avatar">
-          <div class="yt-icon"><i class="fab fa-youtube"></i></div>
+          <a href="https://www.youtube.com/@BeingSevak" target="_blank" rel="noopener noreferrer">
+            <div class="yt-icon">
+              <i class="fab fa-youtube"></i>
+            </div>
+          </a>
+          <img class="avatar-img" src="images/host.png" alt="host" onerror="this.style.display='none'"/>
         </div>
         <a href="donation.html" class="donate-btn">DONATE</a>
       </div>
 
-      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+    <nav>
+      <a href="#">Give Now</a>
+      <a href="#">Zakat</a>
+      <a href="#">Islamic Giving</a>
+      <a href="#">Qurban 2026</a>
+      <a href="#">Amanah</a>
+      <a href="#">About Us</a>
+      <a href="#" class="mobile-donate-btn">DONATE</a>
+    </nav>
+  </div>
+
   <!-- ALERT BANNER -->
   <div class="alert-banner">
-    <span><em>Being Sevak Charitable Trust</em></span>
+    <span class="alert-text"><em>BEING SEVAK CHARITABLE TRUST</em></span>
     <a href="#" class="alert-link">Learn More</a>
   </div>
 

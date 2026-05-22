@@ -263,21 +263,84 @@ input, select { font-family: inherit; outline: none; border: none; }
   z-index: 200;
   overflow: hidden;
 }
-.nav-item:hover .dropdown-menu {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
+/* ================================
+   NAV ITEM DROPDOWN BASE
+================================ */
+.nav-item.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+/* ================================
+   DROPDOWN MENU BOX
+================================ */
+.nav-item.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* ================================
+   SHOW ON HOVER (DESKTOP)
+================================ */
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ================================
+   DROPDOWN LINKS
+================================ */
 .dropdown-menu a {
   display: block;
-  padding: 10px 16px;
-  font-size: 13px;
-  color: var(--text);
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.15s, color 0.15s;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #222;
+  border-bottom: 1px solid #f3f3f3;
+  transition: all 0.2s ease;
 }
-.dropdown-menu a:last-child { border-bottom: none; }
-.dropdown-menu a:hover { background: #f8f8f8; color: var(--pink); }
+
+/* ================================
+   HOVER EFFECT (COOL BLUE SLIDE)
+================================ */
+.dropdown-menu a:hover {
+  background: #00a3da;
+  color: #fff;
+  padding-left: 22px;
+}
+
+/* Remove last border */
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+/* ================================
+   ICON ROTATION (ARROW EFFECT)
+================================ */
+.nav-item.dropdown > a i {
+  transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown:hover > a i {
+  transform: rotate(180deg);
+}
 
 /* Right Side */
 .nav-right {
@@ -595,6 +658,8 @@ input, select { font-family: inherit; outline: none; border: none; }
   flex: 1;
   min-width: 160px;
 }
+
+/* SELECT BOX */
 .category-select select {
   width: 100%;
   border: 1.5px solid var(--border);
@@ -605,17 +670,40 @@ input, select { font-family: inherit; outline: none; border: none; }
   background: white;
   appearance: none;
   cursor: pointer;
-  transition: border-color 0.2s;
+  transition: all 0.25s ease;
 }
-.category-select select:focus { border-color: var(--cyan); }
+
+/* focus effect */
+.category-select select:focus {
+  border-color: #00a3da;
+  box-shadow: 0 0 8px rgba(0,163,218,0.3);
+}
+
+/* ARROW ICON */
 .category-select .fa-chevron-down {
   position: absolute;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 10px;
-  color: var(--text-light);
+  color: #00a3d4;
   pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 BLUR + COLOR CHANGE ON HOVER */
+.category-select:hover .fa-chevron-down {
+  color: #00a3d4;
+  filter: blur(0.3px);
+  text-shadow: 0 0 6px rgba(0,163,218,0.6);
+}
+
+/* 🔥 ACTIVE FOCUS STATE (BEST EFFECT) */
+.category-select:focus-within .fa-chevron-down {
+  color: #00e1ff;
+  filter: blur(0px);
+  text-shadow: 0 0 10px rgba(0,225,255,0.9);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 /* Payment Icons */
@@ -632,7 +720,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 .pay-icon-text {
   font-size: 10px;
   font-weight: 800;
-  color: #1a1f71;
+  color: #00a3d4;
   letter-spacing: 0.3px;
 }
 .pay-icon-text.mc { color: #eb001b; }
