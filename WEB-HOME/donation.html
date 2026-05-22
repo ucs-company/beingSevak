@@ -619,6 +619,8 @@
   }
 }
 </style>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="payment/razorpay.js"></script>
 </head>
 <body>
   <!-- TOP UTILITY BAR -->
@@ -1209,38 +1211,20 @@
 
     // Donate Now
     function handleDonate(tab) {
+      const panel = document.getElementById('panel-' + tab);
       const amt = document.getElementById('amt-' + tab).value;
-      if (!amt || parseFloat(amt) <= 0) {
-        alert('Please enter a valid donation amount.');
-        return;
-      }
-      const name = document.getElementById('fname').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      if (!name.trim()) { alert('Please enter your first name.'); return; }
-      if (!email.trim()) { alert('Please enter your email.'); return; }
-      if (!phone.trim()) { alert('Please enter your phone number.'); return; }
-      const programme = document.querySelector('#panel-' + tab + ' h2') ? document.querySelector('#panel-' + tab + ' h2').textContent : 'General';
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'payment/payu.php';
-      const fields = {
+      const name = panel.querySelector('input[placeholder="First Name"]').value;
+      const email = panel.querySelector('input[type="email"]').value;
+      const phone = panel.querySelector('input[type="tel"]').value;
+      const programme = panel.querySelector('h2').textContent;
+      donateWithRazorpay({
         amount: amt,
-        firstname: name,
+        name: name,
         email: email,
         phone: phone,
-        productinfo: 'Donation - ' + programme,
-        udf1: 'General',
-        udf2: 'once',
-        udf3: programme
-      };
-      for (const [k, v] of Object.entries(fields)) {
-        const inp = document.createElement('input');
-        inp.type = 'hidden'; inp.name = k; inp.value = v;
-        form.appendChild(inp);
-      }
-      document.body.appendChild(form);
-      form.submit();
+        description: 'Donation - ' + programme,
+        mission: programme
+      });
     }
     
   </script>

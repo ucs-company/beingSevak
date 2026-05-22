@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Donate Modal – BSCT</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="../payment/razorpay.js"></script>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 :root {
@@ -452,33 +454,17 @@ function updateModalTotal() {
 }
 function handleModalDonate() {
   const amt = document.getElementById('modalAmt').value;
-  const fname = document.getElementById('modalFname').value;
+  const name = document.getElementById('modalFname').value;
   const email = document.getElementById('modalEmail').value;
   const phone = document.getElementById('modalPhone').value;
-  if (!amt || parseFloat(amt) <= 0) { alert('Please enter a valid amount.'); return; }
-  if (!fname.trim()) { alert('Please enter your first name.'); return; }
-  if (!email.trim()) { alert('Please enter your email.'); return; }
-  if (!phone.trim()) { alert('Please enter your phone number.'); return; }
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = '../payment/payu.php';
-  const fields = {
+  donateWithRazorpay({
     amount: amt,
-    firstname: fname,
+    name: name,
     email: email,
     phone: phone,
-    productinfo: 'Donation - Modal',
-    udf1: 'General',
-    udf2: 'once',
-    udf3: ''
-  };
-  for (const [k, v] of Object.entries(fields)) {
-    const inp = document.createElement('input');
-    inp.type = 'hidden'; inp.name = k; inp.value = v;
-    form.appendChild(inp);
-  }
-  document.body.appendChild(form);
-  form.submit();
+    description: 'Donation - Modal',
+    mission: 'General'
+  });
 }
 </script>
 <!-- WhatsApp Floating Button -->

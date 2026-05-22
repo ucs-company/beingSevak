@@ -1,16 +1,3 @@
-<?php
-require_once 'config.php';
-
-$txnid = $_POST['txnid'] ?? '';
-$amount = $_POST['amount'] ?? '';
-$productinfo = $_POST['productinfo'] ?? '';
-$firstname = $_POST['firstname'] ?? '';
-$email = $_POST['email'] ?? '';
-$udf1 = $_POST['udf1'] ?? '';
-$mihpayid = $_POST['mihpayid'] ?? '';
-$status = $_POST['status'] ?? '';
-$error = $_POST['error'] ?? $_POST['unmappedstatus'] ?? 'Transaction could not be completed';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +25,7 @@ body{
   width:100%;
   box-shadow:0 20px 60px rgba(0,0,0,0.08);
 }
-.icon{
-  width:72px;height:72px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 20px;font-size:36px;
-  background:#fff3e0;color:#f57c00;
-}
+.icon{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:36px;background:#fff3e0;color:#f57c00;}
 h2{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:#1a1a2e;margin-bottom:8px;}
 p{color:#4a5568;font-size:0.9rem;line-height:1.6;margin-bottom:6px;}
 .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
@@ -70,14 +52,17 @@ p{color:#4a5568;font-size:0.9rem;line-height:1.6;margin-bottom:6px;}
 <div class="card">
   <div class="icon">&#9888;</div>
   <h2>Payment Could Not Be Completed</h2>
-  <p><?php echo htmlspecialchars($error); ?></p>
-  <p style="font-size:0.85rem;color:#999;margin-top:10px;">
-    Don't worry — no amount has been deducted. Please try again or use a different payment method.
-  </p>
+  <p id="errMsg">Transaction could not be completed.</p>
+  <p style="font-size:0.85rem;color:#999;margin-top:10px;">Don't worry — no amount has been deducted. Please try again or use a different payment method.</p>
   <div class="btn-group">
     <a href="javascript:history.back()" class="btn">Try Again</a>
     <a href="../donation.html" class="btn btn-outline">Choose Another Option</a>
   </div>
 </div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const err = params.get('error');
+if (err) document.getElementById('errMsg').textContent = err;
+</script>
 </body>
 </html>

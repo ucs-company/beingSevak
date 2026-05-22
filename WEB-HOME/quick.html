@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="payment/razorpay.js"></script>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -645,26 +647,14 @@
       if (!email) { alert('Please enter your email.'); return; }
       if (!phone) { alert('Please enter your phone number.'); return; }
       const items = Object.entries(cartQty).filter(([,q]) => q > 0).map(([k,q]) => k + 'x' + q).join(', ');
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'payment/payu.php';
-      const fields = {
+      donateWithRazorpay({
         amount: total,
-        firstname: name,
+        name: name,
         email: email,
         phone: phone,
-        productinfo: 'Donation Basket: ' + items,
-        udf1: 'General',
-        udf2: 'once',
-        udf3: items
-      };
-      for (const [k, v] of Object.entries(fields)) {
-        const inp = document.createElement('input');
-        inp.type = 'hidden'; inp.name = k; inp.value = v;
-        form.appendChild(inp);
-      }
-      document.body.appendChild(form);
-      form.submit();
+        description: 'Donation Basket: ' + items,
+        mission: items
+      });
     }
   </script>
 
