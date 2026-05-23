@@ -52,7 +52,7 @@
               '<a href="' + p + 'photos.html">Photos</a>' +
               '<a href="#">Youtube Video</a>' +
               '<a href="#">Press Release</a>' +
-              '<a href="#">In News Paper</a>' +
+              '<a href="' + p + 'newspaper/newspaper.html">In News Paper</a>' +
             '</div>' +
           '</div>' +
           '<div class="nav-item">' +
