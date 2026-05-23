@@ -356,33 +356,36 @@ body{
 }
 
 /* HIGHLIGHT */
-
 .mealwave-highlight-box{
-  display:flex;
-  gap:25px;
-  margin-top:35px;
-  flex-wrap:wrap;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* Upar niche nahi jayega */
 }
 
 .mealwave-highlight-box div{
-  background:#fff;
-  border:1px solid #eaf7fc;
-  padding:30px;
-  border-radius:25px;
-  box-shadow:0 10px 35px rgba(0,0,0,0.05);
+    width: 220px;
+    min-height: 180px;
+    padding: 35px 25px;
+    border-radius: 25px;
+    background: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.mealwave-highlight-box h3{
-  color:#00a3da;
-  font-size:35px;
-  margin-bottom:8px;
+.mealwave-highlight-box div:hover{
+    background: #00a3da;
 }
 
-.mealwave-highlight-box span{
-  color:#555;
-  font-weight:600;
+.mealwave-highlight-box div:hover h3,
+.mealwave-highlight-box div:hover span{
+    color: #fff;
 }
-
 /* LIST */
 
 .rotiseva-content ul{
