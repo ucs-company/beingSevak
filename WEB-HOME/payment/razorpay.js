@@ -1,4 +1,4 @@
-const RAZORPAY_KEY_ID = 'rzp_test_SsL2Rtbax0FEts';
+const RAZORPAY_KEY_ID = 'rzp_live_StUN8QoR2STezo';
 
 function donateWithRazorpay({ amount, name, email, phone, description, mission }) {
   if (!amount || parseFloat(amount) <= 0) { alert('Please enter a valid amount.'); return; }
