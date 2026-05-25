@@ -304,3 +304,32 @@ setInterval(()=>{
   showImpactSlide(currentImpact + 1);
 
 },5000);
+
+/* =========================================
+   FEATURED PROJECTS SLIDER
+========================================= */
+
+const featuredSlides = document.querySelectorAll('.featured-slide');
+const featuredDots = document.querySelectorAll('.featured-dot');
+
+let currentFeatured = 0;
+
+function showFeaturedSlide(index) {
+  featuredSlides[currentFeatured].classList.remove('active');
+  featuredDots[currentFeatured].classList.remove('active');
+
+  currentFeatured = (index + featuredSlides.length) % featuredSlides.length;
+
+  featuredSlides[currentFeatured].classList.add('active');
+  featuredDots[currentFeatured].classList.add('active');
+}
+
+featuredDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    showFeaturedSlide(i);
+  });
+});
+
+setInterval(() => {
+  showFeaturedSlide(currentFeatured + 1);
+}, 5000);

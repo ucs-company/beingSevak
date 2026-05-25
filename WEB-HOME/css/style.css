@@ -3849,59 +3849,27 @@ body{
 .featured-section {
   padding: 72px 20px;
   background: white;
-}
-.featured-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.featured-card {
-  border-radius: 12px;
   overflow: hidden;
+}
+
+/* SLIDER BOX */
+.featured-slider-box {
+  max-width: 1100px;
+  margin: 0 auto;
   position: relative;
-  box-shadow: var(--shadow);
-}
-.featured-card.large { height: 440px; }
-.featured-card.small { height: 204px; }
-.featured-side { display: flex; flex-direction: column; gap: 24px; }
-
-.feat-img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease;
-}
-.featured-card:hover .feat-img { transform: scale(1.04); }
-
-.feat-img-1 {
-  background-image: url("images/project1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-.feat-img-2 {
-  background-image: url("images/project2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.feat-img-1 {
-  background-image: url("https://your-image-link.jpg");
-}
-.feat-img-1,
-.feat-img-2 {
-  height: 250px;
-  border-radius: 12px;
-}
-/* GRID */
-.featured-grid {
+/* SLIDE - shows 2 cards side by side */
+.featured-slide {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  display: none;
+}
+
+.featured-slide.active {
+  display: grid;
 }
 
 /* CARD */
@@ -3910,24 +3878,27 @@ body{
   border-radius: 16px;
   overflow: hidden;
   height: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
 }
 
 /* IMAGE */
 .feat-img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.5s ease;
 }
 
-/* IMAGES */
-.feat-img-1 {
-  background-image: url("images/project1.jpg");
-}
-
-.feat-img-2 {
-  background-image: url("images/project2.jpg");
+.featured-card:hover .feat-img {
+  transform: scale(1.06);
 }
 
 /* OVERLAY */
@@ -3936,15 +3907,90 @@ body{
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 25px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 28px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
   color: #fff;
+  z-index: 2;
+}
+
+.feat-tag {
+  display: inline-block;
+  background: #00a3da;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.feat-overlay h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.feat-overlay p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 16px;
+}
+
+.feat-btn {
+  display: inline-block;
+  background: #00a3da;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.feat-btn:hover {
+  background: #007d94;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,163,218,0.35);
+  color: #fff;
+}
+
+/* DOTS */
+.featured-dots {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.featured-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.featured-dot.active {
+  width: 42px;
+  border-radius: 20px;
+  background: #00a3da;
+  box-shadow: 0 0 18px rgba(0,163,218,0.5);
 }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-  .featured-grid {
+  .featured-slide {
     grid-template-columns: 1fr;
+  }
+  .featured-card {
+    height: 320px;
   }
 }
 .feat-overlay {
