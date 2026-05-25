@@ -60,239 +60,177 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
   box-shadow:0 25px 60px rgba(0,163,218,0.35);
 }
 
-/* ─── CONTAINER ─── */
-.contact-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 24px;
+/* ─── Nav bar ─── */
+/* ─── Nav bar ─── */
+/* ─── Nav bar ─── */
+
+
+.tricycle-lifecycle-section{
+    background:#fff;
+    padding:100px 8%;
+    overflow:hidden;
 }
 
-/* ─── CONTACT GRID ─── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: start;
+.tricycle-container{
+    max-width:1300px;
+    margin:auto;
 }
 
-/* ─── CONTACT INFO CARDS ─── */
-.contact-info h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 1.6rem;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-.contact-info > p {
-  color: var(--text-mid);
-  font-size: 0.95rem;
-  margin-bottom: 30px;
-  line-height: 1.7;
+.tricycle-heading{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 70px;
 }
 
-.info-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  background: var(--white);
-  border: 1px solid #e2ecf5;
-  border-radius: 16px;
-  padding: 20px 22px;
-  margin-bottom: 16px;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-}
-.info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  border-color: var(--cyan);
-}
-.info-card .icon-box {
-  width: 50px; height: 50px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--cyan), var(--mid));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
-  color: var(--white);
-  flex-shrink: 0;
-  transition: transform 0.4s ease;
-}
-.info-card:hover .icon-box {
-  transform: scale(1.1) rotate(-5deg);
-}
-.info-card h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-.info-card p, .info-card a {
-  font-size: 0.88rem;
-  color: var(--text-mid);
-  line-height: 1.6;
-  text-decoration: none;
-}
-.info-card a:hover { color: var(--cyan); }
-
-/* ─── VISIT US ACCORDION ─── */
-.visit-card .icon-box { align-self: flex-start; margin-top: 4px; }
-.visit-accordion { margin-top: 6px; }
-.visit-item {
-  padding: 8px 0;
-  border-bottom: 1px solid #eef4f8;
-}
-.visit-item:last-child { border-bottom: none; }
-.visit-item strong {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  color: var(--navy);
-  margin-bottom: 2px;
-}
-.visit-item p {
-  font-size: 0.8rem;
-  color: var(--text-mid);
-  line-height: 1.5;
-  margin: 0;
+.tricycle-tag{
+    display:inline-block;
+    padding:10px 22px;
+    background:rgba(0,163,218,0.12);
+    color:#00a3da;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:20px;
 }
 
-/* ─── SOCIAL ─── */
-.social-section {
-  margin-top: 30px;
-}
-.social-section h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--navy);
-  margin-bottom: 14px;
-}
-.social-links {
-  display: flex;
-  gap: 12px;
-}
-.social-links a {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: var(--light-bg);
-  border: 1px solid #e2ecf5;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.15rem;
-  color: var(--mid);
-  text-decoration: none;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.social-links a:hover {
-  background: var(--cyan);
-  color: var(--white);
-  border-color: var(--cyan);
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,162,217,0.25);
+.tricycle-heading h2{
+    font-size:52px;
+    color:#111;
+    margin-bottom:20px;
+    font-weight:700;
 }
 
-/* ─── CONTACT FORM ─── */
-.contact-form-wrap {
-  background: var(--white);
-  border: 1px solid #e2ecf5;
-  border-radius: 20px;
-  padding: 36px 32px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-  transition: box-shadow 0.4s ease;
-}
-.contact-form-wrap:hover {
-  box-shadow: 0 16px 50px rgba(0,0,0,0.08);
-}
-.contact-form-wrap h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.contact-form-wrap > p {
-  font-size: 0.88rem;
-  color: var(--text-mid);
-  margin-bottom: 24px;
+.tricycle-heading p{
+    color:#666;
+    font-size:17px;
+    line-height:1.9;
 }
 
-.form-group {
-  margin-bottom: 18px;
-}
-.form-group label {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.form-group label .req { color: #e53935; }
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #e2ecf5;
-  border-radius: 12px;
-  font-size: 0.88rem;
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text-dark);
-  background: #fafcfe;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 4px rgba(0,162,217,0.1);
-  background: var(--white);
-}
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.tricycle-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.submit-btn {
-  background: linear-gradient(135deg, var(--cyan), var(--mid));
-  color: var(--white);
-  border: none;
-  padding: 14px 36px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.35s ease;
-  box-shadow: 0 8px 25px rgba(0,162,217,0.3);
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: 0.5s;
-}
-.submit-btn:hover::before { left: 100%; }
-.submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0,162,217,0.35);
-}
-.submit-btn:active {
-  transform: translateY(-1px);
+.tricycle-image{
+    position:relative;
 }
 
-/* ─── MAP SECTION ─── */
+.tricycle-image::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#00a3da;
+    border-radius:50%;
+    top:-30px;
+    left:-30px;
+    opacity:.12;
+}
+
+.tricycle-image img{
+    width:100%;
+    border-radius:25px;
+    display:block;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    position:relative;
+    z-index:2;
+}
+
+.tricycle-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.tricycle-card{
+    background:#fff;
+    border:1px solid rgba(0,163,218,0.15);
+    padding:28px;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.tricycle-card:hover{
+    background:#00a3da;
+    transform:translateY(-8px);
+}
+
+.tricycle-card h3{
+    color:#111;
+    margin-bottom:12px;
+    font-size:22px;
+    transition:.4s;
+}
+
+.tricycle-card p{
+    color:#666;
+    line-height:1.7;
+    transition:.4s;
+}
+
+.tricycle-card:hover h3,
+.tricycle-card:hover p{
+    color:#fff;
+}
+
+.tricycle-stats{
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.tricycle-stat-box{
+    background:#00a3da;
+    min-width:250px;
+    padding:35px;
+    text-align:center;
+    border-radius:20px;
+    color:#fff;
+    box-shadow:0 15px 35px rgba(0,163,218,0.25);
+}
+
+.tricycle-stat-box h3{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.tricycle-stat-box span{
+    font-size:17px;
+    font-weight:500;
+}
+
+@media(max-width:991px){
+
+    .tricycle-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tricycle-content{
+        grid-template-columns:1fr;
+    }
+
+    .tricycle-heading h2{
+        font-size:38px;
+    }
+
+    .tricycle-stat-box{
+        width:100%;
+    }
+
+}
+
+
+
+
+/* ─── footer ─── */
+/* ─── footer ─── */
+/* ─── footer ─── */
 .map-section {
   background: var(--light-bg);
   padding: 60px 24px;
