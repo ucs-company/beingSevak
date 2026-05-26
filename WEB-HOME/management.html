@@ -91,133 +91,77 @@
   gap: 40px;
 }
 
-/* Rectangle card */
-.management-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+/* Team circles grid */
+.team-circles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 40px 30px;
+  margin-top: 10px;
 }
 
-.management-card {
-  display: flex;
-  align-items: stretch;
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 6px 30px rgba(3,22,62,0.12);
-  transition: 0.3s;
+.team-member {
+  text-align: center;
+  transition: transform 0.4s ease;
 }
 
-.management-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 45px rgba(3,22,62,0.18);
+.team-member:hover {
+  transform: translateY(-8px);
 }
 
-.management-image {
-  width: 35%;
-  min-height: 420px;
-  overflow: hidden;
+.team-member-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--cyan);
+  box-shadow: 0 10px 30px rgba(0,163,218,0.25);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  margin: 0 auto 18px;
+  display: block;
   background: #eef6fb;
 }
 
-.management-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.team-member:hover .team-member-img {
+  box-shadow: 0 16px 45px rgba(0,163,218,0.4);
+  transform: scale(1.05);
 }
 
-.management-content {
-  width: 65%;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.reverse {
-  flex-direction: row;
-}
-
-.card-name {
+.team-member-name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.1rem;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
-.card-role {
+.team-member-role {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.82rem;
   color: var(--cyan);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
+  letter-spacing: 0.5px;
 }
 
-.card-divider {
-  width: 60px;
-  height: 4px;
+.team-member-divider {
+  width: 40px;
+  height: 3px;
   background: var(--cyan);
-  margin-bottom: 22px;
+  margin: 10px auto 0;
   border-radius: 2px;
 }
 
-.card-desc {
-  font-size: 0.95rem;
-  color: var(--text-mid);
-  line-height: 1.9;
-}
-
-.card-socials {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.card-socials a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--light-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--mid);
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.card-socials a:hover {
-  background: var(--cyan);
-  color: white;
-}
-
-@media (max-width: 900px) {
-
-  .management-card,
-  .reverse {
-    flex-direction: column;
+@media (max-width: 768px) {
+  .team-circles {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 30px 20px;
   }
-
-  .management-image,
-  .management-content {
-    width: 100%;
+  .team-member-img {
+    width: 120px;
+    height: 120px;
   }
-
-  .management-image {
-    height: 320px;
-    min-height: auto;
-  }
-
-  .management-content {
-    padding: 28px;
-  }
-
-  .card-name {
-    font-size: 1.5rem;
+  .team-member-name {
+    font-size: 1rem;
   }
 }
 
@@ -1058,70 +1002,70 @@
       Meet the dedicated leaders of Being Sevak Charitable Trust who are passionately working towards social welfare, empowerment, and inclusive growth for society.
     </p>
 
-    <!-- MANAGEMENT TEAM -->
-<div class="management-wrapper">
+    <!-- MANAGEMENT TEAM - Circle Grid -->
+<div class="team-circles">
 
-  <!-- PRIYANK SHAH -->
-  <div class="management-card">
-
-    <!-- LEFT INFO -->
-    <div class="management-content">
-      <div class="card-name">Priyank Shah</div>
-      <div class="card-role">Trustee</div>
-
-      <div class="card-divider"></div>
-
-      <p class="card-desc">
-        Trustee Mr. Priyank Shah, Trustee of the Being Sevak Charitable Trust &amp; the eminent CEO of Eatonik Industries, renowned for the widely acclaimed Kanchan Mouth Freshener brand. His life's motto, "Sevak Bano," reflects his deep commitment to selfless service and social welfare.
-        <br><br>
-        With over 15 years of experience in social work, he has actively collaborated with multiple NGOs and worked extensively for specially-abled individuals. Inspired by his mother's dedication to social service, Mr. Shah continues to champion empowerment, inclusivity, and compassionate leadership for a better society.
-      </p>
-
-      <div class="card-socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-
-    <!-- RIGHT IMAGE -->
-    <div class="management-image">
-      <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Priyank Shah">
-    </div>
-
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Priyank Shah" class="team-member-img">
+    <div class="team-member-name">Priyank Shah</div>
+    <div class="team-member-role">Founder &amp; Chairperson</div>
+    <div class="team-member-divider"></div>
   </div>
 
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp_Image_2023-12-16_at_15.12.49-removebg-preview-1-removebg-preview-e1702727078665.jpg" alt="Jigna Patel" class="team-member-img">
+    <div class="team-member-name">Jigna Patel</div>
+    <div class="team-member-role">Treasurer</div>
+    <div class="team-member-divider"></div>
+  </div>
 
-  <!-- SHWETA SHAH -->
-  <div class="management-card reverse">
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp_Image_2023-12-16_at_15.12.49-removebg-preview-1-removebg-preview-e1702727078665.jpg" alt="Shweta Shah" class="team-member-img">
+    <div class="team-member-name">Shweta Shah</div>
+    <div class="team-member-role">President</div>
+    <div class="team-member-divider"></div>
+  </div>
 
-    <!-- LEFT IMAGE -->
-    <div class="management-image">
-      <img src="https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp_Image_2023-12-16_at_15.12.49-removebg-preview-1-removebg-preview-e1702727078665.jpg" alt="Shweta Shah">
-    </div>
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Mahendra Pal" class="team-member-img">
+    <div class="team-member-name">Mahendra Pal</div>
+    <div class="team-member-role">Secretary</div>
+    <div class="team-member-divider"></div>
+  </div>
 
-    <!-- RIGHT INFO -->
-    <div class="management-content">
-      <div class="card-name">Shweta Shah</div>
-      <div class="card-role">Secretary</div>
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Ashutosh Pawar" class="team-member-img">
+    <div class="team-member-name">Ashutosh Pawar</div>
+    <div class="team-member-role">Joint Secretary</div>
+    <div class="team-member-divider"></div>
+  </div>
 
-      <div class="card-divider"></div>
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Samir Sura" class="team-member-img">
+    <div class="team-member-name">Samir Sura</div>
+    <div class="team-member-role">Advisory Board Member</div>
+    <div class="team-member-divider"></div>
+  </div>
 
-      <p class="card-desc">
-        Founder Mrs. Shweta Shah is a seasoned social worker with over 11 years of experience dedicated to serving visually impaired individuals, underprivileged children, and people in need.
-        <br><br>
-        Her diligent, devoted, and compassionate nature has helped uplift countless lives through various welfare initiatives. As Secretary of Being Sevak Charitable Trust and a consulting social worker, she has played a vital role in supporting organizations working for the visually impaired and the needy.
-        <br><br>
-        Her tireless contribution and unwavering dedication continue to elevate the mission and impact of Being Sevak Charitable Trust across communities.
-      </p>
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Vaishali Sawant" class="team-member-img">
+    <div class="team-member-name">Vaishali Sawant</div>
+    <div class="team-member-role">Accounts Executive</div>
+    <div class="team-member-divider"></div>
+  </div>
 
-      <div class="card-socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Sakshi Singh" class="team-member-img">
+    <div class="team-member-name">Sakshi Singh</div>
+    <div class="team-member-role">Project Head</div>
+    <div class="team-member-divider"></div>
+  </div>
 
+  <div class="team-member">
+    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Dilip Kumar Vishwarma" class="team-member-img">
+    <div class="team-member-name">Dilip Kumar Vishwarma</div>
+    <div class="team-member-role">Core Team Member</div>
+    <div class="team-member-divider"></div>
   </div>
 
   </div>
