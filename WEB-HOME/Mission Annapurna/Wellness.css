@@ -674,7 +674,69 @@ nav a:hover{
 }
 
 
+/* =========================
+DONATION
+========================= */
 
+.sevak-donation{
+  width:100%;
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  padding:55px 4%;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+}
+
+.sevak-donation-content{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:120px; /* Height */
+  padding:0px 0;   /* Top-Bottom Padding */
+}
+
+.sevak-left{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.sevak-tag{
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+}
+
+.sevak-title{
+  font-size:41px;
+  margin:0;
+  line-height:1.2;
+  color:#fff;
+}
+
+.sevak-desc{
+  font-size:15px;
+  margin:0;
+  color:#fff;
+}
+
+.sevak-btn{
+  display:inline-block;
+  padding:20px 42px;
+  background:#00a3da;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:700;
+  font-size:23px;
+  white-space:nowrap;
+  transition:0.3s;
+}
+
+.sevak-btn:hover{
+  transform:translateY(-2px);
+}
 
 
 

@@ -525,76 +525,68 @@ DONATION
 DONATION
 ========================= */
 
-.donation-section{
+/* =========================
+DONATION
+========================= */
+
+.sevak-donation{
   width:100%;
-
-  padding:35px 6%;
-
-  background:linear-gradient(135deg,#00a3da,#315270);
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  padding:55px 4%;
+  min-height:120px;
+  display:flex;
+  align-items:center;
 }
 
-.donation-wrapper{
+.sevak-donation-content{
   width:100%;
-
-  max-width:1200px;
-
-  margin:auto;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
-  gap:30px;
+  min-height:120px; /* Height */
+  padding:0px 0;   /* Top-Bottom Padding */
 }
 
-.donation-content{
-  max-width:650px;
+.sevak-left{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.sevak-tag{
+  font-size:20px;
+  font-weight:700;
   color:#fff;
 }
 
-.donation-content span{
-  font-size:12px;
-  font-weight:700;
-}
-
-.donation-content h2{
-  font-size:32px;
+.sevak-title{
+  font-size:41px;
+  margin:0;
   line-height:1.2;
-
-  margin:10px 0;
+  color:#fff;
 }
 
-.donation-content p{
-  font-size:14px;
-  line-height:1.7;
+.sevak-desc{
+  font-size:15px;
+  margin:0;
+  color:#fff;
 }
 
-.donate-btn{
-    display:inline-block;
-    padding:15px 36px;
-    background:#00a3da;
-    color:#fff;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:700;
-    transition:0.4s;
-    box-shadow:
-    0 10px 25px rgba(11,77,120,0.25);
-  }
+.sevak-btn{
+  display:inline-block;
+  padding:20px 42px;
+  background:#00a3da;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:700;
+  font-size:23px;
+  white-space:nowrap;
+  transition:0.3s;
+}
 
-  .donate-btn:hover{
-    background: var(--pink-dark); transform: translateY(-1px); 
-  }
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-  .donation-wrapper{
-    flex-direction:column;
-    text-align:center;
-  }
-
+.sevak-btn:hover{
+  transform:translateY(-2px);
 }
 /* =========================
 RESPONSIVE

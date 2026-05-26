@@ -787,61 +787,68 @@ nav a:hover{
 DONATION
 ========================= */
 
-.donation-section{
+/* =========================
+DONATION
+========================= */
+
+.sevak-donation{
   width:100%;
-  padding:15px 6%;   /* even smaller padding */
-  min-height:140px;  /* control height */
   background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  padding:55px 4%;
+  min-height:120px;
+  display:flex;
+  align-items:center;
 }
 
-.donation-wrapper{
+.sevak-donation-content{
   width:100%;
-  max-width:1200px;
-  margin:auto;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
-  gap:20px;
+  min-height:120px; /* Height */
+  padding:0px 0;   /* Top-Bottom Padding */
 }
 
-.donation-content{
-  max-width:600px;
+.sevak-left{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.sevak-tag{
+  font-size:20px;
+  font-weight:700;
   color:#fff;
 }
 
-.donation-content span{
-  font-size:11px;
-  font-weight:700;
-}
-
-.donation-content h2{
-  font-size:26px;   /* smaller heading */
+.sevak-title{
+  font-size:41px;
+  margin:0;
   line-height:1.2;
-  margin:6px 0;
+  color:#fff;
 }
 
-.donation-content p{
-  font-size:13px;
-  line-height:1.5;
+.sevak-desc{
+  font-size:15px;
+  margin:0;
+  color:#fff;
 }
 
-.donate-btn{
+.sevak-btn{
   display:inline-block;
-  padding:12px 28px;  /* smaller button */
+  padding:20px 42px;
   background:#00a3da;
   color:#fff;
   text-decoration:none;
   border-radius:6px;
   font-weight:700;
-  transition:0.4s;
-  box-shadow:0 10px 25px rgba(11,77,120,0.25);
+  font-size:23px;
+  white-space:nowrap;
+  transition:0.3s;
 }
 
-.donate-btn:hover{
-  background: var(--pink-dark);
-  transform: translateY(-1px);
+.sevak-btn:hover{
+  transform:translateY(-2px);
 }
 
 
