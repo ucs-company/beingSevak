@@ -1861,7 +1861,8 @@ body{
   width:500px;
   height:500px;
   overflow:hidden;
-}ss
+  border-radius:30px;
+}
 
 .img-box{
     position:absolute;
@@ -1870,6 +1871,7 @@ body{
     box-shadow:0 10px 30px rgba(0,0,0,0.15);
     transition:0.4s ease;
     cursor:pointer;
+
 }
 
 .img-box img{
@@ -1877,6 +1879,7 @@ body{
     height:100%;
     object-fit:cover;
     display:block;
+    border-radius:30px;
     transition:0.4s ease;
 }
 

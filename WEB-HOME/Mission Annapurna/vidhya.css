@@ -64,7 +64,7 @@ HERO SECTION
 }
 
 .hero-left h1{
-  font-size:58px;
+  font-size:62px;
   line-height:1.1;
   font-weight:800;
 
@@ -78,8 +78,8 @@ HERO SECTION
 }
 
 .hero-left p{
-  font-size:15px;
-  line-height:1.8;
+  font-size:18px;
+  line-height:1.9;
 
   color:#51606d;
 
@@ -101,7 +101,7 @@ HERO SECTION
   padding:14px 26px;
   border-radius:50px;
 
-  font-size:14px;
+  font-size:18px;
   font-weight:700;
 
   transition:0.3s;
@@ -111,7 +111,7 @@ HERO SECTION
   background:#00a3da;
   color:#fff;
 
-  box-shadow:0 10px 25px rgba(0,163,218,0.25);
+  box-shadow:0 15px 35px rgba(0,163,218,0.35);
 }
 
 .primary-btn:hover{
@@ -220,7 +220,7 @@ HERO SECTION
 
 .floating-card h3{
   color:#00a3da;
-  font-size:24px;
+  font-size:34px;
   margin-bottom:4px;
 }
 
@@ -570,13 +570,13 @@ DONATION
 
 .sevak-btn{
   display:inline-block;
-  padding:20px 42px;
+  padding:15px 36px;
   background:#00a3da;
   color:#fff;
   text-decoration:none;
   border-radius:6px;
   font-weight:700;
-  font-size:23px;
+  font-size:16px;
   white-space:nowrap;
   transition:0.3s;
 }

@@ -836,13 +836,13 @@ DONATION
 
 .sevak-btn{
   display:inline-block;
-  padding:20px 42px;
+  padding:15px 36px;
   background:#00a3da;
   color:#fff;
   text-decoration:none;
   border-radius:6px;
   font-weight:700;
-  font-size:23px;
+  font-size:16px;
   white-space:nowrap;
   transition:0.3s;
 }
