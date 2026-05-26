@@ -527,9 +527,11 @@ DONATION
 
 .sevak-donation{
   width:100%;
-  background:#fff;
-  padding:10px 6%;
-  
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  padding:55px 4%;
+  min-height:120px;
+  display:flex;
+  align-items:center;
 }
 
 .sevak-donation-content{
@@ -537,6 +539,8 @@ DONATION
   display:flex;
   justify-content:space-between;
   align-items:center;
+  min-height:120px; /* Height */
+  padding:0px 0;   /* Top-Bottom Padding */
 }
 
 .sevak-left{
@@ -546,32 +550,33 @@ DONATION
 }
 
 .sevak-tag{
-  font-size:11px;
+  font-size:20px;
   font-weight:700;
-  color:#00a3da;
+  color:#fff;
 }
 
 .sevak-title{
-  font-size:18px;
+  font-size:41px;
   margin:0;
   line-height:1.2;
+  color:#fff;
 }
 
 .sevak-desc{
-  font-size:12px;
+  font-size:15px;
   margin:0;
-  color:#555;
+  color:#fff;
 }
 
 .sevak-btn{
   display:inline-block;
-  padding:10px 22px;
+  padding:20px 42px;
   background:#00a3da;
   color:#fff;
   text-decoration:none;
   border-radius:6px;
   font-weight:700;
-  font-size:13px;
+  font-size:23px;
   white-space:nowrap;
   transition:0.3s;
 }
@@ -796,7 +801,7 @@ RESPONSIVE
   align-items:center;
   text-align:center;
 
-  background:linear-gradient(135deg,#00a3da,#315270);
+   background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   color:#fff;
 
   border-radius:0px;
