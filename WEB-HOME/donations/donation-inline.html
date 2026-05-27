@@ -148,19 +148,18 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 .dist-tabs {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   flex-wrap: wrap;
   justify-content: center;
 }
 .dist-tab {
-  width: 150px;
-  height: 150px;
-  padding: 12px 10px;
+  padding: 22px 44px;
+  min-width: 200px;
   border: 2px solid var(--border);
-  border-radius: 12px;
+  border-radius: 50px;
   background: var(--white);
   font-family:'Montserrat',sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--mid);
   cursor: pointer;
@@ -169,7 +168,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.dist-tab i { display: block; font-size: 1.3rem; margin-bottom: 6px; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.dist-tab i { margin-right: 8px; font-size: 1rem; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .dist-tab:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,162,217,0.18); }
 .dist-tab.active { border-color: var(--cyan); background: linear-gradient(135deg, var(--cyan), var(--mid)); color: var(--white); box-shadow: 0 8px 25px rgba(0,162,217,0.35); transform: translateY(-2px) scale(1.03); }
 .dist-tab.active i { color: var(--white); transform: scale(1.2); }
@@ -395,6 +394,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .dist-section-head {
   margin-bottom: 14px;
+  text-align: center;
 }
 .dist-section-head h3 {
   font-family:'Montserrat',sans-serif;
@@ -416,8 +416,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-wrap.landscape .top-row{display:flex;gap:16px;flex-wrap:wrap;}
 .donate-wrap.landscape .top-row .col{flex:1;min-width:180px;}
 .donate-wrap.landscape .dist-tabs{flex-wrap:nowrap;}
-.donate-wrap.landscape .dist-tab{min-width:0;padding:8px 6px;font-size:0.7rem;}
-.donate-wrap.landscape .dist-tab i{font-size:1rem;margin-bottom:2px;}
+.donate-wrap.landscape .dist-tab{min-width:0;padding:16px 34px;font-size:0.78rem;}
+.donate-wrap.landscape .dist-tab i{font-size:0.95rem;margin-right:6px;}
 .donate-wrap.landscape .freq-toggle{margin-bottom:0;}
 .donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
 .donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
@@ -441,7 +441,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .form-body { padding: 20px 18px; }
-  .dist-tab { min-width: 100%; }
+  .dist-tab { width: 100%; justify-content: center; }
   .form-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; align-items: stretch; }
   .donate-btn-inline { width: 100%; text-align: center; }
