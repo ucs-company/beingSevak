@@ -864,6 +864,134 @@
     }
     .testimonial-card:hover .quote-icon { color: rgba(255,255,255,0.6); }
 
+    /* ─── PDF MODAL ─── */
+    .pdf-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .pdf-modal.open {
+      display: flex;
+    }
+    .pdf-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+    }
+    .pdf-modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      height: 85vh;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+    .pdf-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: #f8f9fa;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .pdf-modal-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: #125299;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pdf-modal-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .pdf-modal-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: #eef2f7;
+      color: #125299;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease;
+    }
+    .pdf-modal-btn:hover {
+      background: #00a3da;
+      color: #fff;
+    }
+    .pdf-modal-btn.download-btn {
+      background: #00a3da;
+      color: #fff;
+    }
+    .pdf-modal-btn.download-btn:hover {
+      background: #007d94;
+    }
+    .pdf-modal-body {
+      flex: 1;
+      position: relative;
+    }
+    .pdf-modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .pdf-modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      color: #125299;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      transition: 0.2s ease;
+      z-index: 5;
+    }
+    .pdf-modal-nav:hover {
+      background: #00a3da;
+      color: #fff;
+    }
+    .pdf-modal-nav.prev {
+      left: -20px;
+    }
+    .pdf-modal-nav.next {
+      right: -20px;
+    }
+    @media(max-width:768px) {
+      .pdf-modal-content {
+        width: 95%;
+        height: 75vh;
+      }
+      .pdf-modal-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+      .pdf-modal-nav.prev { left: -8px; }
+      .pdf-modal-nav.next { right: -8px; }
+    }
+
     /* ─── SCROLL REVEAL ─── */
     .reveal {
       opacity: 0;
@@ -1102,7 +1230,7 @@
   </section>
 
   <!-- DOCUMENT PORTAL -->
-  <section class="doc-portal">
+  <section class="doc-portal" id="documents">
     <div class="doc-portal-inner">
 
       <div class="doc-portal-title">
@@ -1112,48 +1240,66 @@
 
       <!-- TABS -->
       <div class="doc-tabs">
-        <button class="doc-tab active" data-tab="trust-docs"><i class="fas fa-file-shield"></i> Trust Documents</button>
+        <button class="doc-tab active" data-tab="legal-docs"><i class="fas fa-file-shield"></i> Trust Documents</button>
         <button class="doc-tab" data-tab="activity-reports"><i class="fas fa-chart-line"></i> Activity Reports</button>
-        <button class="doc-tab" data-tab="report-cards"><i class="fas fa-clipboard-check"></i> Audit Report</button>
+        <button class="doc-tab" data-tab="audit-reports"><i class="fas fa-clipboard-check"></i> BSCT Audit Reports</button>
       </div>
 
-      <!-- TRUST DOCUMENTS -->
-      <div class="doc-cards active" id="trust-docs">
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-contract"></i></div><div class="doc-card-body"><h4>Registration Certificate</h4><p>Legal Compliance Document</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-id-card"></i></div><div class="doc-card-body"><h4>PAN Card</h4><p>Tax Identification Document</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-certificate"></i></div><div class="doc-card-body"><h4>80G Certificate (New)</h4><p>Tax Exemption Certificate</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-certificate"></i></div><div class="doc-card-body"><h4>80G Certificate (Old)</h4><p>Tax Exemption Certificate</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-invoice"></i></div><div class="doc-card-body"><h4>12A Certificate (New)</h4><p>Trust Registration Exemption</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-invoice"></i></div><div class="doc-card-body"><h4>12A Certificate (Old)</h4><p>Trust Registration Exemption</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-hand-holding-heart"></i></div><div class="doc-card-body"><h4>CSR Funds Certificate</h4><p>Corporate Social Responsibility Compliance</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-building"></i></div><div class="doc-card-body"><h4>NITI Aayog Registration</h4><p>Government Registry</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-award"></i></div><div class="doc-card-body"><h4>ISO Certificate</h4><p>Quality Management Certification</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+      <!-- LEGAL DOCUMENTS -->
+      <div class="doc-cards active" id="legal-docs">
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/regeistrationCertificate.pdf"><div class="doc-card-icon"><i class="fas fa-file-contract"></i></div><div class="doc-card-body"><h4>Registration Certificate</h4><p>Legal Compliance Document</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/PanCard.pdf"><div class="doc-card-icon"><i class="fas fa-id-card"></i></div><div class="doc-card-body"><h4>PAN Card</h4><p>Tax Identification Document</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/80G Certificate (New).pdf"><div class="doc-card-icon"><i class="fas fa-certificate"></i></div><div class="doc-card-body"><h4>80G Certificate (New)</h4><p>Tax Exemption Certificate</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/80G Certificate (Old).pdf"><div class="doc-card-icon"><i class="fas fa-certificate"></i></div><div class="doc-card-body"><h4>80G Certificate (Old)</h4><p>Tax Exemption Certificate</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/12A Certificate (New).pdf"><div class="doc-card-icon"><i class="fas fa-file-invoice"></i></div><div class="doc-card-body"><h4>12A Certificate (New)</h4><p>Trust Registration Exemption</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/CSR Funds Certificate.PDF"><div class="doc-card-icon"><i class="fas fa-hand-holding-heart"></i></div><div class="doc-card-body"><h4>CSR Funds Certificate</h4><p>Corporate Social Responsibility Compliance</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/documents/NITI Aayog Registration.pdf"><div class="doc-card-icon"><i class="fas fa-building"></i></div><div class="doc-card-body"><h4>NITI Aayog Registration</h4><p>Government Registry</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
       </div>
 
       <!-- ACTIVITY REPORTS -->
       <div class="doc-cards" id="activity-reports">
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2016</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2017</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2018</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2019</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2020</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2021</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2022</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2023</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2024</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/BSCT Activity Report 2016.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2016</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity-Report-2017 UPDATED.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2017</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity-Report-2018 UPDATED.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2018</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report 2021.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2021</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report 2022.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2022</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report 2023.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2023</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report Jan 2024 To Dec 2024).pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2024</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
       </div>
 
-      <!-- REPORT CARDS -->
-      <div class="doc-cards" id="report-cards">
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-chart-pie"></i></div><div class="doc-card-body"><h4>Annual Impact Reports</h4><p>Yearly Impact & Outcome Analysis</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-invoice-dollar"></i></div><div class="doc-card-body"><h4>Financial Reports</h4><p>Audited Financial Statements</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-eye"></i></div><div class="doc-card-body"><h4>Transparency Reports</h4><p>Open Data & Governance Reports</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-users"></i></div><div class="doc-card-body"><h4>Beneficiary Reports</h4><p>Community Impact & Reach Analysis</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-clipboard-list"></i></div><div class="doc-card-body"><h4>Organizational Report Cards</h4><p>Overall Performance Scorecard</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+      <!-- BSCT AUDIT REPORTS -->
+      <div class="doc-cards" id="audit-reports">
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2016-2017.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2016-2017</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2017-2018.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2017-2018</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2018-2019.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2018-2019</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2019-2020.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2019-2020</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2020-2021 .pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2020-2021</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2021 2022.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2021-2022</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/BSCT Audit Report 2022- 2023.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2022-2023</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card" data-pdf="BSCT Trust Document/BSCT Audit Report/Being Sevak Audit Report BSCT 2024.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>BSCT Audit Report 2024</h4><p>Annual Audit Report</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
       </div>
 
     </div>
   </section>
+
+  <!-- PDF MODAL -->
+  <div class="pdf-modal" id="pdfModal">
+    <div class="pdf-modal-overlay" id="pdfModalOverlay"></div>
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3 id="pdfModalTitle">Document</h3>
+        <div class="pdf-modal-actions">
+          <button class="pdf-modal-btn download-btn" id="pdfModalDownload" title="Download"><i class="fas fa-download"></i></button>
+          <button class="pdf-modal-btn" id="pdfModalPrev" title="Previous"><i class="fas fa-chevron-left"></i></button>
+          <button class="pdf-modal-btn" id="pdfModalNext" title="Next"><i class="fas fa-chevron-right"></i></button>
+          <button class="pdf-modal-btn" id="pdfModalClose" title="Close"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe id="pdfModalIframe" src=""></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- VALUES / COMPLIANCE SECTION -->
   <section class="values-section">
@@ -1410,6 +1556,105 @@
         this.classList.add('active');
         document.getElementById(this.dataset.tab).classList.add('active');
       });
+    });
+
+    // ============================
+    // PDF MODAL
+    // ============================
+    const pdfModal = document.getElementById('pdfModal');
+    const pdfModalOverlay = document.getElementById('pdfModalOverlay');
+    const pdfModalIframe = document.getElementById('pdfModalIframe');
+    const pdfModalTitle = document.getElementById('pdfModalTitle');
+    const pdfModalClose = document.getElementById('pdfModalClose');
+    const pdfModalDownload = document.getElementById('pdfModalDownload');
+    const pdfModalPrev = document.getElementById('pdfModalPrev');
+    const pdfModalNext = document.getElementById('pdfModalNext');
+
+    let pdfDocs = [];
+    let pdfCurrentIdx = 0;
+
+    function openPdfModal(idx, docs) {
+      if (!docs || !docs[idx]) return;
+      pdfDocs = docs;
+      pdfCurrentIdx = idx;
+      const doc = docs[idx];
+      pdfModalTitle.textContent = doc.name;
+      pdfModalIframe.src = doc.pdf;
+      pdfModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePdfModal() {
+      pdfModal.classList.remove('open');
+      pdfModalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    function prevPdf() {
+      if (pdfDocs.length === 0) return;
+      let idx = pdfCurrentIdx;
+      idx = idx === 0 ? pdfDocs.length - 1 : idx - 1;
+      const doc = pdfDocs[idx];
+      pdfCurrentIdx = idx;
+      pdfModalTitle.textContent = doc.name;
+      pdfModalIframe.src = doc.pdf;
+    }
+
+    function nextPdf() {
+      if (pdfDocs.length === 0) return;
+      let idx = pdfCurrentIdx;
+      idx = idx === pdfDocs.length - 1 ? 0 : idx + 1;
+      const doc = pdfDocs[idx];
+      pdfCurrentIdx = idx;
+      pdfModalTitle.textContent = doc.name;
+      pdfModalIframe.src = doc.pdf;
+    }
+
+    // Click on arrow to open modal
+    document.querySelectorAll('.doc-card').forEach(function(card) {
+      const arrow = card.querySelector('.doc-card-arrow');
+      if (arrow) {
+        arrow.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const pdf = card.getAttribute('data-pdf');
+          if (!pdf) return;
+          const name = card.querySelector('h4').textContent;
+          const parentCards = card.closest('.doc-cards');
+          if (!parentCards) return;
+          const allDocs = parentCards.querySelectorAll('.doc-card');
+          const docs = Array.from(allDocs).map(function(d) {
+            return {
+              pdf: d.getAttribute('data-pdf'),
+              name: d.querySelector('h4').textContent
+            };
+          }).filter(function(d) { return d.pdf; });
+          const idx = docs.findIndex(function(d) { return d.pdf === pdf; });
+          if (idx !== -1) openPdfModal(idx, docs);
+        });
+      }
+    });
+
+    // Download
+    pdfModalDownload.addEventListener('click', function() {
+      if (!pdfDocs[pdfCurrentIdx]) return;
+      const link = document.createElement('a');
+      link.href = pdfDocs[pdfCurrentIdx].pdf;
+      link.download = pdfDocs[pdfCurrentIdx].name.replace(/\s+/g, '_') + '.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    pdfModalClose.addEventListener('click', closePdfModal);
+    pdfModalOverlay.addEventListener('click', closePdfModal);
+    pdfModalPrev.addEventListener('click', prevPdf);
+    pdfModalNext.addEventListener('click', nextPdf);
+
+    document.addEventListener('keydown', function(e) {
+      if (!pdfModal.classList.contains('open')) return;
+      if (e.key === 'Escape') closePdfModal();
+      if (e.key === 'ArrowLeft') prevPdf();
+      if (e.key === 'ArrowRight') nextPdf();
     });
   </script>
 
