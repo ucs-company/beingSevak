@@ -125,7 +125,7 @@ body{
 /* IMPACT */
 .impact{
   width:100%;
-  padding:80px 7%;
+  padding:0px 7%;
   background:#f8fbfd;
 }
 
@@ -172,7 +172,7 @@ body{
 /* WORK */
 .work{
   width:100%;
-  padding:90px 7%;
+  padding:10px 7%;
   text-align:center;
 }
 
@@ -205,7 +205,7 @@ body{
 }
 
 .item:hover img{
-  transform:scale(1.08);
+  transform:scale(1.03);
 }
 
 .item h3{

@@ -241,7 +241,7 @@ section{
 .about-section{
   width:100%;
 
-  padding:100px 7%;
+  padding:0px 7%;
 
   display:flex;
   align-items:center;
@@ -370,7 +370,7 @@ section{
 .mission-section{
   width:100%;
 
-  padding:100px 7%;
+  padding:0px 7%;
 
   background:#f8fbfd;
 }
@@ -475,7 +475,7 @@ section{
 
 .impact-section2{
   width:100%;
-  padding:100px 7%;
+  padding:0px 7%;
 }
 
 .impact-wrapper2{
@@ -561,7 +561,7 @@ section{
 
 .gallery-section{
   width:100%;
-  padding:100px 7%;
+  padding:10px 7%;
   background:#f8fbfd;
 }
 

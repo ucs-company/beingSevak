@@ -292,7 +292,7 @@ nav a:hover{
 .about-section{
   width:100%;
 
-  padding:100px 7%;
+  padding:0px 7%;
 
   display:flex;
   align-items:center;
@@ -421,7 +421,7 @@ nav a:hover{
 .mission-section{
   width:100%;
 
-  padding:100px 7%;
+  padding:0px 7%;
 
   background:#f8fbfd;
 }
