@@ -56,7 +56,7 @@
     .leadership-section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 70px 28px;
+      padding: 30px 28px;
     }
     .section-title {
       font-family: 'Montserrat', sans-serif;
@@ -290,6 +290,24 @@
       box-shadow:0 10px 25px rgba(11,77,120,0.25);
     }
     .hero-buttons .donate-btn:hover{ background:#007d94; transform:translateY(-1px); }
+    .founder-note-wrap {
+      display:flex; gap:40px; align-items:center; margin-top:40px;
+      background:#f0f8ff; border:1px solid #d0eaf5;
+      border-radius:20px; padding:30px 32px; max-width:100%;
+    }
+    .founder-note-text { flex:1; min-width:260px; }
+    .founder-note-text h2 {
+      font-family:'Montserrat',sans-serif; font-size:1.3rem;
+      font-weight:800; color:var(--navy); margin-bottom:16px;
+    }
+    .founder-note-text p {
+      font-size:0.85rem; line-height:1.8; color:#4a5568;
+      margin-bottom:12px;
+    }
+    .founder-note-text .founder-sign {
+      font-family:'Montserrat',sans-serif; font-weight:800;
+      font-size:1rem; color:var(--navy); margin-top:8px;
+    }
     .hero-image{ position:relative; z-index:2; display:flex; justify-content:center; }
     .hero-image img{
       width:100%; max-width:500px; border-radius:30px;
@@ -317,6 +335,9 @@
       .hero h1{font-size:42px;} .hero p{font-size:16px;}
       .hero-buttons{justify-content:center;} .hero-image img{max-width:90%;}
       .floating-card.card1{left:5%;} .floating-card.card2{right:5%;}
+      .founder-note-wrap{flex-direction:column-reverse;text-align:center;padding:24px 20px;}
+      .founder-note-img{flex:0 0 auto;}
+      .founder-note-img img{width:140px;height:140px;}
     }
     @media(max-width:550px){
       .hero h1{font-size:32px;} .hero p{font-size:14px;}
@@ -819,9 +840,9 @@
         <div class="zakat-circle-wrap">
           <div class="zakat-pulse-ring"></div>
           <div class="zakat-pulse-ring ring2"></div>
-          <button class="zakat-circle-btn">
-            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
-          </button>
+           <a href="Mission Annapurna/sevaknivash.html" class="zakat-circle-btn">
+      <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Sevak Nivas">
+    </a>
           <span class="zakat-label">Sevakनिवास</span>
         </div>
       </div>
@@ -861,10 +882,10 @@
             <a href="newspaper/newspaper.html">In News Paper</a>
           </div>
         </div>
-        <div class="nav-item dropdown">
+        <!-- <div class="nav-item dropdown">
           <a href="#"> CSR</a>
 
-        </div>
+        </div> -->
         
         <div class="nav-item">
           <a href="contactus/contact.html">CONTACT US</a>
@@ -873,11 +894,10 @@
           <a href="#">GET INVOLVED<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="#">Individual Donation</a>
-            <a href="#">Volunteers(SEVAK BANO)</a>
-            <a href="#">Corporate Collaboration</a>
-            <a href="school/school.html">School/Institute Collaboration</a>
+            <a href="careers.html">Volunteers(SEVAK BANO)</a>
+            <a href="#">CSR</a>
+            <a href="#">School/Institute Collaboration</a>
             <a href="#">NGO Collaboration</a>
-            <a href="careers.html">Careers</a>
           </div>
         </div>
       </nav>
@@ -944,9 +964,9 @@
           <a href="newspaper/newspaper.html">In News Paper</a>
         </div>
       </div>
-      <div class="mnav-item">
+      <!-- <div class="mnav-item">
         <a href="#" class="mnav-link">CSR</a>
-      </div>
+      </div> -->
       <div class="mnav-item">
         <a href="contactus/contact.html" class="mnav-link">CONTACT US</a>
       </div>
@@ -954,11 +974,10 @@
         <a href="#" class="mnav-link">GET INVOLVED <i class="fas fa-chevron-down"></i></a>
         <div class="mnav-sub">
           <a href="donation.html">Individual Donation</a>
-          <a href="#">Volunteers (SEVAK BANO)</a>
-          <a href="#">Corporate Collaboration</a>
-          <a href="school/school.html">School/Institute Collaboration</a>
+          <a href="careers.html">Volunteers (SEVAK BANO)</a>
+          <a href="#">CSR</a>
+          <a href="#">School/Institute Collaboration</a>
           <a href="#">NGO Collaboration</a>
-          <a href="careers.html">Careers</a>
         </div>
       </div>
       <a href="donation2/donation2.html" class="mobile-donate-btn">DONATE</a>
@@ -973,32 +992,30 @@
     <h1>Our Management</h1>
   </section>
 
-  <!-- HERO SECTION (Annapurna style) -->
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
   
     <div class="hero-content">
-      <span class="tag">BEING SEVAK CHARITABLE TRUST</span>
       <h1>Our <span>Management</span></h1>
       <p>Meet the dedicated leaders guiding BSCT's mission of selfless service and social empowerment.</p>
-      <div class="hero-buttons">
-        <a href="#leadership" class="donate-btn">Meet Our Team</a>
+
+      <!-- Founder's Note -->
+      <div class="founder-note-wrap">
+        <div class="founder-note-text">
+          <h2>Founder's Note</h2>
+          <p>Life has always been a journey filled with ups and downs. There was a time when every project started by me and my team became a great success. But life teaches us that every challenge comes with a new beginning. Due to some unavoidable circumstances, I made the difficult decision to resign from my job.</p>
+          <p>However, I strongly believe that when your intentions are pure and your passion is genuine, life always opens another door. After every storm, there is a sunrise — and for me, that sunrise came through the unwavering support and belief of my team, which inspired the Organisation of Being Sevak Charitable Trust.</p>
+          <p>I believe that even two helping hands can create wonders in society. With one simple mantra — <strong>"Sevak Bano"</strong> — our mission is to spread kindness, dignity, empowerment, and hope among underprivileged, visually impaired, specially-abled, and needy individuals.</p>
+          <p>Together, we are not just serving people; we are changing lives.</p>
+          <div class="founder-sign">Priyank Shah</div>
+        </div>
       </div>
+
     </div>
 
     <div class="hero-image">
-      <div class="floating-card card1">
-        <h3>12+</h3>
-        <p>Years Experience</p>
-      </div>
-      <div class="floating-card card2">
-        <h3>2+</h3>
-        <p>Dedicated Founders</p>
-      </div>
-      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Management">
+      <img src="images/managesir.png">
     </div>
-
-    <div class="blur blur1"></div>
-    <div class="blur blur2"></div>
 
   </section>
 
@@ -1015,67 +1032,67 @@
 <div class="team-circles">
 
   <div class="team-member">
-    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Priyank Shah" class="team-member-img">
+    <img src="images/priyank shah.jpeg" alt="Priyank Shah" class="team-member-img">
     <div class="team-member-name">Priyank Shah</div>
     <div class="team-member-role">Founder &amp; Chairperson</div>
     <div class="team-member-divider"></div>
   </div>
 
   <div class="team-member">
-    <img src="https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp_Image_2023-12-16_at_15.12.49-removebg-preview-1-removebg-preview-e1702727078665.jpg" alt="Jigna Patel" class="team-member-img">
+    <img src="images/jignapatel.jpeg" alt="Jigna Patel" class="team-member-img">
     <div class="team-member-name">Jigna Patel</div>
     <div class="team-member-role">Treasurer</div>
     <div class="team-member-divider"></div>
   </div>
 
   <div class="team-member">
-    <img src="https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp_Image_2023-12-16_at_15.12.49-removebg-preview-1-removebg-preview-e1702727078665.jpg" alt="Shweta Shah" class="team-member-img">
+    <img src="images/swethashah.jpeg" alt="Shweta Shah" class="team-member-img">
     <div class="team-member-name">Shweta Shah</div>
     <div class="team-member-role">President</div>
     <div class="team-member-divider"></div>
   </div>
 
   <div class="team-member">
-    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Mahendra Pal" class="team-member-img">
+    <img src="images/Mahendrapal.jpeg" alt="Mahendra Pal" class="team-member-img">
     <div class="team-member-name">Mahendra Pal</div>
-    <div class="team-member-role">Secretary</div>
+    <div class="team-member-role">Core Team Member</div>
     <div class="team-member-divider"></div>
   </div>
 
   <div class="team-member">
-    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Ashutosh Pawar" class="team-member-img">
+    <img src="images/ashutoshpawar.jpeg" alt="Ashutosh Pawar" class="team-member-img">
     <div class="team-member-name">Ashutosh Pawar</div>
-    <div class="team-member-role">Joint Secretary</div>
+    <div class="team-member-role">Core Team Member</div>
     <div class="team-member-divider"></div>
   </div>
 
-  <div class="team-member">
+  <!-- <div class="team-member">
     <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Samir Sura" class="team-member-img">
     <div class="team-member-name">Samir Sura</div>
     <div class="team-member-role">Advisory Board Member</div>
     <div class="team-member-divider"></div>
-  </div>
+  </div> -->
 
   <div class="team-member">
     <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Vaishali Sawant" class="team-member-img">
     <div class="team-member-name">Vaishali Sawant</div>
-    <div class="team-member-role">Accounts Executive</div>
+    <div class="team-member-role">Core Team Member</div>
     <div class="team-member-divider"></div>
   </div>
 
   <div class="team-member">
-    <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Sakshi Singh" class="team-member-img">
+    <img src="images/SakshiSingh.jpeg" alt="Sakshi Singh" class="team-member-img">
     <div class="team-member-name">Sakshi Singh</div>
-    <div class="team-member-role">Project Head</div>
+    <div class="team-member-role">Core Team Member</div>
     <div class="team-member-divider"></div>
   </div>
 
-  <div class="team-member">
+  <!-- <div class="team-member">
     <img src="https://beingsevak.org/wp-content/uploads/2023/11/element.png" alt="Sujith Kumar Ganesh" class="team-member-img">
     <div class="team-member-name">Sujith Kumar Ganesh</div>
     <div class="team-member-role">Core Team Member</div>
     <div class="team-member-divider"></div>
-  </div>
+  </div> -->
 
   </div>
   </section>

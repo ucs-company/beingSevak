@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Individual Donation | Being Sevak Charitable Trust</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#074D97;--mid:#046FB1;--cyan:#009BD4;--cyan-light:#33bce8;
+  --gold:#D4AF37;--white:#fff;--light-bg:#f4f7fb;--text-dark:#1a1a2e;
+  --text-mid:#4a5568;--border:#d0eaf5;
+}
+body{font-family:'Open Sans',sans-serif;background:var(--light-bg);color:var(--text-dark);padding:20px;}
+
+.donate-wrap{
+  max-width:820px;margin:0 auto;background:var(--white);
+  border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  overflow:hidden;animation:formIn 0.6s ease;
+}
+@keyframes formIn{
+  0%{opacity:0;transform:translateY(30px) scale(0.97);}
+  100%{opacity:1;transform:translateY(0) scale(1);}
+}
+
+.form-header{
+  background:linear-gradient(to right,#009BD4 0%,#0285C3 25%,#046FB1 50%,#074D97 75%,#083D8B 100%);
+  padding:28px 32px;display:flex;justify-content:space-between;
+  align-items:center;position:relative;overflow:hidden;
+}
+.form-header::before{
+  content:'';position:absolute;top:-50%;left:-50%;
+  width:200%;height:200%;
+  background:radial-gradient(circle,rgba(0,162,217,0.15),transparent);
+  animation:shine 8s linear infinite;
+}
+@keyframes shine{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+.form-header-left{position:relative;z-index:1;}
+.form-header-left h2{
+  font-family:'Montserrat',sans-serif;font-size:1.5rem;
+  font-weight:800;color:var(--white);
+}
+.form-header-left p{
+  font-size:0.82rem;color:rgba(255,255,255,0.75);margin-top:4px;
+}
+.form-header-right{text-align:right;position:relative;z-index:1;}
+.badge-80g{
+  display:inline-block;background:var(--gold);color:var(--navy);
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:0.7rem;padding:5px 16px;border-radius:20px;
+}
+
+.indi-section{padding:28px 32px 32px;}
+
+.indi-tabs{
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;
+}
+.indi-tab{
+  padding:16px 28px;border:2px solid var(--border);
+  border-radius:9px;background:var(--white);
+  font-family:'Montserrat',sans-serif;font-size:0.82rem;
+  font-weight:700;color:var(--mid);cursor:pointer;
+  transition:all 0.3s ease;text-align:center;
+}
+.indi-tab i{margin-right:8px;font-size:1rem;color:var(--cyan);}
+.indi-tab:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,162,217,0.18);}
+.indi-tab.active{border-color:var(--cyan);background:linear-gradient(135deg,var(--cyan),var(--mid));color:var(--white);box-shadow:0 6px 20px rgba(0,162,217,0.35);}
+.indi-tab.active i{color:var(--white);}
+
+.indi-panel{display:none;}
+.indi-panel.active{display:block;animation:panelSlide 0.5s cubic-bezier(0.22,1,0.36,1);}
+@keyframes panelSlide{
+  0%{opacity:0;transform:translateY(30px) scale(0.97);}
+  100%{opacity:1;transform:translateY(0) scale(1);}
+}
+
+.indi-desc{
+  background:#f0f8ff;border:2px solid var(--border);
+  border-radius:14px;padding:28px 30px;
+}
+.indi-desc h3{
+  font-family:'Montserrat',sans-serif;font-size:1.25rem;
+  color:var(--navy);margin-bottom:14px;
+}
+.indi-desc h3 i{color:var(--cyan);margin-right:10px;}
+.indi-desc p{
+  font-size:0.92rem;color:var(--text-mid);line-height:1.8;margin-bottom:18px;
+}
+.indi-impact{
+  display:flex;flex-direction:column;gap:10px;
+}
+.indi-impact span{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:8px;padding:12px 18px;font-size:0.88rem;color:var(--text-mid);
+}
+.indi-impact span strong{color:var(--cyan);}
+
+@media(max-width:600px){
+  .indi-tab{width:100%;}
+  .indi-section{padding:20px 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="donate-wrap">
+  <div class="form-header">
+    <div class="form-header-left">
+      <h2><i class="fas fa-hand-holding-heart"></i> Individual Donation</h2>
+      <p>Your personal contribution makes a real difference</p>
+    </div>
+    <div class="form-header-right">
+      <span class="badge-80g">80G TAX EXEMPTION</span>
+    </div>
+  </div>
+
+  <div class="indi-section">
+    <div class="indi-tabs">
+      <button class="indi-tab active" data-indi="general" onclick="selectIndi(this)">
+        <i class="fas fa-heart"></i> General Support
+      </button>
+      <button class="indi-tab" data-indi="education" onclick="selectIndi(this)">
+        <i class="fas fa-graduation-cap"></i> Education
+      </button>
+      <button class="indi-tab" data-indi="health" onclick="selectIndi(this)">
+        <i class="fas fa-heartbeat"></i> Healthcare
+      </button>
+      <button class="indi-tab" data-indi="food" onclick="selectIndi(this)">
+        <i class="fas fa-utensils"></i> Food & Nutrition
+      </button>
+    </div>
+
+    <div class="indi-panel active" id="panel-general">
+      <div class="indi-desc">
+        <h3><i class="fas fa-heart"></i> General Support</h3>
+        <p>Your unrestricted donation allows us to direct funds where they are needed most. From daily operations to emergency relief, every rupee helps us serve communities with dignity and compassion. Support our mission to empower underprivileged, visually impaired, specially-abled, and needy individuals across India.</p>
+        <div class="indi-impact">
+          <span><strong>₹500</strong> provides meals for 25 children</span>
+          <span><strong>₹1,000</strong> supports educational materials for 10 students</span>
+          <span><strong>₹2,500</strong> covers medical check-ups for 15 elderly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="indi-panel" id="panel-education">
+      <div class="indi-desc">
+        <h3><i class="fas fa-graduation-cap"></i> Education Support</h3>
+        <p>Help us provide quality education to underprivileged children. Your donation funds school supplies, tuition support, digital learning resources, and scholarship programmes that give every child a chance to build a brighter future.</p>
+        <div class="indi-impact">
+          <span><strong>₹500</strong> buys stationery kit for 5 students</span>
+          <span><strong>₹1,000</strong> sponsors one child's monthly tuition</span>
+          <span><strong>₹2,500</strong> provides digital learning access for 10 children</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="indi-panel" id="panel-health">
+      <div class="indi-desc">
+        <h3><i class="fas fa-heartbeat"></i> Healthcare Support</h3>
+        <p>Your contribution helps us organise health check-up camps, provide medicines, and support medical treatments for those who cannot afford them. Together we can ensure that quality healthcare reaches every doorstep.</p>
+        <div class="indi-impact">
+          <span><strong>₹500</strong> covers general check-up for 15 people</span>
+          <span><strong>₹1,000</strong> provides essential medicines for a month</span>
+          <span><strong>₹2,500</strong> funds an eye check-up camp for 50 villagers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="indi-panel" id="panel-food">
+      <div class="indi-desc">
+        <h3><i class="fas fa-utensils"></i> Food & Nutrition</h3>
+        <p>Support our Mission Annapurna initiative to provide nutritious meals to the hungry. Every donation helps us run community kitchens, distribute food packets, and ensure no one sleeps on an empty stomach.</p>
+        <div class="indi-impact">
+          <span><strong>₹500</strong> provides 50 nutritious meals</span>
+          <span><strong>₹1,000</strong> supplies dry rations for a family of 4</span>
+          <span><strong>₹2,500</strong> runs a community kitchen for a day</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function selectIndi(el) {
+  document.querySelectorAll('.indi-tab').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.indi-panel').forEach(p => {
+    p.classList.remove('active');
+    void p.offsetHeight;
+  });
+  document.getElementById('panel-' + el.dataset.indi).classList.add('active');
+}
+</script>
+</body>
+</html>
