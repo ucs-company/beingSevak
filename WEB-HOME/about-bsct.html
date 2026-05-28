@@ -1,204 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About BSCT | Being Sevak Charitable Trust</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --navy:    #03163E;
-      --mid:     #315371;
-      --cyan:    #00A2D9;
+      --navy: #03163E;
+      --mid: #315371;
+      --cyan: #00A2D9;
       --cyan-light: #33bce8;
-      --green:   #2eb85c;
-      --gold:    #D4AF37;
-      --white:   #ffffff;
-      --light-bg:#f4f7fb;
-      --text-dark:#1a1a2e;
+      --green: #2eb85c;
+      --gold: #D4AF37;
+      --white: #ffffff;
+      --light-bg: #f4f7fb;
+      --text-dark: #1a1a2e;
       --text-mid: #4a5568;
     }
 
-    body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
+    }
 
     /* ─── TAX BOX (Annapurna header style) ─── */
-    .tax-box{
-      width:100%;
-      height:70px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
+    .tax-box {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
-      color:#fff;
-      border-radius:0px;
-      margin:20px 0;
-      padding:10px;
+      color: #fff;
+      border-radius: 0px;
+      margin: 20px 0;
+      padding: 10px;
     }
-    .tax-box h1{
-      font-family:'Montserrat',sans-serif;
-      font-size:28px;
-      font-weight:800;
-      letter-spacing:2px;
-      color:#fff;
-      margin:0;
+
+    .tax-box h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      margin: 0;
     }
 
     /* ─── HERO (Annapurna style) ─── */
-    .hero{
-      min-height:100vh;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      align-items:center;
-      gap:0px;
-      position:relative;
-      overflow:hidden;
-      padding:10px 8%;
-    }
-    .hero-content{
-      position:relative;
-      z-index:2;
-    }
-    .hero-content .tag{
-      background:transparent;
-      color:#00a3da;
-      padding:0;
-      border-radius:0;
-      display:inline-block;
-      margin-bottom:25px;
-      font-weight:800;
-      font-size:30px;
-      letter-spacing:1px;
-    }
-    .hero h1{
-      font-size:62px;
-      line-height:1.1;
-      margin-bottom:25px;
-      color:var(--navy);
-    }
-    .hero h1 span{
-      color:#00a3da;
-    }
-    .hero p{
-      font-size:18px;
-      line-height:1.9;
-      color:#66788a;
-      margin-bottom:35px;
-    }
-    .hero-buttons{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-    .hero-buttons .donate-btn{
-      display:inline-block;
-      padding:15px 36px;
-      background:#00a3da;
-      color:#fff;
-      text-decoration:none;
-      border-radius:6px;
-      font-weight:700;
-      transition:0.4s;
-      box-shadow:0 10px 25px rgba(11,77,120,0.25);
-    }
-    .hero-buttons .donate-btn:hover{
-      background:#007d94;
-      transform:translateY(-1px);
-    }
-    .hero-image{
-      position:relative;
-      z-index:2;
-      display:flex;
-      justify-content:center;
-    }
-    .hero-image img{
-      width:100%;
-      max-width:500px;
-      border-radius:30px;
-      box-shadow:0 25px 50px rgba(0,0,0,0.15);
-      transition:0.5s ease;
-    }
-    .hero-image img:hover{
-      transform:scale(1.02);
-    }
-    .floating-card{
-      position:absolute;
-      background:rgba(255,255,255,0.95);
-      backdrop-filter:blur(8px);
-      padding:18px 24px;
-      border-radius:18px;
-      box-shadow:0 15px 35px rgba(0,0,0,0.12);
-      text-align:center;
-      z-index:3;
-      animation:floatCard 4s ease-in-out infinite alternate;
-    }
-    .floating-card.card1{
-      top:5%;
-      left:-10px;
-    }
-    .floating-card.card2{
-      bottom:10%;
-      right:-10px;
-      animation-delay:2s;
-    }
-    .floating-card h3{
-      font-size:28px;
-      font-weight:800;
-      color:#00a3da;
-    }
-    .floating-card p{
-      font-size:13px;
-      color:#555;
-      margin:0;
-    }
-    @keyframes floatCard{
-      0%{transform:translateY(0);}
-      100%{transform:translateY(-15px);}
-    }
-    .blur{
-      position:absolute;
-      width:500px;
-      height:500px;
-      border-radius:50%;
-      filter:blur(120px);
-      opacity:0.15;
-      z-index:0;
-      pointer-events:none;
-    }
-    .blur1{
-      background:#00a3da;
-      top:-100px;
-      left:-100px;
-    }
-    .blur2{
-      background:#315270;
-      bottom:-100px;
-      right:-100px;
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0px;
+      position: relative;
+      overflow: hidden;
+      padding: 10px 8%;
     }
 
-    @media(max-width:900px){
-      .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-        gap:50px;
-      }
-      .hero h1{font-size:42px;}
-      .hero p{font-size:16px;}
-      .hero-buttons{justify-content:center;}
-      .hero-image img{max-width:90%;}
-      .floating-card.card1{left:5%;}
-      .floating-card.card2{right:5%;}
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
-    @media(max-width:550px){
-      .hero h1{font-size:32px;}
-      .hero p{font-size:14px;}
-      .floating-card{padding:12px 16px;}
-      .floating-card h3{font-size:22px;}
+
+    .hero-content .tag {
+      background: transparent;
+      color: #00a3da;
+      padding: 0;
+      border-radius: 0;
+      display: inline-block;
+      margin-bottom: 25px;
+      font-weight: 800;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 62px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      color: var(--navy);
+    }
+
+    .hero h1 span {
+      color: #00a3da;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #66788a;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons .donate-btn {
+      display: inline-block;
+      padding: 15px 36px;
+      background: #00a3da;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: 0.4s;
+      box-shadow: 0 10px 25px rgba(11, 77, 120, 0.25);
+    }
+
+    .hero-buttons .donate-btn:hover {
+      background: #007d94;
+      transform: translateY(-1px);
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 30px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      transition: 0.5s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.02);
+    }
+
+    .floating-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 18px 24px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      text-align: center;
+      z-index: 3;
+      animation: floatCard 4s ease-in-out infinite alternate;
+    }
+
+    .floating-card.card1 {
+      top: 5%;
+      left: -10px;
+    }
+
+    .floating-card.card2 {
+      bottom: 10%;
+      right: -10px;
+      animation-delay: 2s;
+    }
+
+    .floating-card h3 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #00a3da;
+    }
+
+    .floating-card p {
+      font-size: 13px;
+      color: #555;
+      margin: 0;
+    }
+
+    @keyframes floatCard {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .blur {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .blur1 {
+      background: #00a3da;
+      top: -100px;
+      left: -100px;
+    }
+
+    .blur2 {
+      background: #315270;
+      bottom: -100px;
+      right: -100px;
+    }
+
+    @media(max-width:900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image img {
+        max-width: 90%;
+      }
+
+      .floating-card.card1 {
+        left: 5%;
+      }
+
+      .floating-card.card2 {
+        right: 5%;
+      }
+    }
+
+    @media(max-width:550px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .floating-card {
+        padding: 12px 16px;
+      }
+
+      .floating-card h3 {
+        font-size: 22px;
+      }
     }
 
     /* ─── .section-label (shared) ─── */
@@ -211,6 +279,7 @@
       position: relative;
       display: inline-block;
     }
+
     .section-label::after {
       content: '';
       display: block;
@@ -227,10 +296,12 @@
       margin: 0 auto 60px;
       padding: 0 24px;
     }
-    .video-wrap video, .video-wrap iframe {
+
+    .video-wrap video,
+    .video-wrap iframe {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
       display: block;
       aspect-ratio: 16/9;
     }
@@ -240,6 +311,7 @@
       background: var(--light-bg);
       padding: 60px 24px;
     }
+
     .stats-grid {
       max-width: 1100px;
       margin: 0 auto;
@@ -248,6 +320,7 @@
       gap: 30px;
       justify-content: center;
     }
+
     .stat-item {
       display: flex;
       flex-direction: column;
@@ -255,21 +328,27 @@
       gap: 10px;
       min-width: 130px;
     }
+
     .stat-icon {
-      width: 80px; height: 80px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       background: var(--navy);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.8rem;
       color: white;
-      box-shadow: 0 4px 16px rgba(13,33,97,0.25);
+      box-shadow: 0 4px 16px rgba(13, 33, 97, 0.25);
     }
+
     .stat-num {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: 1.4rem;
       color: var(--green);
     }
+
     .stat-label {
       font-family: 'Montserrat', sans-serif;
       font-weight: 600;
@@ -284,6 +363,7 @@
       padding: 42px 24px;
       text-align: center;
     }
+
     .tax-banner p {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -293,7 +373,10 @@
       margin: 0 auto;
       line-height: 1.5;
     }
-    .tax-banner span { color: var(--gold); }
+
+    .tax-banner span {
+      color: var(--gold);
+    }
 
     /* ─── FOOTER ─── */
     .footer {
@@ -301,6 +384,7 @@
       padding: 60px 24px 0;
       color: #cdd6f4;
     }
+
     .footer-top {
       max-width: 1200px;
       margin: 0 auto;
@@ -309,17 +393,38 @@
       gap: 40px;
       padding-bottom: 50px;
     }
-    .footer-brand { display: flex; flex-direction: column; gap: 16px; }
-    .footer-logo { display: flex; align-items: center; gap: 12px; }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .footer-logo-circle {
-      width: 54px; height: 54px; border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
       border: 2px solid var(--gold);
       background: white;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
       flex-shrink: 0;
     }
-    .footer-logo-circle img { width: 100%; height: 100%; object-fit: contain; }
+
+    .footer-logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .footer-logo-text {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
@@ -327,12 +432,14 @@
       color: white;
       line-height: 1.3;
     }
+
     .footer-tagline {
       font-size: 0.8rem;
       color: var(--gold);
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
     }
+
     .qr-block {
       background: white;
       border-radius: 8px;
@@ -340,8 +447,20 @@
       width: 120px;
       text-align: center;
     }
-    .qr-block img { width: 100px; height: 100px; object-fit: contain; }
-    .qr-label { font-size: 0.68rem; color: var(--navy); font-weight: 700; margin-top: 4px; }
+
+    .qr-block img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    .qr-label {
+      font-size: 0.68rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
     .brochure-btn {
       display: inline-block;
       background: var(--green);
@@ -354,6 +473,7 @@
       text-decoration: none;
       width: fit-content;
     }
+
     .footer-col h4 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
@@ -364,41 +484,108 @@
       border-bottom: 3px solid var(--green);
       display: inline-block;
     }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
     .footer-col ul li a {
       color: #b0bfd8;
       text-decoration: none;
       font-size: 0.85rem;
       transition: color 0.2s;
-      display: flex; align-items: center; gap: 7px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
     }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.85rem; }
-    .contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
-    .contact-item a { color: #b0bfd8; text-decoration: none; }
-    .contact-item a:hover { color: var(--gold); }
-    .social-icons { display: flex; gap: 12px; margin-top: 14px; }
+
+    .footer-col ul li a:hover {
+      color: var(--gold);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+    }
+
+    .contact-item i {
+      color: var(--gold);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: #b0bfd8;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--gold);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
     .social-icons a {
-      width: 36px; height: 36px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 0.95rem;
       text-decoration: none;
       transition: transform 0.2s;
     }
-    .social-icons a:hover { transform: scale(1.15); }
-    .social-icons .fb { background: #1877f2; color: white; }
-    .social-icons .ig { background: #e1306c; color: white; }
-    .social-icons .yt { background: #ff0000; color: white; }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+    }
+
+    .social-icons .fb {
+      background: #1877f2;
+      color: white;
+    }
+
+    .social-icons .ig {
+      background: #e1306c;
+      color: white;
+    }
+
+    .social-icons .yt {
+      background: #ff0000;
+      color: white;
+    }
 
     .footer-bottom {
-      background: rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.3);
       text-align: center;
       padding: 18px 24px;
       font-size: 0.8rem;
       color: #8899bb;
     }
-    .footer-bottom .reg { font-family: 'Montserrat', sans-serif; font-weight: 700; color: white; font-size: 1rem; margin-bottom: 6px; }
-    .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+    .footer-bottom .reg {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-bottom a {
+      color: var(--gold);
+      text-decoration: none;
+    }
 
     .disclaimer-block {
       background: #f0f0f0;
@@ -408,8 +595,14 @@
       color: #555;
       line-height: 1.7;
     }
-    .disclaimer-block strong { color: #222; }
-    .disclaimer-block a { color: var(--green); }
+
+    .disclaimer-block strong {
+      color: #222;
+    }
+
+    .disclaimer-block a {
+      color: var(--green);
+    }
 
     /* ══════════════════════════════════════════
        ENHANCED: Annapurna/Vidhya-style additions
@@ -417,23 +610,57 @@
 
     /* ─── FLOATING KEYFRAMES ─── */
     @keyframes floatUpDown {
-      0%   { transform: translateY(0px); }
-      50%  { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
     }
+
     @keyframes floatCard {
-      0%   { transform: perspective(1000px) rotate(-3deg) translateY(0); }
-      50%  { transform: perspective(1000px) rotate(-3deg) translateY(-12px); }
-      100% { transform: perspective(1000px) rotate(-3deg) translateY(0); }
+      0% {
+        transform: perspective(1000px) rotate(-3deg) translateY(0);
+      }
+
+      50% {
+        transform: perspective(1000px) rotate(-3deg) translateY(-12px);
+      }
+
+      100% {
+        transform: perspective(1000px) rotate(-3deg) translateY(0);
+      }
     }
+
     @keyframes float {
-      0%   { transform: translateY(0px); }
-      50%  { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
     }
+
     @keyframes fadeInUp {
-      0%   { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ─── ENHANCED HERO (Vidhya-style grid with floating cards) ─── */
@@ -445,6 +672,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -456,6 +684,7 @@
       position: relative;
       z-index: 2;
     }
+
     .hero-tag {
       color: var(--cyan);
       font-weight: 800;
@@ -464,6 +693,7 @@
       display: inline-block;
       margin-bottom: 18px;
     }
+
     .hero-grid h1 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
@@ -473,26 +703,39 @@
       letter-spacing: 2px;
       margin-bottom: 18px;
     }
+
     .hero-grid h1 span {
       color: var(--cyan);
     }
+
     .hero-grid .hero-desc {
       font-size: 1rem;
       line-height: 1.8;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       margin-bottom: 30px;
       max-width: 520px;
     }
+
     .hero-breadcrumb {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .hero-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
-    .hero-breadcrumb a:hover { color: var(--gold); }
-    .hero-breadcrumb .sep { opacity: 0.5; }
+
+    .hero-breadcrumb a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .hero-breadcrumb a:hover {
+      color: var(--gold);
+    }
+
+    .hero-breadcrumb .sep {
+      opacity: 0.5;
+    }
 
     /* Hero right – floating cards area */
     .hero-right {
@@ -502,31 +745,42 @@
       align-items: center;
       min-height: 400px;
     }
+
     .hero-card {
       position: absolute;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       padding: 18px 22px;
       border-radius: 20px;
       min-width: 180px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
       z-index: 5;
       animation: float 3s ease-in-out infinite;
       text-align: center;
     }
+
     .hero-card h3 {
       color: var(--cyan);
       font-family: 'Montserrat', sans-serif;
       font-size: 28px;
       margin-bottom: 4px;
     }
+
     .hero-card p {
       font-size: 12px;
       font-weight: 600;
       color: var(--text-mid);
     }
-    .hero-card.card1 { top: 50px; left: 10px; }
-    .hero-card.card2 { bottom: 60px; right: 10px; }
+
+    .hero-card.card1 {
+      top: 50px;
+      left: 10px;
+    }
+
+    .hero-card.card2 {
+      bottom: 60px;
+      right: 10px;
+    }
 
     .hero-glow {
       position: absolute;
@@ -536,8 +790,18 @@
       filter: blur(120px);
       opacity: 0.4;
     }
-    .hero-glow.g1 { background: var(--cyan); top: -50px; left: -80px; }
-    .hero-glow.g2 { background: var(--mid); bottom: -60px; right: -80px; }
+
+    .hero-glow.g1 {
+      background: var(--cyan);
+      top: -50px;
+      left: -80px;
+    }
+
+    .hero-glow.g2 {
+      background: var(--mid);
+      bottom: -60px;
+      right: -80px;
+    }
 
     /* ─── 2-COL ABOUT GRID (Annapurna-style) ─── */
     .about-grid-wrap {
@@ -549,42 +813,52 @@
       margin: 0 auto;
       padding: 80px 24px;
     }
+
     .about-image-col {
       position: relative;
     }
+
     .about-image-col img {
       width: 100%;
       height: 480px;
       object-fit: cover;
       border-radius: 30px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
       transition: 0.5s ease;
       display: block;
     }
+
     .about-image-col img:hover {
       transform: scale(1.03);
-      box-shadow: 0 40px 90px rgba(0,0,0,0.2);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.2);
     }
+
     .about-image-col::before {
       content: "";
       position: absolute;
-      top: 20px; left: 20px;
-      width: 100%; height: 100%;
+      top: 20px;
+      left: 20px;
+      width: 100%;
+      height: 100%;
       border-radius: 30px;
-      background: linear-gradient(135deg, rgba(0,162,217,0.2), transparent);
+      background: linear-gradient(135deg, rgba(0, 162, 217, 0.2), transparent);
       filter: blur(12px);
       z-index: -1;
     }
+
     .about-content-col {
       padding-right: 20px;
     }
+
     .about-content-col .section-label {
       font-size: 1.5rem;
       margin-bottom: 18px;
     }
+
     .about-content-col .section-label::after {
       width: 50px;
     }
+
     .about-content-col h2 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
@@ -592,9 +866,11 @@
       margin-bottom: 18px;
       line-height: 1.2;
     }
+
     .about-content-col h2 span {
       color: var(--cyan);
     }
+
     .about-content-col p {
       font-size: 1rem;
       line-height: 1.85;
@@ -607,27 +883,31 @@
       background: var(--light-bg);
       padding: 80px 24px;
     }
+
     .values-inner {
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 25px;
       margin-top: 50px;
     }
+
     .value-card {
       background: #fff;
       padding: 35px 28px;
       border-radius: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
       text-align: center;
       position: relative;
       overflow: hidden;
       cursor: pointer;
       transition: 0.5s ease;
     }
+
     .value-card::before {
       content: "";
       position: absolute;
@@ -639,33 +919,40 @@
       transition: 0.5s ease;
       z-index: 1;
     }
+
     .value-card:hover::before {
       height: 100%;
     }
+
     .value-card:hover {
       transform: translateY(-12px);
     }
-    .value-card > * {
+
+    .value-card>* {
       position: relative;
       z-index: 2;
       transition: 0.4s ease;
     }
+
     .value-card .val-icon {
       font-size: 2.4rem;
       color: var(--cyan);
       margin-bottom: 16px;
     }
+
     .value-card h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.15rem;
       color: var(--navy);
       margin-bottom: 12px;
     }
+
     .value-card p {
       font-size: 0.88rem;
       line-height: 1.7;
       color: var(--text-mid);
     }
+
     .value-card:hover .val-icon,
     .value-card:hover h3,
     .value-card:hover p {
@@ -677,10 +964,12 @@
       padding: 80px 24px;
       background: #fff;
     }
+
     .testimonials-inner {
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -688,11 +977,12 @@
       margin-top: 50px;
       align-items: stretch;
     }
+
     .testimonial-card {
       background: #fff;
       padding: 30px;
       border-radius: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.07);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
       transition: 0.4s ease;
       overflow: hidden;
       position: relative;
@@ -701,6 +991,7 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
     .testimonial-card::before {
       content: "";
       position: absolute;
@@ -713,44 +1004,53 @@
       z-index: 1;
       border-radius: 28px;
     }
+
     .testimonial-card:hover::before {
       height: 100%;
     }
+
     .testimonial-card:hover {
       transform: translateY(-10px);
     }
-    .testimonial-card > * {
+
+    .testimonial-card>* {
       position: relative;
       z-index: 2;
     }
+
     .testimonial-card p {
       line-height: 1.9;
       color: var(--text-mid);
       margin-bottom: 20px;
       font-size: 0.92rem;
     }
+
     .testimonial-card h4 {
       font-family: 'Montserrat', sans-serif;
       color: var(--cyan);
       font-size: 1rem;
     }
+
     .testimonial-card span {
       font-size: 0.8rem;
       color: var(--text-mid);
     }
+
     .testimonial-card:hover p,
     .testimonial-card:hover h4,
     .testimonial-card:hover span {
       color: #fff !important;
     }
+
     .testimonial-card .quote-icon {
       font-size: 1.6rem;
       color: var(--cyan-light);
       margin-bottom: 12px;
       opacity: 0.5;
     }
+
     .testimonial-card:hover .quote-icon {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     /* ─── SCROLL REVEAL ─── */
@@ -759,6 +1059,7 @@
       transform: translateY(40px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
+
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
@@ -772,41 +1073,99 @@
         padding: 60px 0;
         gap: 30px;
       }
+
       .hero-grid .hero-desc,
       .hero-breadcrumb {
         margin-left: auto;
         margin-right: auto;
       }
-      .hero-breadcrumb { justify-content: center; }
-      .hero-right { min-height: 300px; }
-      .hero-grid h1 { font-size: 2.2rem; }
+
+      .hero-breadcrumb {
+        justify-content: center;
+      }
+
+      .hero-right {
+        min-height: 300px;
+      }
+
+      .hero-grid h1 {
+        font-size: 2.2rem;
+      }
+
       .about-grid-wrap {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
         padding: 60px 24px;
       }
-      .about-content-col { padding-right: 0; }
-      .about-content-col .section-label { margin: 0 auto 18px; }
-      .about-content-col .section-label::after { margin: 8px auto 0; }
-      .about-image-col img { height: 360px; }
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .about-content-col {
+        padding-right: 0;
+      }
+
+      .about-content-col .section-label {
+        margin: 0 auto 18px;
+      }
+
+      .about-content-col .section-label::after {
+        margin: 8px auto 0;
+      }
+
+      .about-image-col img {
+        height: 360px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 900px) {
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
     }
+
     @media (max-width: 768px) {
-      .values-grid { grid-template-columns: 1fr; }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero-card.card1,
-      .hero-card.card2 { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin: 10px; min-width: 140px; }
-      .hero-right { flex-direction: column; min-height: auto; }
-      .hero-grid h1 { font-size: 1.8rem; }
-      .hero-tag { font-size: 22px; }
-      .testimonial-grid { grid-template-columns: 1fr; }
+      .hero-card.card2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: 10px;
+        min-width: 140px;
+      }
+
+      .hero-right {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .hero-grid h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-tag {
+        font-size: 22px;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- TOP UTILITY BAR -->
@@ -842,22 +1201,28 @@
         <div class="zakat-circle-wrap">
           <div class="zakat-pulse-ring"></div>
           <div class="zakat-pulse-ring ring2"></div>
+
+          <a href="Mission Annapurna/ann.html"></a>
+
           <button class="zakat-circle-btn">
+
             <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
           </button>
+          </a>
+
           <span class="zakat-label">Annदान</span>
         </div>
       </div>
 
       <br>
-      
+
       <div class="nav-quick">
         <div class="zakat-circle-wrap">
           <div class="zakat-pulse-ring"></div>
           <div class="zakat-pulse-ring ring2"></div>
-          <button class="zakat-circle-btn">
-            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
-          </button>
+          <a href="Mission Annapurna/sevaknivash.html" class="zakat-circle-btn">
+            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Sevak Nivas">
+          </a>
           <span class="zakat-label">Sevakनिवास</span>
         </div>
       </div>
@@ -872,7 +1237,7 @@
             <!-- <a href="mission-vision.html">Mission/Vision</a> -->
             <a href="trust-documents.html">Trust Documents</a>
             <a href="where-we-work.html">Where We Work</a>
-            
+
           </div>
         </div>
         <div class="nav-item dropdown">
@@ -889,7 +1254,7 @@
             <a href="Mission Annapurna/Eco.html">Mission Eco-Warriors</a>
           </div>
         </div>
-         <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
           <a href="#">NEWS & STORIES<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="awards.html">Awards/Achievements</a>
@@ -897,11 +1262,11 @@
             <a href="newspaper/newspaper.html">In News Paper</a>
           </div>
         </div>
-        <div class="nav-item dropdown">
+        <!-- <div class="nav-item dropdown">
           <a href="#"> CSR</a>
 
-        </div>
-        
+        </div> -->
+
         <div class="nav-item">
           <a href="contactus/contact.html">CONTACT US</a>
         </div>
@@ -910,7 +1275,7 @@
           <div class="dropdown-menu">
             <a href="#">Individual Donation</a>
             <a href="#">Volunteers(SEVAK BANO)</a>
-            <a href="#">Corporate Collaboration</a>
+            <a href="#">CSR</a>
             <a href="#">School/Institute Collaboration</a>
             <a href="#">NGO Collaboration</a>
             <a href="careers.html">Careers</a>
@@ -980,9 +1345,9 @@
           <a href="newspaper/newspaper.html">In News Paper</a>
         </div>
       </div>
-      <div class="mnav-item">
+      <!-- <div class="mnav-item">
         <a href="#" class="mnav-link">CSR</a>
-      </div>
+      </div> -->
       <div class="mnav-item">
         <a href="contactus/contact.html" class="mnav-link">CONTACT US</a>
       </div>
@@ -990,11 +1355,10 @@
         <a href="#" class="mnav-link">GET INVOLVED <i class="fas fa-chevron-down"></i></a>
         <div class="mnav-sub">
           <a href="donation.html">Individual Donation</a>
-          <a href="#">Volunteers (SEVAK BANO)</a>
-          <a href="#">Corporate Collaboration</a>
+          <a href="careers.html">Volunteers(SEVAK BANO)</a>
+          <a href="#">CSR</a>
           <a href="#">School/Institute Collaboration</a>
           <a href="#">NGO Collaboration</a>
-          <a href="careers.html">Careers</a>
         </div>
       </div>
       <a href="donation2/donation2.html" class="mobile-donate-btn">DONATE</a>
@@ -1002,7 +1366,7 @@
   </div>
 
   <!-- ALERT BANNER -->
- 
+
 
   <!-- TAX BOX HEADER (Annapurna style) -->
   <section class="tax-box">
@@ -1011,7 +1375,7 @@
 
   <!-- HERO SECTION (Annapurna style) -->
   <section class="hero" id="home">
-  
+
     <div class="hero-content">
       <span class="tag">BEING SEVAK CHARITABLE TRUST</span>
 
@@ -1021,9 +1385,10 @@
       </h1>
 
       <p>
-        Being Sevak Charitable Trust is a national non-profit serving since 2015 
-        through healthcare, education, women empowerment, vocational training, 
-        and child development — inspired by the vision of "Sevak Bano".
+        Being Sevak Charitable Trust is a dedicated non-profit organization working since 2015 with a mission to serve
+        humanity through compassion, care, and inclusive development. Guided by the belief of “Sevak Bano” Become a
+        Servant of Society the organization is committed to creating meaningful change in the lives of underprivileged
+        communities, specially-abled individuals, women, and children across India.
       </p>
 
       <div class="hero-buttons">
@@ -1053,16 +1418,22 @@
   <!-- ABOUT US (2-col grid with image – Annapurna style) -->
   <section class="about-grid-wrap reveal">
     <div class="about-image-col">
-      <img src="images/aboutus2.jpeg" alt="BSCT Community Work" loading="lazy"/>
+      <img src="images/aboutus2.jpeg" alt="BSCT Community Work" loading="lazy" />
     </div>
     <div class="about-content-col">
       <h2 class="section-label">ABOUT US</h2>
       <h2>Our Mission in <span>Action</span></h2>
       <p>
-        Being Sevak Charitable Trust represents as National Nonprofit Organizations working since 2015 as a servant of society. Founded by a team of social workers who are working in the field of health, education, vocational training, empowering women and child development. As the name Being Sevak suggests from the name "SEVAK BANO" is committed to serving selfless service for the society.
+        To empower underprivileged communities, specially-abled individuals, women, and children through education,
+        healthcare, skill development, livelihood support, and social welfare initiatives. Being Sevak Charitable Trust
+        is committed to creating opportunities that promote dignity, independence, equality, and sustainable community
+        development.
       </p>
+      <h2>Our Vision in <span>Action</span></h2>
       <p>
-        Being Sevak Charitable Trust support different low income groups of people like Visually Impaired Individual, underprivileged children & needy individual in India. With the support of people like you, we are able to help many of these families and individuals not only to meet their essential daily needs, but also to manage their livelihood through our Missions. Registered as not for profit organization in 2015 under the Bombay Trust Act. BSCT Registration No: E-31948/Mumbai/2014-15.
+        To build an inclusive and compassionate society where every individual, regardless of their social or economic
+        background, has equal access to education, healthcare, livelihood opportunities, and the right to live with
+        dignity, confidence, and self-reliance.
       </p>
     </div>
   </section>
@@ -1071,29 +1442,36 @@
   <section class="values-section">
     <div class="values-inner">
       <div class="section-header" style="text-align:center;">
-        <span style="color:var(--cyan);font-weight:700;font-size:1.5rem;letter-spacing:1px;display:block;margin-bottom:8px;">OUR VALUES</span>
+        <span
+          style="color:var(--cyan);font-weight:700;font-size:1.5rem;letter-spacing:1px;display:block;margin-bottom:8px;">OUR
+          VALUES</span>
         <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;color:var(--navy);">What Drives Us</h2>
       </div>
       <div class="values-grid">
         <div class="value-card reveal">
           <div class="val-icon"><i class="fas fa-heart"></i></div>
-          <h3>Selfless Service</h3>
-          <p>Committed to serving society without expectation, embodying the spirit of "Sevak Bano".</p>
+          <h3>Accountability</h3>
+          <p>"We take responsibility for every action and initiative undertaken for community welfare".</p>
         </div>
         <div class="value-card reveal">
           <div class="val-icon"><i class="fas fa-hand-holding-heart"></i></div>
-          <h3>Compassion</h3>
-          <p>Extending a helping hand to visually impaired, underprivileged children &amp; needy individuals.</p>
+          <h3>Compassion & Service </h3>
+          <p>We are committed to selfless service and uplifting lives with empathy, &amp; care, and dignity.</p>
         </div>
         <div class="value-card reveal">
           <div class="val-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h3>Empowerment</h3>
-          <p>Enabling livelihoods through education, vocational training &amp; women empowerment programs.</p>
+          <h3>Leadership </h3>
+          <p>We inspire positive change through dedicated &amp; social leadership and community engagement . &amp;.</p>
         </div>
         <div class="value-card reveal">
           <div class="val-icon"><i class="fas fa-globe-asia"></i></div>
-          <h3>Community Impact</h3>
-          <p>Creating sustainable change across 7+ missions reaching thousands of families nationwide.</p>
+          <h3>Teamwork</h3>
+          <p>We work together with volunteers, partners, and communities to create a greater social impact.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="val-icon"><i class="fas fa-globe-asia"></i></div>
+          <h3>Innovation </h3>
+          <p>We encourage creative and sustainable solutions to address social challenges effectively.</p>
         </div>
       </div>
     </div>
@@ -1127,7 +1505,7 @@
       </div>
       <div class="stat-item">
         <div class="stat-icon"><i class="fas fa-kit-medical"></i></div>
-        <div class="stat-num">868+</div>
+        <div class="stat-num">100000+</div>
         <div class="stat-label">Covid-19 Kits</div>
       </div>
       <div class="stat-item">
@@ -1147,14 +1525,16 @@
   <section class="testimonials-section">
     <div class="testimonials-inner">
       <div class="section-header" style="text-align:center;">
-        <span style="color:var(--cyan);font-weight:700;font-size:1.5rem;letter-spacing:1px;display:block;margin-bottom:8px;">TESTIMONIALS</span>
+        <span
+          style="color:var(--cyan);font-weight:700;font-size:1.5rem;letter-spacing:1px;display:block;margin-bottom:8px;">TESTIMONIALS</span>
         <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;color:var(--navy);">What People Say</h2>
       </div>
       <div class="testimonial-grid">
         <div class="testimonial-card reveal">
           <div>
             <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p>Being Sevak has transformed the lives of so many in our community. Their dedication to education and nourishment is truly inspiring.</p>
+            <p>Being Sevak has transformed the lives of so many in our community. Their dedication to education and
+              nourishment is truly inspiring.</p>
           </div>
           <div>
             <h4>Priya Sharma</h4>
@@ -1164,7 +1544,8 @@
         <div class="testimonial-card reveal">
           <div>
             <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p>The midday meal program has ensured that no child in our area goes to school hungry. Grateful for their relentless service.</p>
+            <p>The midday meal program has ensured that no child in our area goes to school hungry. Grateful for their
+              relentless service.</p>
           </div>
           <div>
             <h4>Rajesh Patel</h4>
@@ -1174,7 +1555,8 @@
         <div class="testimonial-card reveal">
           <div>
             <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p>As a volunteer, I've witnessed firsthand the impact BSCT has on underprivileged families. A truly transparent and dedicated trust.</p>
+            <p>As a volunteer, I've witnessed firsthand the impact BSCT has on underprivileged families. A truly
+              transparent and dedicated trust.</p>
           </div>
           <div>
             <h4>Anita Desai</h4>
@@ -1196,13 +1578,15 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <div class="footer-logo-circle">
-            <img src="logo11.png" alt="BSCT" onerror="this.style.display='none'"/>
+            <img src="logo11.png" alt="BSCT" onerror="this.style.display='none'" />
           </div>
           <div class="footer-logo-text">Being Sevak<br>Charitable Trust</div>
         </div>
         <div class="footer-tagline">5,000 Worldwide Volunteers Already Connected</div>
         <div class="qr-block">
-          <div style="width:100px;height:100px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:0.68rem;color:#555;">QR Code<br>GPay</div>
+          <div
+            style="width:100px;height:100px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:0.68rem;color:#555;">
+            QR Code<br>GPay</div>
           <div class="qr-label">Being Sevak Charitable Trust<br>+91 8879035035</div>
         </div>
         <a href="#" class="brochure-btn">Brochure</a>
@@ -1211,31 +1595,44 @@
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Home</a></li>
-          <li><a href="about-bsct.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> About</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Gallery & Media</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Contact Us</a></li>
+          <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i>
+              Home</a></li>
+          <li><a href="about-bsct.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i>
+              About</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Gallery &
+              Media</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Contact
+              Us</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Additional Resources</h4>
         <ul>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Terms & Conditions</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Privacy Policy</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Return & Refund Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Terms &
+              Conditions</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Privacy
+              Policy</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Return &
+              Refund Policy</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Projects</h4>
         <ul>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission Annapurna</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Vidhya</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission Beach Sevak</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission Aurat</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Bezubaan</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission Atma Nirbhar</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission
+              Annapurna</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Vidhya</a>
+          </li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission Beach
+              Sevak</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission
+              Aurat</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Bezubaan</a>
+          </li>
+          <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--gold)"></i> Mission Atma
+              Nirbhar</a></li>
         </ul>
       </div>
 
@@ -1269,17 +1666,26 @@
   </footer>
 
   <div class="disclaimer-block">
-    <p><strong>Disclaimer:</strong> Being Sevak Charitable Trust shares the progressive vision of the Government (states) and works in collaboration and conjunction with the Government bodies and local donors & NGO toward different activities like eye health, education, Nourishment, Medical, Sanitation and social inclusion for the blind and needy. All funds raised by Being Sevak Charitable Trust may be pooled together and allocated towards different activities and projects like eye care, education, nourishment, medical, sanitation and social inclusion initiatives across India.</p>
+    <p><strong>Disclaimer:</strong> Being Sevak Charitable Trust shares the progressive vision of the Government
+      (states) and works in collaboration and conjunction with the Government bodies and local donors & NGO toward
+      different activities like eye health, education, Nourishment, Medical, Sanitation and social inclusion for the
+      blind and needy. All funds raised by Being Sevak Charitable Trust may be pooled together and allocated towards
+      different activities and projects like eye care, education, nourishment, medical, sanitation and social inclusion
+      initiatives across India.</p>
     <br>
-    <p><strong>Fraud Alert:</strong> Being Sevak Charitable Trust does not authorise collection of donation through personal account of any fundraiser. If you have any doubts about the authenticity of an e-mail, letter, phone call or other correspondence purportedly from, for or on behalf of Being Sevak Charitable Trust kindly report immediately on 8879034034 / 8879035035 or <a href="mailto:being.sevak@gmail.com">being.sevak@gmail.com</a> (Mon - Sat 10:00am to 6:00pm)</p>
+    <p><strong>Fraud Alert:</strong> Being Sevak Charitable Trust does not authorise collection of donation through
+      personal account of any fundraiser. If you have any doubts about the authenticity of an e-mail, letter, phone call
+      or other correspondence purportedly from, for or on behalf of Being Sevak Charitable Trust kindly report
+      immediately on 8879034034 / 8879035035 or <a href="mailto:being.sevak@gmail.com">being.sevak@gmail.com</a> (Mon -
+      Sat 10:00am to 6:00pm)</p>
   </div>
 
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu  = document.getElementById('closeMenu');
+    const closeMenu = document.getElementById('closeMenu');
     if (hamburger) hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-    if (closeMenu)  closeMenu.addEventListener('click',  () => mobileMenu.classList.remove('open'));
+    if (closeMenu) closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
 
     function setQuickAmt(val, btn) {
       document.getElementById('quickAmt').value = val;
@@ -1305,9 +1711,11 @@
     }, { threshold: 0.15 });
     revealEls.forEach(el => revealObserver.observe(el));
   </script>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more."
+    target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
+
 </html>

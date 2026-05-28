@@ -142,7 +142,7 @@
     .hero-buttons .donate-btn:hover{ background:#007d94; transform:translateY(-1px); }
     .hero-image{ position:relative; z-index:2; display:flex; justify-content:center; }
     .hero-image img{
-      width:100%; max-width:500px; border-radius:30px;
+      width:100%; max-width:700px; border-radius:30px;
       box-shadow:0 25px 50px rgba(0,0,0,0.15); transition:0.5s ease;
     }
     .hero-image img:hover{ transform:scale(1.02); }
@@ -204,6 +204,7 @@
     /* CARDS */
     .doc-cards{ display:none; }
     .doc-cards.active{ display:block; }
+    #booklet{ display:block; } /* always visible (standalone) */
     .doc-card{
       display:flex; align-items:center; gap:18px;
       background:#fff; border-radius:14px; padding:18px 24px;
@@ -235,12 +236,58 @@
       transform:translateX(6px); background:#00a3da; color:#fff;
     }
 
+    /* ─── BOOKLET ─── */
+    .booklet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .booklet-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 2px solid #00a3da;
+    }
+    .booklet-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .booklet-item:hover img {
+      transform: scale(1.06);
+    }
+    .booklet-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      padding: 40px 20px 16px;
+      pointer-events: none;
+    }
+    .booklet-overlay .year {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .booklet-overlay .status {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    @media(max-width:900px){
+      .booklet-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
     @media(max-width:768px){
       .doc-tabs{ flex-direction:column; gap:2px; border-radius:10px; }
       .doc-tab{ font-size:13px; padding:12px; }
       .doc-card{ padding:14px 16px; }
       .doc-card-body h4{ font-size:14px; }
       .doc-portal-title h2{ font-size:28px; }
+      .booklet-grid { gap: 14px; }
     }
 
     /* =========================================
@@ -1088,9 +1135,9 @@
         <div class="zakat-circle-wrap">
           <div class="zakat-pulse-ring"></div>
           <div class="zakat-pulse-ring ring2"></div>
-          <button class="zakat-circle-btn">
-            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
-          </button>
+            <a href="Mission Annapurna/sevaknivash.html" class="zakat-circle-btn">
+      <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Sevak Nivas">
+    </a>
           <span class="zakat-label">Sevakनिवास</span>
         </div>
 
@@ -1133,10 +1180,10 @@
           </div>
         </div>
         </div>
-      <div class="nav-item dropdown">
+      <!-- <div class="nav-item dropdown">
           <a href="#"> CSR</a>
         
-        </div>
+        </div> -->
         
         <div class="nav-item dropdown">
           <a href="#">Contact Us</a>
@@ -1146,11 +1193,10 @@
           <a href="#">GET INVOLVED<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="#">Individual Donation</a>
-            <a href="#">Volunteers(SEVAK BANO)</a>
-            <a href="#">Corporate Collaboration</a>
+            <a href="careers.html">Volunteers(SEVAK BANO)</a>
+            <a href="#">CSR</a>
             <a href="#">School/Institute Collaboration</a>
             <a href="#">NGO Collaboration</a>
-            <a href="careers.html">Careers</a>
           </div>
         </div>
       </nav>
@@ -1208,9 +1254,9 @@
           <a href="newspaper/newspaper.html">In News Paper</a>
         </div>
       </div>
-      <div class="mnav-item">
+      <!-- <div class="mnav-item">
         <a href="#" class="mnav-link">CSR</a>
-      </div>
+      </div> -->
       <div class="mnav-item">
         <a href="contactus/contact.html" class="mnav-link">CONTACT US</a>
       </div>
@@ -1218,11 +1264,10 @@
         <a href="#" class="mnav-link">GET INVOLVED <i class="fas fa-chevron-down"></i></a>
         <div class="mnav-sub">
           <a href="donation.html">Individual Donation</a>
-          <a href="#">Volunteers (SEVAK BANO)</a>
-          <a href="#">Corporate Collaboration</a>
+          <a href="careers.html">Volunteers (SEVAK BANO)</a>
+          <a href="#">CSR</a>
           <a href="#">School/Institute Collaboration</a>
           <a href="#">NGO Collaboration</a>
-          <a href="careers.html">Careers</a>
         </div>
       </div>
       <a href="donation2/donation2.html" class="mobile-donate-btn">DONATE</a>
@@ -1241,7 +1286,7 @@
 
   <!-- HERO SECTION (Annapurna style) -->
   <section class="hero" id="home">
-  
+    
     <div class="hero-content">
       <span class="tag">BEING SEVAK CHARITABLE TRUST</span>
       <h1>Trust <span>Documents</span></h1>
@@ -1261,7 +1306,7 @@
         <p>Tax Exemption</p>
       </div>
       
-      <img src="images/Trust1.png" alt="Trust Documents">
+      <img src="images/trustdocumentspng.png" alt="Trust Documents">
     </div>
 
     <div class="blur blur1"></div>
@@ -1273,15 +1318,63 @@
   <section class="doc-portal" id="documents">
     <div class="doc-portal-inner">
 
+      <!-- ACTIVITY REPORT (standalone, always visible) -->
+      <div class="doc-portal-title">
+        <h2>Activity Report Year Wise</h2>
+      </div>
+      <div class="doc-cards" id="booklet">
+        <div class="booklet-grid">
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/BSCT Activity Report 2016.pdf">
+            <img src="BSCT Trust Document/booklet/2016.png" alt="2016" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2016</div></div>
+          </div>
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/Activity-Report-2017 UPDATED.pdf">
+            <img src="BSCT Trust Document/booklet/2017.png" alt="2017" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2017</div></div>
+          </div>
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/Activity-Report-2018 UPDATED.pdf">
+            <img src="BSCT Trust Document/booklet/2018.png" alt="2018" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2018</div></div>
+          </div>
+          <div class="booklet-item">
+            <img src="BSCT Trust Document/booklet/2019.png" alt="2019" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2019</div><div class="status">PDF coming soon</div></div>
+          </div>
+          <div class="booklet-item">
+            <img src="BSCT Trust Document/booklet/2020.png" alt="2020" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2020</div><div class="status">PDF coming soon</div></div>
+          </div>
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/Activity Report 2021.pdf">
+            <img src="BSCT Trust Document/booklet/2021.png" alt="2021" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2021</div></div>
+          </div>
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/Activity Report 2022.pdf">
+            <img src="BSCT Trust Document/booklet/2022.png" alt="2022" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2022</div></div>
+          </div>
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/Activity Report 2023.pdf">
+            <img src="BSCT Trust Document/booklet/2023.png" alt="2023" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2023</div></div>
+          </div>
+          <div class="booklet-item" data-pdf="BSCT Trust Document/activity report/Activity Report Jan 2024 To Dec 2024).pdf">
+            <img src="BSCT Trust Document/booklet/2024.png" alt="2024" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2024</div></div>
+          </div>
+          <div class="booklet-item">
+            <img src="BSCT Trust Document/booklet/2025.png" alt="2025" loading="lazy">
+            <div class="booklet-overlay"><div class="year">2025</div><div class="status">PDF coming soon</div></div>
+          </div>
+        </div>
+      </div>
+
       <div class="doc-portal-title">
         <h2>Trust Documents & Reports</h2>
         <p>Transparency, Accountability & Impact — Building Trust Through Every Action.</p>
       </div>
 
-      <!-- TABS -->
+      <!-- TABS (Trust Documents + Audit Reports) -->
       <div class="doc-tabs">
         <button class="doc-tab active" data-tab="legal-docs"><i class="fas fa-file-shield"></i> Trust Documents</button>
-        <button class="doc-tab" data-tab="activity-reports"><i class="fas fa-chart-line"></i> Activity Reports</button>
         <button class="doc-tab" data-tab="audit-reports"><i class="fas fa-clipboard-check"></i> BSCT Audit Reports</button>
       </div>
 
@@ -1294,17 +1387,6 @@
         <div class="doc-card" data-pdf="BSCT Trust Document/documents/12A Certificate (New).pdf"><div class="doc-card-icon"><i class="fas fa-file-invoice"></i></div><div class="doc-card-body"><h4>12A Certificate (New)</h4><p>Trust Registration Exemption</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
         <div class="doc-card" data-pdf="BSCT Trust Document/documents/CSR Funds Certificate.PDF"><div class="doc-card-icon"><i class="fas fa-hand-holding-heart"></i></div><div class="doc-card-body"><h4>CSR Funds Certificate</h4><p>Corporate Social Responsibility Compliance</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
         <div class="doc-card" data-pdf="BSCT Trust Document/documents/NITI Aayog Registration.pdf"><div class="doc-card-icon"><i class="fas fa-building"></i></div><div class="doc-card-body"><h4>NITI Aayog Registration</h4><p>Government Registry</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-      </div>
-
-      <!-- ACTIVITY REPORTS -->
-      <div class="doc-cards" id="activity-reports">
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/BSCT Activity Report 2016.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2016</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity-Report-2017 UPDATED.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2017</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity-Report-2018 UPDATED.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2018</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report 2021.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2021</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report 2022.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2022</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report 2023.pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2023</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
-        <div class="doc-card" data-pdf="BSCT Trust Document/activity report/Activity Report Jan 2024 To Dec 2024).pdf"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2024</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
       </div>
 
       <!-- BSCT AUDIT REPORTS -->
@@ -1672,6 +1754,26 @@
           if (idx !== -1) openPdfModal(idx, docs);
         });
       }
+    });
+
+    // Click on booklet item to open modal
+    document.querySelectorAll('.booklet-item').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        const pdf = item.getAttribute('data-pdf');
+        if (!pdf) return;
+        const name = (item.querySelector('.year') || {}).textContent || 'Report';
+        const parent = item.closest('.doc-cards');
+        if (!parent) return;
+        const allItems = parent.querySelectorAll('.booklet-item');
+        const docs = Array.from(allItems).map(function(d) {
+          return {
+            pdf: d.getAttribute('data-pdf'),
+            name: (d.querySelector('.year') || {}).textContent || 'Report'
+          };
+        }).filter(function(d) { return d.pdf; });
+        const idx = docs.findIndex(function(d) { return d.pdf === pdf; });
+        if (idx !== -1) openPdfModal(idx, docs);
+      });
     });
 
     // Download
