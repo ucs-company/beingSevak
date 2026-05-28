@@ -26,10 +26,28 @@ document.addEventListener('DOMContentLoaded', function () {
   // Close on outside click
   document.addEventListener('click', (e) => {
     if (mobileMenu && mobileMenu.classList.contains('open') &&
-        !mobileMenu.contains(e.target) && e.target !== hamburger) {
+        !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
       mobileMenu.classList.remove('open');
       document.body.style.overflow = '';
     }
+  });
+
+  // ============================================
+  // MOBILE MENU ACCORDION
+  // ============================================
+  document.querySelectorAll('.mnav-item.has-sub > .mnav-link').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var parent = this.parentElement;
+      var isOpen = parent.classList.contains('open');
+      // Close all other open items
+      document.querySelectorAll('.mnav-item.has-sub.open').forEach(function (item) {
+        item.classList.remove('open');
+      });
+      if (!isOpen) {
+        parent.classList.add('open');
+      }
+    });
   });
 
   // ============================================

@@ -500,13 +500,30 @@ input, select { font-family: inherit; outline: none; border: none; }
 }                    
 
 
+/* Mobile Donate Button (visible only on mobile) */
+.mob-donate-btn {
+  display: none;
+  background: var(--pink);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+.mob-donate-btn:hover { background: var(--pink-dark); }
+
 /* Hamburger */
 .hamburger {
   display: none;
   background: transparent;
   color: white;
   font-size: 22px;
-  margin-left: auto;
+  margin-left: 6px;
 }
 
 /* ============================================
@@ -533,16 +550,65 @@ input, select { font-family: inherit; outline: none; border: none; }
   color: white;
   font-size: 22px;
 }
-.mobile-menu nav a {
-  display: block;
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mnav-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mnav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: rgba(255,255,255,0.9);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 15px;
+  padding: 16px 0;
+  transition: color 0.2s;
+  cursor: pointer;
 }
-.mobile-menu nav a:hover { color: var(--pink); }
+
+.mnav-link i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.mnav-item.open > .mnav-link i {
+  transform: rotate(180deg);
+}
+
+.mnav-link:hover { color: var(--pink); }
+
+.mnav-sub {
+  display: none;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.mnav-item.open > .mnav-sub {
+  display: flex;
+}
+
+.mnav-sub a {
+  display: block;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0 10px 16px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.mnav-sub a:hover {
+  color: var(--pink);
+  border-left-color: var(--pink);
+  padding-left: 20px;
+}
 .mobile-donate-btn {
   display: inline-block !important;
   background: var(--pink) !important;
@@ -4498,6 +4564,8 @@ body{
   .hamburger { display: flex; }
   .phone-num { display: none; }
   .yt-avatar { display: none; }
+  .nav-right .donate-btn { display: none; }
+  .mob-donate-btn { display: inline-block; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-col:first-child { grid-column: 1 / -1; }

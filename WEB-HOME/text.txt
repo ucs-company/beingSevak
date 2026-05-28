@@ -1,12 +1,1 @@
-Create a section titled “Trust Documents”
-Divide content into 3 categories:
-Activity Reports
-BSCT Audit Reports
-Legal Documents
-Each PDF should be shown as a download row/card with:
-File name text
-A download arrow icon (⬇ or SVG icon)
-Click should directly download the PDF using download attribute
-Use correct file paths like:
-
-when  we click arrow its shows view and then ad arrow icon download  just like we do in latest updtates section index.html page 
+Include the same navbar structure, styling, links, logo, and responsive behavior from the index.html page in all other pages.
