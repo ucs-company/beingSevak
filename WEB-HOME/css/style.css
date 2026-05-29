@@ -4564,8 +4564,13 @@ body{
   .hamburger { display: flex; }
   .phone-num { display: none; }
   .yt-avatar { display: none; }
+  .nav-quick { display: none; }
   .nav-right .donate-btn { display: none; }
   .mob-donate-btn { display: inline-block; }
+  .navbar { padding: 12px 20px; }
+  .navbar-inner { padding: 0 10px; gap: 10px; }
+  .logo-circle { width: 55px; height: 55px; margin-right: 0; }
+  .BS-text-logo { height: 50px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-col:first-child { grid-column: 1 / -1; }
@@ -4607,7 +4612,12 @@ body{
 
 @media (max-width: 600px) {
   .top-bar { display: none; }
-  .navbar-inner { height: 60px; }
+  .navbar { padding: 8px 10px; }
+  .navbar-inner { height: 52px; padding: 0 4px; gap: 6px; }
+  .logo-circle { width: 38px; height: 38px; margin-right: 0; }
+  .BS-text-logo { height: 32px; }
+  .mob-donate-btn { padding: 5px 8px; font-size: 10px; }
+  .hamburger { font-size: 16px; margin-left: 2px; }
   .logo-text { font-size: 11px; }
   .nav-quick { display: none; }
   .hero-slider { height: 380px; }
