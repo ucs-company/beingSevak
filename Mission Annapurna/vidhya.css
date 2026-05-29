@@ -640,12 +640,30 @@ RESPONSIVE
 
 @media(max-width:600px){
 
+  .hero-section{
+    padding:50px 5% 30px;
+  }
+
   .hero-left h1{
-    font-size:38px;
+    font-size:32px;
+  }
+
+  .hero-left p{
+    font-size:15px;
+  }
+
+  .tag{
+    font-size:22px;
   }
 
   .hero-buttons{
     flex-direction:column;
+    align-items:center;
+  }
+
+  .primary-btn{
+    padding:12px 22px;
+    font-size:15px;
   }
 
   .impact-grid{
@@ -654,25 +672,76 @@ RESPONSIVE
 
   .hero-right{
     min-height:auto;
-    padding-bottom:40px;
+    padding:0;
+    width:100%;
+    max-width:360px;
+    margin:0 auto;
   }
 
   .main-image-card{
     max-width:100%;
+    transform:none;
+    animation:none;
+    border-radius:20px;
+  }
+
+  .main-image-card img{
+    border-radius:20px;
   }
 
   .floating-card{
-    position:relative;
+    padding:8px 12px;
+    min-width:auto;
+    border-radius:10px;
+  }
 
-    top:auto;
-    left:auto;
-    right:auto;
-    bottom:auto;
+  .floating-card h3{
+    font-size:18px;
+  }
 
-    margin-top:15px;
+  .floating-card p{
+    font-size:11px;
+  }
 
-    width:100%;
-    max-width:220px;
+  .card1{
+    top:0;
+    left:0;
+    border-radius:0 0 12px 0;
+  }
+
+  .card2{
+    bottom:0;
+    right:0;
+    border-radius:12px 0 0 0;
+  }
+
+  .about-image::before{
+    display:none;
+  }
+
+  .sevak-donation{
+    padding:40px 5%;
+  }
+
+  .sevak-donation-content{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+    min-height:auto;
+  }
+
+  .sevak-title{
+    font-size:24px;
+  }
+
+  .sevak-desc{
+    font-size:14px;
+  }
+
+  .sevak-btn{
+    padding:12px 28px;
+    font-size:14px;
+    white-space:normal;
   }
 }
 

@@ -236,6 +236,33 @@ img{width:100%;display:block;}
     flex-direction:column;
     text-align:center;
   }
+
+  .hero-right img{
+    max-width:400px;
+    height:400px;
+  }
+
+  .tag{
+    font-size:24px;
+  }
+
+  .hero-left h1{
+    font-size:46px;
+  }
+
+  .btns{
+    justify-content:center;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .impact-wrapper{
+    flex-direction:column;
+    align-items:center;
+  }
+
 }
 /* =========================
    GALLERY
@@ -413,88 +440,138 @@ RESPONSIVE
 
 @media(max-width:991px){
 
-  .hero-section,
-  .about-section{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-left,
-  .about-content{
-    max-width:100%;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .hero-left h1{
-    font-size:46px;
-  }
-
-  .about-content h2,
-  .section-heading h2,
-  .donation-content h2{
-    font-size:34px;
-  }
-
-  .impact-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
   .gallery-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    padding:0 5%;
   }
 
-  .gallery-item.big{
-    height:240px;
+  .gallery-item.large,
+  .gallery-item.wide{
+    grid-column:span 2;
   }
 
-  .feature-boxes{
-    flex-direction:column;
-  }
-
-  .floating-card{
-    min-width:130px;
+  .gallery-title h2{
+    font-size:34px;
   }
 }
 
 
 @media(max-width:600px){
 
-  .hero-left h1{
-    font-size:38px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .impact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-right{
+  .hero{
+    padding:40px 5% 30px;
     min-height:auto;
-    padding-bottom:40px;
   }
 
-  .main-image-card{
+  .hero-content{
+    gap:30px;
+  }
+
+  .hero-left h1{
+    font-size:26px;
+    line-height:1.3;
+  }
+
+  .hero-left p{
+    font-size:15px;
+  }
+
+  .tag{
+    font-size:16px;
+  }
+
+  .btns{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn{
+    padding:12px 24px;
+    font-size:15px;
+  }
+
+  .hero-right img{
     max-width:100%;
+    height:280px;
+    border-radius:20px;
+    transform:none;
+    animation:none;
   }
 
-  .floating-card{
-    position:relative;
+  .about{
+    padding:50px 5%;
+    gap:30px;
+  }
 
-    top:auto;
-    left:auto;
-    right:auto;
-    bottom:auto;
+  .about-image img{
+    height:300px;
+    border-radius:22px;
+  }
 
-    margin-top:15px;
+  .about-content h2{
+    font-size:28px;
+  }
 
-    width:100%;
-    max-width:220px;
+  .box{
+    padding:16px;
+    border-radius:16px;
+  }
+
+  .impact{
+    padding:50px 5%;
+  }
+
+  .impact-wrapper{
+    gap:15px;
+  }
+
+  .card{
+    padding:15px;
+    text-align:center;
+  }
+
+  .gallery-section{
+    padding:50px 5%;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+    grid-auto-rows:auto;
+    gap:12px;
+  }
+
+  .gallery-item,
+  .gallery-item.large,
+  .gallery-item.wide{
+    grid-column:span 1;
+    grid-row:span 1;
+    height:280px;
+  }
+
+  .gallery-title h2{
+    font-size:28px;
+  }
+
+  .sevak-donation-content{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+    min-height:auto;
+  }
+
+  .sevak-title{
+    font-size:28px;
+  }
+
+  .sevak-desc{
+    font-size:14px;
+  }
+
+  .sevak-btn{
+    padding:12px 28px;
+    font-size:14px;
+    white-space:normal;
   }
 }
 
@@ -646,14 +723,14 @@ RESPONSIVE
 
 .tax-box{
   width:100%;
-  height:70px;
+  height:80px;
 
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
 
-  background:linear-gradient(135deg,#00a3da,#315270);
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   color:#fff;
 
   border-radius:0px;
