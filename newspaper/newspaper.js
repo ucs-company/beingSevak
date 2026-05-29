@@ -1,16 +1,16 @@
 const newspaperData = [
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/12_page-0001-scaled-e1700141052450.jpg", label: "Mumbai Edition", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/3_page-0001-scaled-e1700141896848.jpg", label: "National Daily", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/5_page-0001-scaled-e1700141968690.jpg", label: "City Times", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/6_page-0001-scaled-e1700142006214.jpg", label: "The Chronicle", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/4_page-0001-scaled-e1700141927308.jpg", label: "Morning Herald", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/7_page-0001-scaled-e1700142048420.jpg", label: "Press Gazette", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/8_page-0001-scaled-e1700142506546.jpg", label: "Community Voice", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/10_page-0001-scaled-e1700142599857.jpg", label: "Daily Post", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/9_page-0001-scaled-e1700142545189.jpg", label: "Metro News", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/11_page-0001-scaled-e1700142624972.jpg", label: "Regional Times", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/2_page-0001-scaled-e1700141159806.jpg", label: "The Guardian Post", year: 2023 },
-  { url: "https://beingsevak.org/wp-content/uploads/2023/11/1_page-0001-scaled-e1700141126727.jpg", label: "Front Page", year: 2023 }
+  { url: "../images/newspaperpress/1.jpg", label: "Mumbai Edition", year: 2023 },
+  { url: "../images/newspaperpress/2.jpg", label: "National Daily", year: 2023 },
+  { url: "../images/newspaperpress/3.jpg", label: "City Times", year: 2023 },
+  { url: "../images/newspaperpress/4.jpg", label: "The Chronicle", year: 2023 },
+  { url: "../images/newspaperpress/5.jpg", label: "Morning Herald", year: 2023 },
+  { url: "../images/newspaperpress/6.jpg", label: "Press Gazette", year: 2023 },
+  { url: "../images/newspaperpress/7.jpg", label: "Community Voice", year: 2023 },
+  { url: "../images/newspaperpress/8.jpg", label: "Daily Post", year: 2023 },
+  { url: "../images/newspaperpress/9.jpg", label: "Metro News", year: 2023 },
+  { url: "../images/newspaperpress/10.jpg", label: "Regional Times", year: 2023 },
+  { url: "../images/newspaperpress/11.jpg", label: "The Guardian Post", year: 2023 },
+  { url: "../images/newspaperpress/12.jpg", label: "Front Page", year: 2023 }
 ];
 
 const tickerHeadlines = [
