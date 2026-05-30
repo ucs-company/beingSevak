@@ -252,21 +252,51 @@
     }
 
     @media(max-width:550px) {
-      .hero h1 {
-        font-size: 32px;
+      .hero {
+        padding: 30px 5%;
+        gap: 20px;
       }
-
+      .hero h1 {
+        font-size: 28px;
+      }
       .hero p {
+        font-size: 13px;
+      }
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 16px;
+      }
+      .floating-card {
+        padding: 6px 10px;
+        border-radius: 12px;
+      }
+      .floating-card h3 {
         font-size: 14px;
       }
-
-      .floating-card {
-        padding: 12px 16px;
+      .floating-card p {
+        font-size: 10px;
       }
-
-      .floating-card h3 {
-        font-size: 22px;
+      .floating-card.card1 {
+        top: 0;
+        left: 0;
+        border-radius: 0 0 12px 0;
       }
+      .floating-card.card2 {
+        bottom: 0;
+        right: 0;
+        border-radius: 12px 0 0 0;
+      }
+      .values-section { padding: 40px 14px; }
+      .values-grid { gap: 14px; margin-top: 30px; }
+      .value-card { padding: 20px 16px; border-radius: 18px; }
+      .value-card .val-icon { font-size: 1.6rem; margin-bottom: 10px; }
+      .value-card h3 { font-size: 1rem; }
+      .value-card p { font-size: 0.8rem; }
+      .stats-section { padding: 36px 14px; }
+      .stats-grid { gap: 16px; }
+      .stat-icon { width: 56px; height: 56px; font-size: 1.3rem; }
+      .stat-num { font-size: 1.1rem; }
+      .stat-label { font-size: 0.7rem; }
     }
 
     /* ─── .section-label (shared) ─── */
@@ -1582,20 +1612,7 @@
         </div>
         <p class="footer-desc"> Serving humanity with compassion, dignity, and hope — empowering lives through food,
           education, healthcare, and community support</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+      
       </div>
       <div class="footer-col">
         <h4>About Us</h4>
@@ -1631,7 +1648,23 @@
           <li><a href="school/school.html">School/Institute Collaboration</a></li>
           <li><a href="ngo-collaboration/ngo-ollaboratio.html">NGO Collaboration</a></li>
         </ul>
+
+          <div class="social-icons">
+          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
+      
       <div class="footer-col">
         <h4>Contact</h4>
         <p><i class="fas fa-phone"></i>+91 8879035035</p>
@@ -1655,20 +1688,7 @@
     </div>
   </footer>
 
-  <div class="disclaimer-block">
-    <p><strong>Disclaimer:</strong> Being Sevak Charitable Trust shares the progressive vision of the Government
-      (states) and works in collaboration and conjunction with the Government bodies and local donors & NGO toward
-      different activities like eye health, education, Nourishment, Medical, Sanitation and social inclusion for the
-      blind and needy. All funds raised by Being Sevak Charitable Trust may be pooled together and allocated towards
-      different activities and projects like eye care, education, nourishment, medical, sanitation and social inclusion
-      initiatives across India.</p>
-    <br>
-    <p><strong>Fraud Alert:</strong> Being Sevak Charitable Trust does not authorise collection of donation through
-      personal account of any fundraiser. If you have any doubts about the authenticity of an e-mail, letter, phone call
-      or other correspondence purportedly from, for or on behalf of Being Sevak Charitable Trust kindly report
-      immediately on 8879034034 / 8879035035 or <a href="mailto:being.sevak@gmail.com">being.sevak@gmail.com</a> (Mon -
-      Sat 10:00am to 6:00pm)</p>
-  </div>
+ 
 
   <script src="js/nav.js"></script>
   <script>
