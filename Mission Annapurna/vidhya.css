@@ -396,7 +396,7 @@ IMPACT SECTION
 .impact-section{
   width:100%;
 
-  padding:80px 5%;
+  /* padding:80px 5%; */
 
   background:
   radial-gradient(circle at top left,#dff6ff 0%,transparent 35%),
@@ -481,7 +481,7 @@ GALLERY
 
 .gallery-section{
   width:100%;
-  padding:80px 5%;
+  padding:0px 5%;
   background:#fff;
 }
 

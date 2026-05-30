@@ -278,7 +278,7 @@ section {
 }
 
 .card-icon {
-  width: 80px;
+  width: 160px;
   height: 80px;
   border-radius: 50%;
   background: linear-gradient(135deg, #00a3da, #315270);
@@ -427,6 +427,8 @@ section {
 }
 
 @media (max-width: 768px) {
+  .card-icon { display: none; }
+
   .project-card {
     padding: 20px 18px;
     border-radius: 18px;
@@ -485,14 +487,6 @@ section {
   .project-card h3 { font-size: 16px; }
   .project-card p { font-size: 13px; line-height: 1.5; }
 
-  .card-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 24px;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 12px rgba(0, 163, 218, 0.3);
-  }
-
   .donation-frame { min-height: 480px; border-radius: 16px; }
 
   .tax-box { height: auto; padding: 14px 10px; }
@@ -521,14 +515,6 @@ section {
   .project-card { padding: 14px 12px; border-radius: 14px; }
   .project-card h3 { font-size: 15px; }
   .project-card p { font-size: 12px; }
-
-  .card-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 12px rgba(0, 163, 218, 0.3);
-  }
 
   .donation-frame { min-height: 420px; border-radius: 14px; }
 
