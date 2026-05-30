@@ -847,7 +847,7 @@ input, select { font-family: inherit; outline: none; border: none; }
   max-width: 1300px;
   margin: 18px auto 24px;
   height: 620px;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 16px;
   background: #111;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
@@ -857,6 +857,7 @@ input, select { font-family: inherit; outline: none; border: none; }
   position: absolute;
   inset: 0;
   opacity: 0;
+  overflow: hidden;
   transition: opacity 0.8s ease;
 }
 .slide.active { opacity: 1; z-index: 2; }
@@ -1022,14 +1023,13 @@ input, select { font-family: inherit; outline: none; border: none; }
 
 /* Slider Controls */
 .slider-controls {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 10;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
+  padding: 14px 0 6px;
 }
 .slider-arrow {
   width: 38px;
@@ -4724,7 +4724,10 @@ body{
 @media (max-width: 860px) {
   .slide-title { font-size: 40px; }
   .slide-subtitle { font-size: 18px; }
-  .hero-slider { height: 460px; }
+  .hero-slider {
+    height: 400px;
+    width: calc(100% - 32px);
+  }
   .slide-content { padding: 0 40px; }
   .years-badge { display: none; }
   .causes-grid { grid-template-columns: repeat(2, 1fr); }
@@ -4766,10 +4769,25 @@ body{
   .logo-text { font-size: 11px; }
   .nav-quick { display: flex; }
   .zakat-circle-btn { width: 28px; height: 28px; }
-  .hero-slider { height: 380px; }
-  .slide-title { font-size: 30px; }
-  .slide-subtitle { font-size: 15px; }
-  .slide-content { padding: 0 24px; }
+  .hero-slider {
+    height: 200px;
+    width: calc(100% - 20px);
+    border-radius: 12px;
+    margin: 12px auto 4px;
+  }
+  .slide-bg {
+    background-size: cover;
+    background-position: center;
+  }
+  .slide-title { font-size: 26px; }
+  .slide-subtitle { font-size: 14px; }
+  .slide-content { padding: 0 20px; }
+  .slider-controls {
+    gap: 10px;
+    padding: 10px 0 4px;
+  }
+  .slider-arrow { width: 28px; height: 28px; font-size: 11px; }
+  .dot { width: 8px; height: 8px; }
   .quick-donate-bar { padding: 8px 0; }
   .qd-inner { gap: 6px; }
   .preset-amt { display: none; }
