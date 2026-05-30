@@ -278,8 +278,8 @@ section {
 }
 
 .card-icon {
-  width: 140px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: linear-gradient(135deg, #00a3da, #315270);
   display: flex;
@@ -426,28 +426,111 @@ section {
   }
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 28px;
+@media (max-width: 768px) {
+  .project-card {
+    padding: 20px 18px;
+    border-radius: 18px;
   }
 
-  .hero p {
-    font-size: 15px;
+  .project-card h3 { font-size: 18px; }
+  .project-card p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
-  .hero-image img {
-    height: 200px;
+  .card-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 26px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0, 163, 218, 0.3);
   }
-
-  .card1 { top: 0; left: 0; }
-  .card2 { bottom: 20px; right: 0; }
 
   .tab-link {
     font-size: 11px;
-    padding: 8px 12px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tag { font-size: 22px; }
+
+  .hero { padding: 120px 5% 30px; }
+  .hero h1 { font-size: 30px; }
+  .hero p { font-size: 15px; }
+  .hero-image img {
+    height: 200px;
+    transform: perspective(1000px) rotateY(-5deg);
+    padding: 12px;
   }
 
-  .project-card h3 {
-    font-size: 18px;
+  .floating-card { padding: 10px 14px; }
+  .floating-card h3 { font-size: 20px; }
+  .floating-card p { font-size: 11px; }
+
+  .section-header { margin-bottom: 24px; }
+  .section-header span { font-size: 18px; }
+  .section-header h2 { font-size: 24px; }
+  .section-header p { font-size: 14px; }
+
+  .projects-section { padding: 30px 5% 40px; }
+
+  .tabs-wrapper { gap: 4px; }
+  .tab-link {
+    font-size: 10px;
+    padding: 6px 10px;
   }
+
+  .project-card { padding: 16px 14px; border-radius: 16px; }
+  .project-card h3 { font-size: 16px; }
+  .project-card p { font-size: 13px; line-height: 1.5; }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 163, 218, 0.3);
+  }
+
+  .donation-frame { min-height: 480px; border-radius: 16px; }
+
+  .tax-box { height: auto; padding: 14px 10px; }
+  .tax-box p { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 100px 4% 24px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 14px; }
+
+  .hero-image img {
+    height: 160px;
+    border-radius: 24px;
+    padding: 10px;
+  }
+
+  .hero-image::before { display: none; }
+
+  .card1 { top: 0; left: 0; padding: 8px 12px; }
+  .card2 { bottom: 10px; right: 0; padding: 8px 12px; }
+
+  .floating-card h3 { font-size: 16px; }
+  .floating-card p { font-size: 10px; }
+
+  .project-card { padding: 14px 12px; border-radius: 14px; }
+  .project-card h3 { font-size: 15px; }
+  .project-card p { font-size: 12px; }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 163, 218, 0.3);
+  }
+
+  .donation-frame { min-height: 420px; border-radius: 14px; }
+
+  .tax-box p { font-size: 11px; }
 }

@@ -22,6 +22,7 @@
 </head>
 <body>
 
+  <!-- MAIN NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
 
@@ -41,39 +42,54 @@
 
       </a>
 
+      <!-- Language + Zakat Quick Links -->
       <div class="nav-quick">
 
         <div class="zakat-circle-wrap">
+
           <div class="zakat-pulse-ring"></div>
           <div class="zakat-pulse-ring ring2"></div>
-          <button class="zakat-circle-btn">
-            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
-          </button>
+
+          <a href="../Mission Annapurna/ann.html">
+            <button class="zakat-circle-btn">
+              <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Anndaan" />
+            </button>
+          </a>
+
           <span class="zakat-label">Annदान</span>
+
         </div>
+
       </div>
 
       <br>
-      
+
       <div class="nav-quick">
         <div class="zakat-circle-wrap">
+
           <div class="zakat-pulse-ring"></div>
           <div class="zakat-pulse-ring ring2"></div>
-          <button class="zakat-circle-btn">
-            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
-          </button>
+
+          <a href="../Mission Annapurna/sevaknivash.html" class="zakat-circle-btn">
+            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Sevak Nivas">
+          </a>
+
           <span class="zakat-label">Sevakनिवास</span>
+
         </div>
       </div>
 
+      <!-- Nav Links -->
       <nav class="nav-links">
         <div class="nav-item dropdown">
           <a href="#">ABOUT US <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="../about-bsct.html">About BSCT</a>
             <a href="../management.html">Management</a>
+            <!-- <a href="mission-vision.html">Mission/Vision</a> -->
             <a href="../trust-documents.html">Trust Documents</a>
             <a href="../where-we-work.html">Where We Work</a>
+
           </div>
         </div>
         <div class="nav-item dropdown">
@@ -85,12 +101,12 @@
             <a href="../Mission Annapurna/bezubaan.html">Mission Bezubaan</a>
             <a href="../Mission Annapurna/atmanirbhar.html">Mission Atmanirbhar</a>
             <a href="../Mission Annapurna/Wellness.html">Mission Arogya</a>
-            <a href="../Mission Annapurna/sevak.html">Sevak Niwas Kendra</a>
-            <a href="../Mission Annapurna/beach.html">Mission Beach Sevak</a>
-            <a href="../Mission Annapurna/Eco.html">Mission Eco-Warriors</a>
+            <a href="../Mission Annapurna/sevak.html">Sevak Seva Kendra</a>
+            <!-- <a href="Mission Annapurna/beach.html">Mission Beach Sevak</a> -->
+            <a href="../Mission Annapurna/eco.html">Mission Eco-Warriors</a>
           </div>
         </div>
-         <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
           <a href="#">NEWS & STORIES<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
             <a href="../awards.html">Awards/Achievements</a>
@@ -98,54 +114,106 @@
             <a href="../newspaper/newspaper.html">In News Paper</a>
           </div>
         </div>
-        <div class="nav-item dropdown">
+        <!-- <div class="nav-item dropdown">
           <a href="#"> CSR</a>
-        </div>
-        
+
+        </div> -->
+        <!--  -->
         <div class="nav-item">
           <a href="../contactus/contact.html">CONTACT US</a>
         </div>
         <div class="nav-item dropdown">
           <a href="#">GET INVOLVED<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="#">Individual Donation</a>
-            <a href="#">Volunteers(SEVAK BANO)</a>
-            <a href="#">Corporate Collaboration</a>
-            <a href="school/school.html">School/Institute Collaboration</a>
+            <a href="../individual-donation/individual.html">Individual Donation</a>
+            <a href="../careers.html">Volunteers(SEVAK BANO)</a>
+            <a href="#">CSR</a>
+            <a href="#">School/Institute Collaboration</a>
             <a href="#">NGO Collaboration</a>
-            <a href="../careers.html">Careers</a>
           </div>
         </div>
       </nav>
 
+      <!-- Right Side Icons -->
       <div class="nav-right">
+
+
         <div class="yt-avatar">
           <a href="https://www.youtube.com/@BeingSevak" target="_blank" rel="noopener noreferrer">
+
             <div class="yt-icon">
               <i class="fab fa-youtube"></i>
             </div>
+
           </a>
+
           <img class="avatar-img" src="../images/host.png" alt="host" onerror="this.style.display='none'" />
         </div>
+        <!-- <a href="donation.html" class="donate-btn">DONATE</a> -->
         <a href="../donation2/donation2.html" class="donate-btn">DONATE</a>
+
       </div>
 
+      <!-- Mobile Donate + Hamburger -->
+      <a href="../donation2/donation2.html" class="mob-donate-btn">DONATE</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </header>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
-    <nav>
-      <a href="#">Give Now</a>
-      <a href="#">Zakat</a>
-      <a href="#">Islamic Giving</a>
-      <a href="#">Qurban 2026</a>
-      <a href="#">Amanah</a>
-      <a href="#">About Us</a>
-      <a href="#" class="mobile-donate-btn">DONATE</a>
+    <nav class="mobile-nav">
+      <div class="mnav-item has-sub">
+        <a href="#" class="mnav-link">ABOUT US <i class="fas fa-chevron-down"></i></a>
+        <div class="mnav-sub">
+          <a href="../about-bsct.html">About BSCT</a>
+          <a href="../management.html">Management</a>
+          <a href="../trust-documents.html">Trust Documents</a>
+          <a href="../where-we-work.html">Where We Work</a>
+        </div>
+      </div>
+      <div class="mnav-item has-sub">
+        <a href="#" class="mnav-link">WHAT WE DO <i class="fas fa-chevron-down"></i></a>
+        <div class="mnav-sub">
+          <a href="../Mission Annapurna/Annapurna.html">Mission Annapurna</a>
+          <a href="../Mission Annapurna/Vidhya.html">Mission Vidhya</a>
+          <a href="../Mission Annapurna/aurat.html">Mission Aurat</a>
+          <a href="../Mission Annapurna/bezubaan.html">Mission Bezubaan</a>
+          <a href="../Mission Annapurna/atmanirbhar.html">Mission Atmanirbhar</a>
+          <a href="../Mission Annapurna/Wellness.html">Mission Arogya</a>
+          <a href="../Mission Annapurna/sevak.html">Sevak Seva Kendra</a>
+          <!-- <a href="Mission Annapurna/beach.html">Mission Beach Sevak</a> -->
+          <a href="../Mission Annapurna/eco.html">Mission Eco-Warriors</a>
+        </div>
+      </div>
+      <div class="mnav-item has-sub">
+        <a href="#" class="mnav-link">NEWS & STORIES <i class="fas fa-chevron-down"></i></a>
+        <div class="mnav-sub">
+          <a href="../awards.html">Awards/Achievements</a>
+          <a href="../press/press.html">Press Release</a>
+          <a href="../newspaper/newspaper.html">In News Paper</a>
+        </div>
+      </div>
+      <!-- <div class="mnav-item">
+        <a href="#" class="mnav-link">CSR</a>
+      </div> -->
+      <div class="mnav-item">
+        <a href="../contactus/contact.html" class="mnav-link">CONTACT US</a>
+      </div>
+      <div class="mnav-item has-sub">
+        <a href="#" class="mnav-link">GET INVOLVED <i class="fas fa-chevron-down"></i></a>
+        <div class="mnav-sub">
+          <a href="../individual-donation/individual.html">Individual Donation</a>
+          <a href="../careers.html">Volunteers(SEVAK BANO)</a>
+          <a href="#">CSR</a>
+          <a href="#">School/Institute Collaboration</a>
+          <a href="#">NGO Collaboration</a>
+        </div>
+      </div>
+      <a href="../donation2/donation2.html" class="mobile-donate-btn">DONATE</a>
     </nav>
   </div>
 
@@ -192,7 +260,6 @@
 
     <div class="tab-content active" id="tab-annapurna">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-utensils"></i></div>
         <h3>Mission Annapurna</h3>
         <p>Providing nutritious meals and dry ration kits to underprivileged children and visually impaired individuals across Mumbai.</p>
       </div>
@@ -201,7 +268,6 @@
 
     <div class="tab-content" id="tab-vidya">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
         <h3>Mission Vidya</h3>
         <p>Quality education support for underprivileged children, school dropouts, and visually impaired students through scholarships and supplies.</p>
       </div>
@@ -210,7 +276,6 @@
 
     <div class="tab-content" id="tab-aurat">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-fist-raised"></i></div>
         <h3>Mission Aurat</h3>
         <p>Empowering women through education, skill development, legal awareness, health support, and self-help groups.</p>
       </div>
@@ -219,7 +284,6 @@
 
     <div class="tab-content" id="tab-bezubaan">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-paw"></i></div>
         <h3>Mission Bezubaan</h3>
         <p>Animal welfare initiatives including rescue, medical care, feeding programs, and shelter for stray and abandoned animals.</p>
       </div>
@@ -228,7 +292,6 @@
 
     <div class="tab-content" id="tab-atmanirbhar">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
         <h3>Mission Atmanirbhar</h3>
         <p>Skill development and vocational training for visually impaired individuals, widows, and underprivileged youth to achieve self-reliance.</p>
       </div>
@@ -237,7 +300,6 @@
 
     <div class="tab-content" id="tab-arogya">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
         <h3>Mission Arogya</h3>
         <p>Healthcare initiatives including medical camps, eye check-ups, health awareness drives, and medicine distribution for the needy.</p>
       </div>
@@ -246,7 +308,6 @@
 
     <div class="tab-content" id="tab-eco">
       <div class="project-card">
-        <div class="card-icon"><i class="fas fa-leaf"></i></div>
         <h3>Mission Eco Warriors</h3>
         <p>Environmental conservation projects including tree plantation drives, beach clean-ups, recycling awareness, and sustainability education.</p>
       </div>
