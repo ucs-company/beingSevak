@@ -28,6 +28,13 @@
     });
   });
 
+  /* ===== URL PARAM AUTO-TAB ===== */
+  var params = new URLSearchParams(window.location.search);
+  var tabParam = params.get('tab');
+  if (tabParam) {
+    activateTab(tabParam);
+  }
+
   /* ===== NAVBAR SHADOW ON SCROLL ===== */
   window.addEventListener('scroll', function () {
     var navbar = document.querySelector('.navbar');
