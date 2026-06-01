@@ -875,7 +875,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 
 /* Slide Background Colors (gradient fallbacks) */
 .slide-bg-1 {
-  background-image: url("../images/hero1.jpeg");
+  background-image: url("../images/hero1.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -885,33 +885,33 @@ input, select { font-family: inherit; outline: none; border: none; }
   background-position: center;
 }
 .slide-bg-3 {
-  background-image: url("../images/hero3.jpeg");
+  background-image: url("../images/hero3.jpg");
   background-size: cover;
   background-position: center;
 }
 .slide-bg-4 {
-  background-image: url("../images/hero4.jpeg");
+  background-image: url("../images/hero4.jpg");
   background-size: cover;
   background-position: center;
 }
 .slide-bg-5 {
-  background-image: url("../images/h5.png");
+  background-image: url("../images/hero5.jpg");
   background-size: cover;
   background-position: center;
 }
 .slide-bg-6 {
-  background-image: url("../images/hero6.jpeg");
+  background-image: url("../images/hero6.jpg");
   background-size: cover;
   background-position: center;
 
 }
 .slide-bg-7 {
-  background-image: url("../images/hero7.jpeg");
+  background-image: url("../images/hero7.jpg");
   background-size: cover;
   background-position: center;
 }
 .slide-bg-8 {
-  background-image: url("../images/h8.png");
+  background-image: url("../images/hero8.jpg");
   background-size: cover;
   background-position: center;
 }
