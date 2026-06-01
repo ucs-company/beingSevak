@@ -4717,7 +4717,6 @@ body{
   .BS-text-logo { height: 50px; margin-right: 0; }
   .zakat-circle-btn { width: 34px; height: 34px; }
   .zakat-pulse-ring { display: none; }
-  .zakat-label { display: none; }
   .navbar-inner br { display: none; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
