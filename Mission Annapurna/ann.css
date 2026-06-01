@@ -113,6 +113,14 @@ body{
 
 @media(max-width:768px){
 
+  .anndaan-hero-banner{
+    height:350px;
+  }
+
+  .anndaan-hero-banner img{
+    height:350px;
+  }
+
   .anndaan-content h1{
     font-size:60px;
   }
@@ -324,6 +332,16 @@ body{
   margin-top:50px;
 }
 
+.snackdrive-container{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.snackdrive-content{
+  max-width:800px;
+  margin:0 auto;
+}
+
 .snackdrive-images{
   grid-template-columns:repeat(3,1fr);
 }
@@ -507,7 +525,7 @@ body{
   }
 
   .snackdrive-images{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
@@ -534,6 +552,34 @@ body{
   .rotiseva-gallery,
   .kitcare-gallery,
   .nutritioncare-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .mealwave-highlight-box{
+    flex-wrap:wrap;
+  }
+
+  .mealwave-highlight-box div{
+    width:100%;
+    min-height:auto;
+    padding:20px;
+  }
+
+  .mealwave-gallery img,
+  .rotiseva-gallery img,
+  .kitcare-gallery img,
+  .sweetmeal-grid img,
+  .snackdrive-images img,
+  .nutritioncare-gallery img{
+    height:auto;
+    max-height:220px;
+  }
+
+  .snackdrive-container{
+    padding:60px 5%;
+  }
+
+  .snackdrive-images{
     grid-template-columns:1fr;
   }
 
