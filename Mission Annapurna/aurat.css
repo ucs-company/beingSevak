@@ -316,7 +316,7 @@ img{
   padding:8px 18px;
   border-radius:50px;
 
-  font-size:13px;
+  font-size:x-large;
   font-weight:700;
   letter-spacing:1px;
   margin-bottom:18px;
@@ -541,7 +541,7 @@ img{
   padding:8px 18px;
   border-radius:50px;
 
-  font-size:13px;
+  font-size:x-large;
   font-weight:700;
   letter-spacing:1px;
 
@@ -710,7 +710,7 @@ img{
 
 .gallery-title span{
   color:#00a3da;
-  font-size:15px;
+  font-size:x-large;
   font-weight:700;
   letter-spacing:1px;
   text-transform:uppercase;

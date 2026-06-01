@@ -283,6 +283,7 @@ section{
 .about-content span,
 .section-title span,
 .impact-content span,
+.impact-content2 span,
 .gallery-title span,
 .donation-box span{
   color:#00a3da;
@@ -300,6 +301,7 @@ section{
 .about-content h2,
 .section-title h2,
 .impact-content h2,
+.impact-content2 h2,
 .gallery-title h2,
 .donation-box h2{
   font-size:52px;
@@ -312,6 +314,7 @@ section{
 
 .about-content p,
 .impact-content p,
+.impact-content2 p,
 .gallery-title p,
 .donation-box p{
   color:#6b7280;
@@ -714,6 +717,7 @@ RESPONSIVE
   .about-content h2,
   .section-title h2,
   .impact-content h2,
+  .impact-content2 h2,
   .gallery-title h2,
   .donation-box h2{
     font-size:36px;
@@ -837,6 +841,7 @@ RESPONSIVE
   .about-content h2,
   .section-title h2,
   .impact-content h2,
+  .impact-content2 h2,
   .gallery-title h2,
   .donation-box h2{
     font-size:28px;
