@@ -272,7 +272,7 @@ ABOUT SECTION
 
   gap:45px;
 
-  padding:60px 5%;
+  padding:45px 5%;
 
   background:#fff;
 }
@@ -410,7 +410,8 @@ IMPACT SECTION
 
 .section-heading span{
   color:#00a3da;
-  font-weight:700;
+  font-weight:800;
+  font-size:20px;
 }
 
 .section-heading h2{
@@ -860,7 +861,7 @@ RESPONSIVE
   align-items:center;
   text-align:center;
 
-  background:linear-gradient(135deg,#00a3da,#315270);
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   color:#fff;
 
   border-radius:0px;
@@ -965,8 +966,8 @@ RESPONSIVE
     background:#00a3da;
     color:#fff;
     border-radius:60px;
-    font-size:14px;
-    font-weight:600;
+    font-size:20px;
+    font-weight:700;
     margin-bottom:20px;
     box-shadow:0 10px 25px rgba(0,163,218,0.25);
 }

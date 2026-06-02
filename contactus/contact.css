@@ -106,7 +106,14 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
   border-color: var(--cyan);
+  background: #00a3da;
 }
+.info-card:hover h4,
+.info-card:hover p,
+.info-card:hover a,
+.info-card:hover strong,
+.info-card:hover .visit-item p { color: #fff; }
+.info-card:hover .icon-box { transform: scale(1.1) rotate(-5deg); }
 .info-card .icon-box {
   width: 50px; height: 50px;
   border-radius: 12px;
