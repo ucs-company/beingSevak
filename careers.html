@@ -77,7 +77,18 @@
       padding: 35px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
       margin-bottom: 24px;
+      transition: 0.4s ease;
     }
+    .info-card:hover {
+      background: #00a3da;
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,163,218,0.2);
+    }
+    .info-card:hover h3,
+    .info-card:hover p,
+    .info-card:hover ul li,
+    .info-card:hover ul li i { color: #fff; }
+    .info-card:hover h3 i { background: rgba(255,255,255,0.2); }
     .info-card h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 20px;
@@ -214,14 +225,18 @@
       text-align: center;
       transition: 0.3s;
     }
-    .benefit-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    .benefit-item {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: 0.3s;
     }
     .benefit-item i {
       font-size: 24px;
       color: var(--cyan);
       margin-bottom: 8px;
+      display: block;
     }
     .benefit-item h4 {
       font-family: 'Montserrat', sans-serif;
@@ -235,6 +250,14 @@
       color: var(--text-mid);
       margin: 0;
     }
+    .benefit-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      background: linear-gradient(135deg, #00a3da, #315270);
+    }
+    .benefit-item:hover h4,
+    .benefit-item:hover p,
+    .benefit-item:hover i { color: #fff; }
 
     @media(max-width: 860px) {
       .careers-grid { grid-template-columns: 1fr; }
