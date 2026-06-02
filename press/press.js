@@ -59,7 +59,7 @@ const pressData = [
     date: "September 2023",
     year: 2023,
     description: "Being Sevak: Mission Annapurna With Mandar Chandwadkar From Tarak Mehta Ka Ulta Chashma",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/Fsia.jpg",
     source: "FSIA",
     link: "https://www.fsia.in/best-ngo-in-mumbai-2023-award-being-sevak-charitable-trust"
   },
@@ -68,7 +68,7 @@ const pressData = [
     date: "17 August 2021",
     year: 2021,
     description: "Shankar Mahadevan's charitable trust Being Sevak helps out singers, artists during Covid-19 pandemic",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/indiaToday.png",
     source: "India Today",
     link: "https://www.indiatoday.in/television/video/shankar-mahadevan-s-charitable-trust-being-sevak-helps-out-singers-artists-during-covid-19-pandemic-1841881-2021-08-17"
   },
@@ -77,7 +77,7 @@ const pressData = [
     date: "08 September 2023",
     year: 2023,
     description: "Being Sevak Charitable Trust Initiates 'Save the Flag' Drive on 16th August 2023, Promoting Respect for the National Flag",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/hindustanmentro.png",
     source: "Hindustan Metro",
     link: "https://www.hindustanmetro.com/being-sevak-charitable-trust-initiates-save-the-flag-drive-on-16th-august-2023-promoting-respect-for-the-national-flag-post-independence-day-celebrations/"
   },
@@ -88,7 +88,7 @@ const pressData = [
     date: "20 January 2023",
     year: 2023,
     description: "Being Sevak: Mission Annapurna With Mandar Chandwadkar From Tarak Mehta Ka Ulta Chashma",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/APNnews.jpg",
     source: "APN News",
     link: "https://www.apnnews.com/being-sevak-mission-annapurna-with-mandar-chandwadkar-from-tarak-mehta-ka-ulta-chashma/"
   },
@@ -97,7 +97,7 @@ const pressData = [
     date: "10 October 2023",
     year: 2023,
     description: "Sevak Charitable Trust Empowering Visually Impaired Individuals Across India For Lasting Social Impact",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/bravoword.jpg",
     source: "Bravo World Records",
     link: "https://bravoworldrecords.com/sevak-charitable-trust-empowering-visually-impaired-individuals-across-india-for-lasting-social-impact/"
   },
@@ -106,7 +106,7 @@ const pressData = [
     date: "19 January 2021",
     year: 2021,
     description: "Being Sevak: Mission Annapurna With Mandar Chandwadkar From Tarak Mehta Ka Ulta Chashma",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/global.jpg",
     source: "Global Prime News",
     link: "https://globalprimenews.com/tag/being-sevak-charitable-trust/"
   },
@@ -115,7 +115,7 @@ const pressData = [
     date: "24 November 2023",
     year: 2023,
     description: "Being Sevak Charitable Trust Illuminates Diwali for Visually Impaired Across 7 States by Distributing Anna Potli",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/xpress.png",
     source: "Xpress Times",
     link: "https://xpresstimes.in/being-sevak-charitable-trust-illuminates-diwali-for-visually-impaired-across-7-states-by-distributing-anna-potli/"
   },
@@ -125,7 +125,7 @@ const pressData = [
     date: "08 September 2023",
     year: 2023,
     description: "Being Sevak Charitable Trust Illuminates Janmashtami with Visually Impaired Celebration",
-    image: "../images/logos/aajtak.jpeg",
+    image: "../images/logos/newspatrolling.png",
     source: "News Patrolling",
     link: "https://newspatrolling.com/being-sevak-charitable-trust-illuminates-janmashtami-with-visually-impaired-celebration/"
   }
