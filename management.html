@@ -449,7 +449,144 @@
       transform: translateY(-1px);
     }
 
-    .founder-note-wrap {
+      
+      .founder-section {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.founder-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.heading-line {
+  width: 50px;
+  height: 3px;
+  background-color: #00a3da;
+  display: inline-block;
+}
+
+.founder-heading h2 {
+  font-size: 26px;
+  color: #222;
+  margin: 0;
+  font-weight: bold;
+}
+
+.founder-subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 50px;
+}
+
+.founder-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.founder-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.founder-item {
+  text-align: center;
+}
+
+.founder-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  font-size: 30px;
+  color: #00a3da;
+}
+
+.founder-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.founder-image {
+  flex: 1;
+  text-align: center;
+}
+
+.founder-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== ANIMATION START STATES ===== */
+
+/* 4 grid items - niche se upar */
+.animate-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* image - choti se badi (zoom) */
+.animate-zoom {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Jab scroll karke aaye - final state */
+.animate-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-zoom.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .founder-grid {
+    flex-direction: column;
+  }
+  .founder-col {
+    gap: 40px;
+  }
+}
+
+/* Reduced motion - accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-up,
+  .animate-zoom {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
+
+    /* .founder-note-wrap {
       display: flex;
       gap: 40px;
       align-items: center;
@@ -487,7 +624,7 @@
       font-size: 1rem;
       color: var(--navy);
       margin-top: 8px;
-    }
+    } */
 
     .hero-image {
       position: relative;
@@ -1650,23 +1787,66 @@
     </nav>
   </div>
 
-  <!-- ALERT BANNER -->
-
-
   <!-- TAX BOX HEADER (Annapurna style) -->
   <section class="tax-box">
     <h1>Our Management</h1>
   </section>
 
+  <!-- ALERT BANNER -->
+<section class="founder-section">
+  <div class="founder-heading">
+    <span class="heading-line"></span>
+    <h2>Priyank Shah</h2>
+  </div>
+  <p class="founder-subtitle">Founder Chairman – BEING SEVAK CHARITABLE TRUST</p>
+
+  <div class="founder-grid">
+    <!-- Left column -->
+    <div class="founder-col left">
+      <div class="founder-item animate-up">
+        <div class="founder-icon">🏅</div>
+        <p>Being Sevak Charitable Trust (BSCT) is driven by a vision of creating meaningful social impact through healthcare, education, environmental sustainability, women empowerment, and community welfare initiatives across India.</p>
+      </div>
+      <div class="founder-item animate-up">
+        <div class="founder-icon">❝</div>
+        <p> Our mission is to serve humanity with compassion, dignity, and purpose, ensuring that no individual is left behind.</p>
+      </div>
+    </div>
+
+    <!-- Center image -->
+    <div class="founder-image animate-zoom">
+      <img src="images/managesir.png" alt="">
+    </div>
+
+    <!-- Right column -->
+    <div class="founder-col right">
+      <div class="founder-item animate-up">
+        <div class="founder-icon">👁️</div>
+        <p>Guided by compassion and social responsibility, BSCT envisions an inclusive future where every individual can thrive with dignity, equal opportunities, and access to essential resources.</p>
+      </div>
+      <div class="founder-item animate-up">
+        <div class="founder-icon">🏆</div>
+        <p>Through impactful projects in healthcare, education, women empowerment, environmental conservation, and humanitarian assistance, Being Sevak Charitable Trust continues to drive meaningful change and inspire communities nationwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+   
+  
+
+
   <!-- HERO SECTION -->
-  <section class="hero" id="home">
+  <!-- <section class="hero" id="home">
 
     <div class="hero-content">
       <h1>Our <span>Management</span></h1>
-      <p>Meet the dedicated leaders guiding BSCT's mission of selfless service and social empowerment.</p>
+      <p>Meet the dedicated leaders guiding BSCT's mission of selfless service and social empowerment.</p> -->
 
       <!-- Founder's Note -->
-      <div class="founder-note-wrap">
+      <!-- <div class="founder-note-wrap">
         <div class="founder-note-text">
           <h2>Founder's Note</h2>
           <p>Life has always been a journey filled with ups and downs. There was a time when every project started by me
@@ -1690,7 +1870,7 @@
       <img src="images/managesir.png">
     </div>
 
-  </section>
+  </section> -->
 
   <!-- LEADERSHIP CONTENT -->
   <!-- LEADERSHIP CONTENT -->
@@ -1938,6 +2118,24 @@
 
 
   <script src="js/nav.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".animate-up, .animate-zoom");
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(function (item) {
+      observer.observe(item);
+    });
+  });
+</script>
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
