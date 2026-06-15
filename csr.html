@@ -451,6 +451,175 @@
     <div class="csr-card">
       <p>We welcome corporates, institutions, and partners to collaborate with us in building an inclusive, empowered, and better society for all.</p>
     </div>
+    <!-- ===== Our Initiatives Section ===== -->
+<section class="bs-initiatives">
+  <div class="bs-initiatives__inner">
+
+    <header class="bs-initiatives__head">
+      <span class="bs-initiatives__tag">WHAT WE FOCUS ON</span>
+      <h2 class="bs-initiatives__title">Our Initiatives</h2>
+      <p class="bs-initiatives__sub">These programs strengthen our role as a trusted NGO in India for CSR projects</p>
+    </header>
+
+    <div class="bs-initiatives__grid">
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--edu">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 class="bs-initiative__label">Education</h3>
+        <p class="bs-initiative__desc">Empowering children &amp; youth with quality learning opportunities</p>
+      </div>
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--live">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3 class="bs-initiative__label">Livelihood</h3>
+        <p class="bs-initiative__desc">Building sustainable income sources through skill development</p>
+      </div>
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--env">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3 class="bs-initiative__label">Environment</h3>
+        <p class="bs-initiative__desc">Protecting nature through conservation &amp; green initiatives</p>
+      </div>
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--sport">
+          <i class="fas fa-running"></i>
+        </div>
+        <h3 class="bs-initiative__label">Sports</h3>
+        <p class="bs-initiative__desc">Fostering teamwork, health &amp; excellence through sports</p>
+      </div>
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--art">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3 class="bs-initiative__label">Arts &amp; Culture</h3>
+        <p class="bs-initiative__desc">Preserving heritage &amp; nurturing creative expression</p>
+      </div>
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--health">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <h3 class="bs-initiative__label">Health &amp; Nutrition</h3>
+        <p class="bs-initiative__desc">Ensuring wellness &amp; food security for communities</p>
+      </div>
+
+      <div class="bs-initiative">
+        <div class="bs-initiative__icon bs-initiative__icon--tech">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3 class="bs-initiative__label">Assistive Technology</h3>
+        <p class="bs-initiative__desc">Enabling independence through innovative support tools</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .bs-initiatives {
+    background: #f4f6f9;
+    padding: 70px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .bs-initiatives__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .bs-initiatives__head {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .bs-initiatives__tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #00a3da;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .bs-initiatives__title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin: 0 0 12px;
+  }
+  .bs-initiatives__sub {
+    font-size: 1.05rem;
+    color: #666;
+    margin: 0;
+  }
+  .bs-initiatives__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 24px;
+  }
+  .bs-initiative {
+    background: #fff;
+    border-radius: 18px;
+    padding: 32px 20px 28px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: default;
+  }
+  .bs-initiative:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 163, 218, 0.15);
+  }
+  .bs-initiative__icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .bs-initiative:hover .bs-initiative__icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  .bs-initiative__icon--edu  { background: linear-gradient(135deg, #009BD4, #046FB1); }
+  .bs-initiative__icon--live { background: linear-gradient(135deg, #0285C3, #074D97); }
+  .bs-initiative__icon--env  { background: linear-gradient(135deg, #43a047, #2e7d32); }
+  .bs-initiative__icon--sport { background: linear-gradient(135deg, #e53935, #b71c1c); }
+  .bs-initiative__icon--art  { background: linear-gradient(135deg, #f0b429, #e65100); }
+  .bs-initiative__icon--health { background: linear-gradient(135deg, #00a3da, #007d94); }
+  .bs-initiative__icon--tech { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+  .bs-initiative__label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 8px;
+  }
+  .bs-initiative__desc {
+    font-size: 0.88rem;
+    color: #777;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .bs-initiatives__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .bs-initiatives__grid { grid-template-columns: 1fr; }
+    .bs-initiatives__title { font-size: 1.7rem; }
+  }
+</style>
+
 
     <div class="csr-highlight">
       <h2>Partner With Us</h2>
