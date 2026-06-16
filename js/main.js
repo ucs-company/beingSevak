@@ -329,6 +329,39 @@ setInterval(()=>{
 }
 
 /* =========================================
+   CELEBRITY NOTES SLIDER
+======================================== */
+
+if (document.querySelector('.celebrity-slide')) {
+
+const celebritySlides = document.querySelectorAll('.celebrity-slide');
+const celebrityDots = document.querySelectorAll('.celebrity-dot');
+
+let currentCelebrity = 0;
+
+function showCelebritySlide(index) {
+  celebritySlides[currentCelebrity].classList.remove('active');
+  celebrityDots[currentCelebrity].classList.remove('active');
+
+  currentCelebrity = (index + celebritySlides.length) % celebritySlides.length;
+
+  celebritySlides[currentCelebrity].classList.add('active');
+  celebrityDots[currentCelebrity].classList.add('active');
+}
+
+celebrityDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    showCelebritySlide(i);
+  });
+});
+
+setInterval(() => {
+  showCelebritySlide(currentCelebrity + 1);
+}, 5000);
+
+}
+
+/* =========================================
    FEATURED PROJECTS SLIDER
 ======================================== */
 
